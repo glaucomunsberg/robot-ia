@@ -1,12 +1,19 @@
-## Robot IA 
+---
+title: Robot IA
+---
+
 
 ![Chassis](images/project/current_status_represenation.jpg){ align=right width=50% }
 
+
 The project is a DIY project that uses a AI as the main controller. I create this project to test some ideas about how to create a robot that can be used to help in some tasks using AI. Current 
 
-!!! info
-    The project is in the <b>early stage of development</b> and the robot is not able to move or take actions.
+[![GitHub Release](https://img.shields.io/github/v/release/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/releases)
+[![Release date](https://img.shields.io/github/release-date/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/releases)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/glaucomunsberg/robot-ia/pages%2Fpages-build-deployment)](https://github.com/glaucomunsberg/robot-ia/actions/workflows/pages/pages-build-deployment)
+[![GitHub License](https://img.shields.io/github/license/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/blob/main/LICENSE)
 
+<small>:information_source: It's a <b>early stage of development</b> and the robot is not able to move or take actions at this moment.</small>
 
 ### Progress
 
@@ -26,9 +33,6 @@ Bellow you can see the current status of the project, if you want see the full l
 - [ ] Create the IA model
 - [ ] Create the robot controller
 - [ ] Create the robot interface
-
-
-
 
 ### Project Structure
 
@@ -54,3 +58,7 @@ cd robot-ia
 Fork the repository, create a new branch, make your changes and commit them, then create a pull request.
 
 Keep in mind that you need follow the project [coding style](project/coding-style.md), and the project [documentation](project/documentation.md).
+
+## License
+
+This project is licensed under the MIT License.

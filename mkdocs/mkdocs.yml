@@ -95,7 +95,7 @@ extra_css:
 # MENU NAVIGATION
 nav:
   - Robot IA:
-    - Resume: index.md
+    - Robot IA: index.md
     - Features: project/features.md
     - Roadmap: project/roadmap.md
     - Versions: project/version.md
