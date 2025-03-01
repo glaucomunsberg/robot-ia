@@ -1,0 +1,29 @@
+.progress-bar-container {
+    width: 100%;
+    height: 25px;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    transition: width 0.5s ease-in-out;
+}
+
+.grid-youtube-center {
+    p {
+        a {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 6px;
+        }
+    }
+}

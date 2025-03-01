@@ -1,0 +1,115 @@
+site_name: Robot IA
+repo_name: robot-ia
+repo_url: https://github.com/glaucomunsberg/robot-ia
+edit_uri: -/blob/main/mkdocs/docs
+site_dir: site
+theme:
+  name: material
+  logo: images/logos/robot-ia-white.png
+  language: pt-BR
+  palette:
+    primary: blue
+  icon:
+    repo: fontawesome/brands/gitlab
+  features:
+    - content.code.copy
+    - search.suggest
+    - navigation.instant
+    - navigation.tabs
+    - navigation.footer
+    - navigation.sections
+    - navigation.expand
+    - navigation.tabs.sticky
+    - toc.follow
+    - content.action.edit
+    - content.tooltips
+plugins:
+  - search
+  - blog:
+      archive: false
+  - offline
+  - privacy
+  - social:
+      cards: true
+  - tags:
+      enabled: true
+      tags_file: tags.md
+  - group:
+      plugins:
+        - optimize
+        - minify
+extra:
+  version: 1.0.0
+  homepage: https://docs.mapbiomas.org
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/glaucomunsberg/robot-ia
+  analytics:
+    provider: google
+    property: G-AAAAAAA
+    feedback:
+      title: Essa página foi útil?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: Essa página foi útil
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: Essa página não foi útil
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://github.com/glaucomunsberg/robot-ia/issues/new?title=página a melhorar" target="_blank" rel="noopener">feedback form</a>.
+  consent:
+    title: Política de Cookies
+    description: >-
+      Utilizamos cookies para garantir a melhor experiência em nosso site. Ao continuar navegando, você concorda com nossa política de cookies.
+  
+markdown_extensions:
+  - abbr
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - def_list
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - toc:
+copyright: © 2024 Robot IA
+extra_css:
+  - stylesheets/extra.css
+
+# MENU NAVIGATION
+nav:
+  - Robot IA:
+    - Resume: index.md
+    - Features: project/features.md
+    - Versions: project/version.md
+  - Components:
+    - List: components/index.md
+    - Buying: components/buying.md
+  - 3D Models:
+    - List: 3dmodels/index.md
+  - Assembly:
+    - Resume: assembly/index.md
+    - Chassis: assembly/chassis.md
+    - Body: assembly/body.md
+  - Wiring:
+    - Resume: wiring/index.md
+  - Programming:
+    - Resume: programming/index.md
+  - Blog: blog/index.md
