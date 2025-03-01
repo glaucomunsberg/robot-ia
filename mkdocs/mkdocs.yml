@@ -1,16 +1,16 @@
 site_name: Robot IA
-repo_name: robot-ia
 repo_url: https://github.com/glaucomunsberg/robot-ia
-edit_uri: -/blob/main/mkdocs/docs
+repo_name: glaucomunsberg/robot-ia
 site_dir: site
 theme:
   name: material
   logo: images/logos/robot-ia-white.png
   language: pt-BR
+  icon:
+    repo: fontawesome/brands/github
+  favicon: images/logos/favicon.png
   palette:
     primary: blue
-  icon:
-    repo: fontawesome/brands/gitlab
   features:
     - content.code.copy
     - search.suggest
@@ -39,8 +39,7 @@ plugins:
         - optimize
         - minify
 extra:
-  version: 1.0.0
-  homepage: https://docs.mapbiomas.org
+  homepage: https://github.com/glaucomunsberg/robot-ia
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/glaucomunsberg/robot-ia
@@ -98,6 +97,7 @@ nav:
   - Robot IA:
     - Resume: index.md
     - Features: project/features.md
+    - Roadmap: project/roadmap.md
     - Versions: project/version.md
   - Components:
     - List: components/index.md
@@ -105,9 +105,9 @@ nav:
   - 3D Models:
     - List: 3dmodels/index.md
   - Assembly:
-    - Resume: assembly/index.md
     - Chassis: assembly/chassis.md
     - Body: assembly/body.md
+    - Resume: assembly/index.md
   - Wiring:
     - Resume: wiring/index.md
   - Programming:
