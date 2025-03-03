@@ -112,4 +112,5 @@ nav:
     - Resume: wiring/index.md
   - Programming:
     - Resume: programming/index.md
+    - Setup ESP32-S3: programming/setup.md
   - Blog: blog/index.md

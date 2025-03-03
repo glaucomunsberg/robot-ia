@@ -6,12 +6,16 @@ title: Robot IA
 ![Chassis](images/project/current_status_represenation.jpg){ align=right width=50% }
 
 
-The project is a DIY project that uses a AI as the main controller. I create this project to test some ideas about how to create a robot that can be used to help in some tasks using AI. Current 
+The project is a DIY project that uses a AI as the main controller. I create this project to test some ideas about how to create a robot that can be used to help in some tasks using AI. 
 
-[![GitHub Release](https://img.shields.io/github/v/release/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/releases)
+Current we use a ESP32-S3 microcontroller to run the project with peripherals like camera, ultrasonic sensor, temperature and humidity sensor, etc.
+
+**Current Version**: 0.0.1
+
 [![Release date](https://img.shields.io/github/release-date/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/releases)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/glaucomunsberg/robot-ia/pages%2Fpages-build-deployment)](https://github.com/glaucomunsberg/robot-ia/actions/workflows/pages/pages-build-deployment)
 [![GitHub License](https://img.shields.io/github/license/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/blob/main/LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/releases)
 
 <small>:information_source: It's a <b>early stage of development</b> and the robot is not able to move or take actions at this moment.</small>
 
@@ -27,7 +31,7 @@ Bellow you can see the current status of the project, if you want see the full l
 - [x] Project features and roadmap
 - [ ] Creating the project components <small>:material-progress-clock: In Progress</small>
 - [ ] Creating the project documentation  <small>:material-progress-clock: In Progress</small>
-- [ ] Creating the project assembly
+- [ ] Creating the project assembly <small>:material-progress-clock: In Progress</small>
 - [ ] Create the project programming
 - [ ] Create the project 3D models
 - [ ] Create the IA model

@@ -17,4 +17,6 @@ Below is the list of components used in the robot and the price of each one. Fee
 | Módulo Driver Ponte H - L298N | 1 | R$ 15,70 | R$ 15,70 | [Comprar](https://curtocircuito.com.br/modulo-driver-ponte-h-l298n.html) | 2025-02-28 | Body |
 | Camera VGA 640x480 OV7670 | 1 | R$ 64,00 | R$ 64,00 |  | 2025-03-01 | Body |
 | Buzzer 5v 12mm | 1 | R$ 3,80 | R$ 3,80 |  | 2025-03-01 | Body |
-
+| Multímetro Digital DT830 MXT | 1 | R$ 39,00 | R$ 39,00 |  | 2025-03-03 | Tools |
+| Sensor Temperatura e Umidade DHT11 | 1 | R$ 12,50 | R$ 12,50 |  | 2025-03-03 | Body |
+| Kit Jumper Macho/Macho - 40 pçs - 20cm | 1 | R$ 17,50 | R$ 17,50 |  | 2025-03-03 | Body |
