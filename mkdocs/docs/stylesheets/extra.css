@@ -17,6 +17,14 @@
     transition: width 0.5s ease-in-out;
 }
 
+.grid-center {
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .grid-youtube-center {
     p {
         a {

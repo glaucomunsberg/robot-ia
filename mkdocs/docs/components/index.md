@@ -13,7 +13,6 @@ Below is the list of components used in the robot.
     - [x] Diodo de Uso Geral - 1N4148 - 100V / 0,2A
     - [x] [Kit Jumper Macho/Macho - 40 pçs - 20cm](#kit-jumper-machomacho-40-pcs-20cm)
     - [x] [Kit Jumper Macho/Fêmea - 40 pçs - 20cm](#kit-jumper-macho-femea-40-pcs-20cm)
-    - [x] Kit Jumper Macho/Macho - 40 pçs - 20cm
     - [x] Módulo Driver Ponte H - L298N
     - [x] Buzzer 5v 12mm
 - Hardware

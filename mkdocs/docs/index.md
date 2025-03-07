@@ -8,7 +8,7 @@ title: Robot IA
 
 The project is a DIY project that uses a AI as the main controller. I create this project to test some ideas about how to create a robot that can be used to help in some tasks using AI. 
 
-Current we use a ESP32-S3 microcontroller to run the project with peripherals like camera, ultrasonic sensor, temperature and humidity sensor, etc.
+Current we use a [ESP32-S3](https://www.espressif.com/en/products/socs/esp32s3) microcontroller to run the project with peripherals like camera, ultrasonic sensor, temperature and humidity sensor, etc.
 
 **Current Version**: 0.0.1
 

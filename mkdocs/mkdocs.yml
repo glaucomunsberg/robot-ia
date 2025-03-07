@@ -96,9 +96,15 @@ extra_css:
 nav:
   - Robot IA:
     - Robot IA: index.md
-    - Features: project/features.md
-    - Roadmap: project/roadmap.md
-    - Versions: project/version.md
+    - Process:
+      - Components: components/index.md
+      - Assembly: assembly/index.md
+      - Wiring: wiring/index.md
+      - Programming: programming/index.md
+    - Project:
+      - Features: project/features.md
+      - Roadmap: project/roadmap.md
+      - Versions: project/version.md
   - Components:
     - List: components/index.md
     - Buying: components/buying.md

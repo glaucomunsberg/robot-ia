@@ -14,10 +14,17 @@ go to home directory
     cd ~/
 ```
 
+#### MacOS
 Install `cmake`, `ninja` and `dfu-util` to build the firmware.
 
 ```bash
     brew install cmake ninja dfu-util
+```
+
+#### Ubuntu
+
+```bash
+    sudo apt-get install git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 ```
 
 Install [`esptool`](https://github.com/espressif/esptool){ target="_blank" } to flash the firmware to the ESP32-S3.
@@ -42,6 +49,12 @@ Run install ESP32-S3 values
 ```bash
     cd ~/esp/esp-idf
     ./install.sh esp32s3
+```
+
+#### Ubuntu
+
+```bash
+    . $HOME/esp/esp-idf/export.sh
 ```
 
 Add ESP-IDF to your PATH
