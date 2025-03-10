@@ -1,0 +1,2699 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../project/version.html">
+      
+      
+        <link rel="next" href="buying.html">
+      
+      
+      <link rel="icon" href="../images/logos/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Components - Robot IA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-AAAAAAA"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-AAAAAAA",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-AAAAAAA",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Components - Robot IA" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="./assets/images/social/components/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="None" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Components - Robot IA" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="./assets/images/social/components/index.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#list-of-components" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="https://github.com/glaucomunsberg/robot-ia" title="Robot IA" class="md-header__button md-logo" aria-label="Robot IA" data-md-component="logo">
+      
+  <img src="../images/logos/robot-ia-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Robot IA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Components
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/glaucomunsberg/robot-ia" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    glaucomunsberg/robot-ia
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index.html" class="md-tabs__link">
+          
+  
+  Robot IA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
+          
+  
+  Components
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../3dmodels/index.html" class="md-tabs__link">
+          
+  
+  3D Models
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../assembly/index.html" class="md-tabs__link">
+          
+  
+  Assembly
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../wiring/index.html" class="md-tabs__link">
+          
+  
+  Wiring
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../programming/index.html" class="md-tabs__link">
+          
+  
+  Programming
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../blog/index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Blog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://github.com/glaucomunsberg/robot-ia" title="Robot IA" class="md-nav__button md-logo" aria-label="Robot IA" data-md-component="logo">
+      
+  <img src="../images/logos/robot-ia-white.png" alt="logo">
+
+    </a>
+    Robot IA
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/glaucomunsberg/robot-ia" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    glaucomunsberg/robot-ia
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Robot IA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Robot IA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robot IA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Process
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Process
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Especifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Especifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eletronics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eletronics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eletronics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protoboard-400-pontos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protoboard 400 Pontos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resistor-1k-14w-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resistor 1K - 1/4W - 5%
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kit-jumper-macho-femea-40-pcs-20cm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Jumper Macho Fêmea - 40 pçs - 20cm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kit-jumper-machomacho-40-pcs-20cm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Jumper Macho/Macho - 40 pçs - 20cm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buzer-5v-12mm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buzer 5v 12mm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-driver-ponte-h-l298n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo Driver Ponte H - L298N
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-ips-147-spi-st7789" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display IPS 1.47 SPI - ST7789
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diodo-de-uso-geral-1n4148-100v-02a" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diodo de Uso Geral - 1N4148 - 100V / 0,2A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-5mm-vermelho-verde-azul-amarelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED 5mm - Vermelho, Verde, Azul, Amarelo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kit-resistores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Resistores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devkitc-1-esp32-s3-n16r8" class="md-nav__link">
+    <span class="md-ellipsis">
+      DevkitC-1 ESP32-S3 N16R8
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DevkitC-1 ESP32-S3 N16R8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pin-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin layout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonte-ajustavel-para-protoboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonte Ajustável Para Protoboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-bank-5v-21a-10000mah" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Bank 5V 2.1A 10000mAh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ultrassonic-hc-sr04" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ultrassonic HC-SR04
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-vga-640x480-ov7670" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera VGA 640x480 OV7670
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor-temperatura-e-umidade-dht11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Temperatura e Umidade DHT11
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infra
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kit-chassi-4wd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Chassi 4WD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multimetro-digital-dt830-mxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multímetro Digital DT830 MXT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiring/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wiring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Project
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/features.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/roadmap.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project/version.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Especifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Especifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eletronics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eletronics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eletronics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protoboard-400-pontos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protoboard 400 Pontos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resistor-1k-14w-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resistor 1K - 1/4W - 5%
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kit-jumper-macho-femea-40-pcs-20cm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Jumper Macho Fêmea - 40 pçs - 20cm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kit-jumper-machomacho-40-pcs-20cm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Jumper Macho/Macho - 40 pçs - 20cm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buzer-5v-12mm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buzer 5v 12mm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-driver-ponte-h-l298n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo Driver Ponte H - L298N
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-ips-147-spi-st7789" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display IPS 1.47 SPI - ST7789
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diodo-de-uso-geral-1n4148-100v-02a" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diodo de Uso Geral - 1N4148 - 100V / 0,2A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-5mm-vermelho-verde-azul-amarelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED 5mm - Vermelho, Verde, Azul, Amarelo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kit-resistores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Resistores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devkitc-1-esp32-s3-n16r8" class="md-nav__link">
+    <span class="md-ellipsis">
+      DevkitC-1 ESP32-S3 N16R8
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DevkitC-1 ESP32-S3 N16R8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pin-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin layout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonte-ajustavel-para-protoboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonte Ajustável Para Protoboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-bank-5v-21a-10000mah" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Bank 5V 2.1A 10000mAh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ultrassonic-hc-sr04" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ultrassonic HC-SR04
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-vga-640x480-ov7670" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera VGA 640x480 OV7670
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor-temperatura-e-umidade-dht11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Temperatura e Umidade DHT11
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infra
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kit-chassi-4wd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Chassi 4WD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multimetro-digital-dt830-mxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multímetro Digital DT830 MXT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="buying.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Buying
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3D Models
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            3D Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3dmodels/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    List
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Assembly
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Assembly
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembly
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/chassis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chassis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../assembly/body.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wiring
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Wiring
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiring/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wiring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Programming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../programming/setup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup ESP32-S3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of components
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Especifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Especifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eletronics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eletronics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eletronics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protoboard-400-pontos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protoboard 400 Pontos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resistor-1k-14w-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resistor 1K - 1/4W - 5%
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kit-jumper-macho-femea-40-pcs-20cm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Jumper Macho Fêmea - 40 pçs - 20cm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kit-jumper-machomacho-40-pcs-20cm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Jumper Macho/Macho - 40 pçs - 20cm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buzer-5v-12mm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buzer 5v 12mm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-driver-ponte-h-l298n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulo Driver Ponte H - L298N
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-ips-147-spi-st7789" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display IPS 1.47 SPI - ST7789
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diodo-de-uso-geral-1n4148-100v-02a" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diodo de Uso Geral - 1N4148 - 100V / 0,2A
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#led-5mm-vermelho-verde-azul-amarelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      LED 5mm - Vermelho, Verde, Azul, Amarelo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kit-resistores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Resistores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devkitc-1-esp32-s3-n16r8" class="md-nav__link">
+    <span class="md-ellipsis">
+      DevkitC-1 ESP32-S3 N16R8
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DevkitC-1 ESP32-S3 N16R8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pin-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pin layout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#energy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Energy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Energy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fonte-ajustavel-para-protoboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonte Ajustável Para Protoboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#power-bank-5v-21a-10000mah" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Bank 5V 2.1A 10000mAh
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ultrassonic-hc-sr04" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ultrassonic HC-SR04
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#camera-vga-640x480-ov7670" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera VGA 640x480 OV7670
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor-temperatura-e-umidade-dht11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor Temperatura e Umidade DHT11
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Infra
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kit-chassi-4wd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit Chassi 4WD
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multimetro-digital-dt830-mxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multímetro Digital DT830 MXT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/glaucomunsberg/robot-ia/edit/master/docs/components/index.md" title="Editar esta página" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Components</h1>
+
+<p><img align="center" alt="Components" src="../images/components/components.jpg" /></p>
+<p>Below is the list of components used in the robot. </p>
+<h2 id="list-of-components">List of components</h2>
+<ul>
+<li>Eletronics<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#protoboard-400-pontos">Protoboard 400 Pontos</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#resistor-1k-14w-5">Resistor 1K - 1/4W - 5%</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Resistor 1K - 1/4W</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#display-ips-147-spi-st7789">Display IPS 1.47 SPI - ST7789</a> </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#diodo-de-uso-geral-1n4148-100v-02a">Diodo de Uso Geral - 1N4148 - 100V / 0,2A</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#kit-jumper-machomacho-40-pcs-20cm">Kit Jumper Macho/Macho - 40 pçs - 20cm</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#kit-jumper-macho-femea-40-pcs-20cm">Kit Jumper Macho/Fêmea - 40 pçs - 20cm</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#modulo-driver-ponte-h-l298n">Módulo Driver Ponte H - L298N</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#buzer-5v-12mm">Buzzer 5v 12mm</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#led-5mm-vermelho-verde-azul-amarelo">LED 5mm - Vermelho, Verde, Azul, Amarelo</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#kit-resistores">Kit Resistores</a></li>
+</ul>
+</li>
+<li>Hardware<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#devkitc-1-esp32-s3-n16r8">Placa DevkitC-1 ESP32-S3 N16R8</a></li>
+</ul>
+</li>
+<li>Energy<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#power-bank-5v-21a-10000mah">Power Bank 5V 2.1A 10000mAh</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#fonte-ajustavel-para-protoboard">Fonte Ajustável Para Protoboard</a></li>
+</ul>
+</li>
+<li>Sensing<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#ultrassonic-hc-sr04">Ultrassonic HC-SR04</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#camera-vga-640x480-ov7670">Camera VGA 640x480 OV7670</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#sensor-temperatura-e-umidade-dht11">Sensor Temperatura e Umidade DHT11</a></li>
+</ul>
+</li>
+<li>Infra<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#kit-chassi-4wd">Kit Chassi 4WD</a></li>
+</ul>
+</li>
+<li>Tools<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <a href="#multimetro-digital-dt830-mxt">Multímetro Digital DT830 MXT</a></li>
+</ul>
+</li>
+</ul>
+<p>All components list and prices can be found in the <a href="buying.html">Buying list</a> page.</p>
+<h2 id="especifications">Especifications</h2>
+<h3 id="eletronics">Eletronics</h3>
+<h4 id="protoboard-400-pontos">Protoboard 400 Pontos</h4>
+<p><img align="right" alt="Protoboard 400 Pontos" src="/images/components/protoboard-400.png" width="200" /></p>
+<ul>
+<li>Quantidade de pontos: 400;</li>
+<li>Barramento de alimentação: 2 pares (+ e -);</li>
+<li>Material Base: ABS;</li>
+<li>Material de conexão: Bronze banhado à Níquel;</li>
+<li>terminais suportados: 0,3 à 0,8 mm²;</li>
+<li>Resistencia de isolamento: 100 MΩ / min;</li>
+<li>Tensão Máxima: 500 VAC / min;</li>
+<li>Dimensões: 83mm x 55mm x 10mm;</li>
+<li>Peso: 30 gramas;</li>
+</ul>
+<h4 id="resistor-1k-14w-5">Resistor 1K - 1/4W - 5%</h4>
+<p><img align="right" alt="Resistor 1K - 1/4W - 5%" src="/images/components/resistor-1k-14w-5.png" width="200" /></p>
+<ul>
+<li>Resistência: 1K;</li>
+<li>Potência: 1/4W;</li>
+<li>Tolerância: 5%;</li>
+<li>Cor: Preto;</li>
+<li>Tamanho: 6mm x 6mm;</li>
+<li>Peso: 0,01g;</li>
+</ul>
+<h4 id="kit-jumper-macho-femea-40-pcs-20cm">Kit Jumper Macho Fêmea - 40 pçs - 20cm</h4>
+<p><img align="right" alt="Kit Jumper Macho Fêmea - 40 pçs - 20cm" src="/images/components/kit-jumper-macho-feme.png" width="200" /></p>
+<ul>
+<li>Quantidade de pontos: 40;</li>
+<li>Material: Plástico;</li>
+<li>Cor: Preto;</li>
+<li>Tamanho: 20cm;</li>
+</ul>
+<h4 id="kit-jumper-machomacho-40-pcs-20cm">Kit Jumper Macho/Macho - 40 pçs - 20cm</h4>
+<p><img align="right" alt="Kit Jumper Macho Macho - 40 pçs - 20cm" src="/images/components/kit-jumper-macho-macho.png" width="200" /></p>
+<ul>
+<li>Quantidade de pontos: 40;</li>
+<li>Material: Plástico;</li>
+<li>Cor: Preto;</li>
+<li>Tamanho: 20cm;</li>
+</ul>
+<h4 id="buzer-5v-12mm">Buzer 5v 12mm</h4>
+<p><img align="right" alt="Buzer 5v 12mm" src="/images/components/buzzer_ativo_5v.webp" width="200" /></p>
+<ul>
+<li>Tensão de alimentação recomendada: 5 V;</li>
+<li>Tensão de operação: 4 V a 8 V;</li>
+<li>Corrente máxima: 40 mA;</li>
+<li>Diâmetro: 12 mm;</li>
+<li>Altura: 10mm;</li>
+<li>Peso: 1,6g.</li>
+</ul>
+<h4 id="modulo-driver-ponte-h-l298n">Módulo Driver Ponte H - L298N</h4>
+<p><img align="right" alt="Módulo Driver Ponte H - L298N" src="/images/components/modulo-driver-ponte-h-l298n.png" width="200" /></p>
+<ul>
+<li>Driver de Motores: L298N</li>
+<li>Tensão da Lógica: 5 V</li>
+<li>Tensão de Operação: 7 a 30 V</li>
+<li>Corrente de Operação: até 2 A por canal</li>
+<li>Dimensões: 43 x 43 x 27 mm</li>
+<li>Peso: 30 g</li>
+</ul>
+<h4 id="display-ips-147-spi-st7789">Display IPS 1.47 SPI - ST7789</h4>
+<p><img align="right" alt="Display IPS 1.47 SPI - ST7789" src="/images/components/display_ips_1.47_2.jpg" width="200" /></p>
+<ul>
+<li>Modelo: Display IPS 1.47 SPI - ST7789</li>
+<li>Resolução: 172 x 320 píxeis</li>
+<li>Tensão Lógica: 3.3V</li>
+<li>Chip Controlador: ST7789</li>
+<li>Interface: SPI</li>
+<li>Tela do LCD: IPS </li>
+<li>Área Ativa de Visualização: 17,38 x 32,35 mm</li>
+<li>Dimensões Totais: 30,00 x 37,00  x 2,76 mm</li>
+<li>Temperatura Operacional: -20 °C a 70 °C</li>
+<li>Peso: 2.7g</li>
+</ul>
+<h4 id="diodo-de-uso-geral-1n4148-100v-02a">Diodo de Uso Geral - 1N4148 - 100V / 0,2A</h4>
+<p><img align="right" alt="Diodo de Uso Geral - 1N4148 - 100V / 0,2A" src="/images/components/diodo_1n4148.jpg" width="100" /></p>
+<ul>
+<li>Tensão de Pico Reversa: 100V</li>
+<li>Corrente de Pico: 0,2A</li>
+<li>Peso: 0,1g</li>
+</ul>
+<h4 id="led-5mm-vermelho-verde-azul-amarelo">LED 5mm - Vermelho, Verde, Azul, Amarelo</h4>
+<p><img align="right" alt="LED 5mm - Vermelho, Verde, Azul, Amarelo" src="/images/components/led_difuso.jpg" width="200" /></p>
+<ul>
+<li>Tamanho: 5 mm</li>
+<li>Tensão: 2.0 ~ 2.21V</li>
+<li>Corrente: 20 mA</li>
+<li>Intensidade luminosa: 1000 MCD</li>
+<li>Vida útil: 50,000 Horas</li>
+<li>Ângulo de abertura: 120º graus</li>
+</ul>
+<h4 id="kit-resistores">Kit Resistores</h4>
+<p><img align="right" alt="Kit Resistores" src="/images/components/kit_resistors.webp" width="200" /></p>
+<ul>
+<li>20 pçs 10 Ohms,</li>
+<li>20 pçs 47 Ohms,</li>
+<li>20 pçs 100 Ohms,</li>
+<li>20 pçs 220 Ohms,</li>
+<li>20 pçs 470 Ohms,</li>
+<li>20 pçs 510 Ohms,</li>
+<li>20 pçs 680 Ohms,</li>
+<li>20 pçs 1 K Ohms.</li>
+<li>20 pçs 2.2 K Ohms</li>
+<li>20 pçs 3.3K Ohms,</li>
+<li>20 pçs 4.7 K Ohms</li>
+<li>20 pçs 6.8 K Ohms</li>
+<li>20 pçs 10 K Ohms</li>
+<li>20 pçs 47 K Ohms</li>
+<li>20 pçs 68 K Ohms</li>
+<li>20 pçs 100 K Ohms</li>
+<li>20 pçs 220 K Ohms</li>
+<li>20 pçs 470 K Ohms</li>
+<li>20 pçs 680 K Ohms</li>
+<li>20 pçs 1M Ohms</li>
+</ul>
+<hr />
+<h3 id="hardware">Hardware</h3>
+<h4 id="devkitc-1-esp32-s3-n16r8">DevkitC-1 ESP32-S3 N16R8</h4>
+<p><img align="right" alt="ESP32-S3" src="/images/components/esp32-s3-n16r8.jpg" width="200" /></p>
+<p>ESP32-S3 is a system on a chip that integrates the following features:</p>
+<ul>
+<li>Wi-Fi (2.4 GHz band)</li>
+<li>Bluetooth Low Energy</li>
+<li>Dual high performance Xtensa® 32-bit LX7 CPU cores</li>
+<li>Ultra Low Power co-processor running either RISC-V or FSM core</li>
+<li>Multiple peripherals</li>
+<li>Built-in security hardware</li>
+<li>USB OTG interface</li>
+<li>USB Serial/JTAG Controller</li>
+</ul>
+<h6 id="pin-layout">Pin layout</h6>
+<p><img alt="ESP32-S3 Pin Layout" src="/images/components/ESP32-S3_DevKitC-1_pinlayout_v1.1.jpg" />
+<a href="/images/components/ESP32-S3_DevKitC-1_pinlayout_v1.1.jpg" target="_blank">Abrir em nova janela</a></p>
+<hr />
+<h3 id="energy">Energy</h3>
+<h4 id="fonte-ajustavel-para-protoboard">Fonte Ajustável Para Protoboard</h4>
+<p><img align="right" alt="Fonte Ajustável Para Protoboard" src="/images/components/3PS02-4.jpg" width="200" /></p>
+<ul>
+<li>Modelo: KA-972</li>
+<li>Tensão de entrada: 5v 2A</li>
+<li>Entrada: Micro/Tipo-C</li>
+<li>Capacidade: 10.000mAh</li>
+<li>Tensão de saída: 5v 2.1A</li>
+<li>Capacidade: 6200mAh</li>
+</ul>
+<h4 id="power-bank-5v-21a-10000mah">Power Bank 5V 2.1A 10000mAh</h4>
+<p><img align="right" alt="Power Bank 5V 2.1A 10000mAh MAH KA-972" src="/images/components/power_bank_carregador_portatil_10_000mah_ka_972.webp" width="200" /></p>
+<ul>
+<li>Modelo: KA-972</li>
+<li>Capacidade: 10000mAh</li>
+<li>Tensão de saída: 5V</li>
+<li>Corrente de saída: 2.1A</li>
+<li>Dimensões: 14 x 6,5 x 1,5 cm</li>
+</ul>
+<hr />
+<h3 id="sensing">Sensing</h3>
+<h4 id="ultrassonic-hc-sr04">Ultrassonic HC-SR04</h4>
+<p><img align="right" alt="Ultrassonic HC-SR04" src="/images/components/HC-SR04.png" width="200" /></p>
+<ul>
+<li>Alimentação: 5V DC</li>
+<li>Corrente de Operação: 15 mA</li>
+<li>Ângulo de efeito: 15°</li>
+<li>Alcance: 2cm ~ 4m</li>
+<li>Precisão máxima: 3 mm/cm</li>
+</ul>
+<h4 id="camera-vga-640x480-ov7670">Camera VGA 640x480 OV7670</h4>
+<p><img align="right" alt="Camera VGA 640x480 OV7670" src="/images/components/OV7670.webp" width="200" /></p>
+<ul>
+<li>Modelo: OV7670;</li>
+<li>Resolução: 640 x 480;</li>
+<li>Tensão: 2,5 ? 3,0V;</li>
+<li>Potência de operação: 60mW/15fpsVGAYUV;</li>
+<li>Modo Sleep: 20 ?A;</li>
+<li>Corrente escura: 12 mV/s a 60°;</li>
+<li>Temperatura de operação: -30°C a 70°C;</li>
+<li>Tamanho da lente: 1/6";</li>
+<li>Ângulo de visão: 25°;</li>
+<li>Frame rate Máx.: 30fps VGA;</li>
+<li>Sensibilidade: 1,3V/(lux-sec);</li>
+<li>Proporção entre sinal e ruído: 46dB;</li>
+<li>Alcance dinâmico: 52 dB;</li>
+<li>Exposição eletrônica: Linha a linha (1 a 510);</li>
+<li>Cobertura de pixels: 3,6 x 3,6?m;</li>
+<li>Sensibilidade para a operação com pouca luminosidade;</li>
+<li>Interface SCCB compatível com interface I2C;</li>
+<li>Flicker: 50/60Hz (detecção automática);</li>
+</ul>
+<h4 id="sensor-temperatura-e-umidade-dht11">Sensor Temperatura e Umidade DHT11</h4>
+<p><img align="right" alt="Sensor Temperatura e Umidade DHT11" src="/images/components/dht11.png" width="200" /></p>
+<ul>
+<li>Modelo: DHT11 (Datasheet)</li>
+<li>Tensão de operação: 3 – 5 V (5,5 V máximo)</li>
+<li>Faixa de medição de umidade: 20 a 90% UR</li>
+<li>Faixa de medição de temperatura: 0º a 50ºC</li>
+<li>Corrente: Máximo de 500mA durante o uso; 100μA a 150μA em modo de espera</li>
+<li>Precisão de umidade de medição: ± 5,0% UR</li>
+<li>Precisão de medição de temperatura: ± 2,0ºC</li>
+<li>Tempo de resposta: 2 segundos</li>
+<li>Dimensões: 23 mm x 12 mm x 5 mm (sem terminais)</li>
+</ul>
+<hr />
+<h3 id="infra">Infra</h3>
+<h4 id="kit-chassi-4wd">Kit Chassi 4WD</h4>
+<p><img align="right" alt="Kit Chassi 4WD" src="/images/components/kit_chassi_4wd.jpg" width="300" /></p>
+<ul>
+<li>Chassi em acrílico;</li>
+<li>Tração nas 4 rodas (4WD);</li>
+<li>Dimensões: 256 x 150 x 65mm;</li>
+<li>Peso Chassi completo: 470g;</li>
+<li>Corrente motor sem carga: 200mA (6V) e 150mA (3V);</li>
+<li>Velocidade motor sem carga: 200RPM (6V) e 90RPM (3V);</li>
+</ul>
+<hr />
+<h3 id="tools">Tools</h3>
+<h4 id="multimetro-digital-dt830-mxt">Multímetro Digital DT830 MXT</h4>
+<p><img align="right" alt="Multímetro Digital DT830 MXT" src="/images/components/D_NQ_NP_2X_682728-MLB74821404574_032024-F.webp" width="300" /></p>
+<ul>
+<li>Display: 3 ½ Dígitos (2000 Contagens).</li>
+<li>Indicação de Sobre-faixa: Mostra apenas o dígito mais significativo (1).</li>
+<li>Temperatura de Operação: 0°C a 50°C, RH &lt; 70%.</li>
+<li>Temperatura de Armazenamento: -20°C a 60°C, RH &lt; 80%.</li>
+<li>Uso Interno.</li>
+<li>Alimentação: 1 x 9V (Inclusa)</li>
+<li>Dimensões: 126(A) x 70(L) x 24(P)mm.</li>
+<li>Peso: Aproximadamente 150g.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Essa página foi útil?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="Essa página foi útil" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="Essa página não foi útil" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/glaucomunsberg/robot-ia/issues/new?title=página a melhorar" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../project/version.html" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Versions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Versions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="buying.html" class="md-footer__link md-footer__link--next" aria-label="Próximo: Buying">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Buying
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2024 Robot IA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/glaucomunsberg/robot-ia" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Política de Cookies</h4>
+<p>Utilizamos cookies para garantir a melhor experiência em nosso site. Ao continuar navegando, você concorda com nossa política de cookies.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceitar</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Gerenciar configurações</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "search.suggest", "navigation.instant", "navigation.tabs", "navigation.footer", "navigation.sections", "navigation.expand", "navigation.tabs.sticky", "toc.follow", "content.action.edit", "content.tooltips"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
