@@ -19,4 +19,9 @@ I use the video below to assemble the chassis.
 
 ## Result
 
+
+When finished assembling the chassis, it will look like the image below a chassis with 4 wheels connected to the motors. 
+
 ![Chassis](../images/assembly/chassis/result.jpg){ align=center}
+
+After assembling the chassis, you can install the [body components](body.md) to the robot.

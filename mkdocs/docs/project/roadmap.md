@@ -9,10 +9,10 @@ Bellow you can see the roadmap of the project, the features that are implemented
     
 - [ ] Install the components <small>:material-progress-clock: In Progress</small>
     - [ ] ESP32-S3 N16R8 <small>:material-progress-clock: In Progress</small>
-    - [ ] Temperature and humidity sensor <small>:material-progress-clock: In Progress</small>
+    - [x] Buzzer
+    - [x] Ultrasonic sensor
+    - [x] Temperature and humidity sensor <small>:material-progress-clock: In Progress</small>
     - [ ] Camera 
-    - [ ] Buzzer
-    - [ ] Ultrasonic
     - [ ] Display
 
 ## Brain

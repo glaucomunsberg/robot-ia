@@ -3,7 +3,7 @@ title: Robot IA
 ---
 
 
-![Chassis](images/project/current_status_represenation.jpg){ align=right width=50% }
+[![Chassis](images/project/current_status_represenation.jpg){ align=right width=50% }](images/project/current_status_represenation.jpg){target="_bank"}
 
 
 The project is a DIY project that uses a AI as the main controller. I create this project to test some ideas about how to create a robot that can be used to help in some tasks using AI. 
@@ -18,6 +18,13 @@ Current we use a [ESP32-S3](https://www.espressif.com/en/products/socs/esp32s3) 
 [![GitHub Release](https://img.shields.io/github/v/release/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/releases)
 
 <small>:information_source: It's a <b>early stage of development</b> and the robot is not able to move or take actions at this moment.</small>
+
+<div class="grid-center" markdown>
+[![Features](images/project/0.0.2/general/IMG_5008.jpg){ width="200" }](images/project/0.0.2/general/IMG_5008.jpg){ target="_blank" }
+[![Features](images/project/0.0.2/general/IMG_5005.jpg){ width="200" }](images/project/0.0.2/general/IMG_5005.jpg){ target="_blank" }
+[![Features](images/project/0.0.2/breadboard/breadboard.png){ width="200" }](images/project/breadboard/breadboard.png){ target="_blank" }
+[![Features](images/project/current_status_represenation.jpg){ width="200" }](images/project/current_status_represenation.jpg){ target="_blank" }
+</div>
 
 ### Progress
 
@@ -66,3 +73,12 @@ Keep in mind that you need follow the project [coding style](project/coding-styl
 ## License
 
 This project is licensed under the MIT License.
+
+## Inspiration
+
+The project was inspired by some projects and products that I saw. See some of them bellow:
+
+- [Wall-E Replica](https://wired.chillibasket.com/3d-printed-wall-e/){ target="_blank" }
+- [Otoodiy](https://www.ottodiy.com/){ target="_blank" }
+- [Amazon Astro](https://www.amazon.com/Introducing-Amazon-Astro/dp/B078NSDFSB){ target="_blank" }
+

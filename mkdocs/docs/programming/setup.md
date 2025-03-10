@@ -51,16 +51,17 @@ Run install ESP32-S3 values
     ./install.sh esp32s3
 ```
 
-#### Ubuntu
-
-```bash
-    . $HOME/esp/esp-idf/export.sh
-```
+#### MacOS
 
 Add ESP-IDF to your PATH
 
 ```bash
     echo 'alias get_idf=". $HOME/esp/esp-idf/export.sh"' >> ~/.zshrc
+```
+
+#### Ubuntu
+```bash
+    echo 'alias get_idf=". $HOME/esp/esp-idf/export.sh"' >> ~/.bashrc
 ```
 
 ### Install MicroPython
@@ -72,11 +73,34 @@ Install MicroPython
     git clone git@github.com:micropython/micropython.git
 ```
 
+Install the cross-compiler
+
+```bash
+    cd ~/micropython
+    cd mpy-cross
+    make
+```
+
 ### Install Tommy
 
 ```bash
     pip3 install tk --break-system-packages
+```
+
+#### MacOS
+
+```bash
     brew brew install python-tk@3.12
+```
+
+#### Ubuntu
+
+```bash
+    sudo apt install python3-tk
+```
+
+
+```bash
     pip3 install thonny --break-system-packages
 ```
 
