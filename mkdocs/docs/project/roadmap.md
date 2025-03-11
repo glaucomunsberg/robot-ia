@@ -7,17 +7,17 @@ Bellow you can see the roadmap of the project, the features that are implemented
     - [x] [Assemble the chassis](../assembly/chassis.md)
     - [x] [Motors and the wheels](../assembly/chassis.md)
     
-- [ ] Install the components <small>:material-progress-clock: In Progress</small>
-    - [ ] ESP32-S3 N16R8 <small>:material-progress-clock: In Progress</small>
+- [ ] Install the components <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
+    - [ ] ESP32-S3 N16R8 <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
     - [x] Buzzer
     - [x] Ultrasonic sensor
-    - [x] Temperature and humidity sensor <small>:material-progress-clock: In Progress</small>
+    - [x] Temperature and humidity sensor <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
     - [ ] Camera 
     - [ ] Display
 
 ## Brain
 - [ ] Connect the ESP32-S3 N16R8 to the components
-    - [ ] Connect the ESP32-S3 N16R8 to the computer <small>:material-progress-clock: In Progress</small>
+    - [ ] Connect the ESP32-S3 N16R8 to the computer <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
     - [ ] Connect the motors
     - [ ] Connect the display
     - [ ] Connect the buzzer
@@ -35,9 +35,9 @@ Bellow you can see the roadmap of the project, the features that are implemented
 
 ## Interface
 
-- [ ] Create a interface to control the robot <small>:material-progress-clock: In Progress</small>
-    - [ ] Connect the ESP32-S3 N16R8 to the computer <small>:material-progress-clock: In Progress</small>
-    - [ ] Connect the wifi to the robot <small>:material-progress-clock: In Progress</small>
+- [ ] Create a interface to control the robot <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
+    - [ ] Connect the ESP32-S3 N16R8 to the computer <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
+    - [ ] Connect the wifi to the robot <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
 - [ ] Create API to control the robot with actions interface
     - [ ] Create a service to control the movements of the robot
     - [ ] Create a service to control the camera of the robot

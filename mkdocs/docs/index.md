@@ -36,9 +36,9 @@ Bellow you can see the current status of the project, if you want see the full l
 
 - [x] Project structure and documentation
 - [x] Project features and roadmap
-- [ ] Creating the project components <small>:material-progress-clock: In Progress</small>
-- [ ] Creating the project documentation  <small>:material-progress-clock: In Progress</small>
-- [ ] Creating the project assembly <small>:material-progress-clock: In Progress</small>
+- [ ] Creating the project components <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
+- [ ] Creating the project documentation  <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
+- [ ] Creating the project assembly <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
 - [ ] Create the project programming
 - [ ] Create the project 3D models
 - [ ] Create the IA model

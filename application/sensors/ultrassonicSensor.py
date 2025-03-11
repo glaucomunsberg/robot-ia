@@ -1,17 +1,16 @@
-import machine
 import time
 from machine import Pin
-from common.singleton import SingletonMeta
 from common.synapses import Synapses
 
 
-class ultrassonicSensor:
-    synapses = Synapses()
+class UltrassonicSensor:
     """
     Driver to use the untrasonic sensor HC-SR04.
     The sensor range is between 2cm and 4m.
     The timeouts received listening to echo pin are converted to OSError('Out of range')
     """
+
+    synapses = Synapses()
     # echo_timeout_us is based in chip range limit (400cm)
 
     def __init__(self):
@@ -22,14 +21,14 @@ class ultrassonicSensor:
         By default is based in sensor limit range (4m)
         """
 
-        self.echo_timeout_us = self.synapses.ULTRASSONIC_ECHO_TIMEOUT_US
+        self.echo_timeout_us = self.synapses.ultrassonic_echo_timeout_us
         # Init trigger pin (out)
         self.trigger = Pin(
-            self.synapses.ULTRASSONIC_TRIGGER_PIN, mode=Pin.OUT, pull=None)
+            self.synapses.ultrassonic_trigger_pin, mode=Pin.OUT, pull=None)
         self.trigger.value(0)
 
         # Init echo pin (in)
-        self.echo = Pin(self.synapses.ULTRASSONIC_ECHO_PIN,
+        self.echo = Pin(self.synapses.ultrassonic_echo_pin,
                         mode=Pin.IN, pull=None)
 
     def _send_pulse_and_wait(self):
@@ -49,7 +48,7 @@ class ultrassonicSensor:
             return pulse_time
         except OSError as ex:
             if ex.args[0] == 110:  # 110 = ETIMEDOUT
-                raise OSError('Out of range')
+                raise OSError('Out of range') from ex
             raise ex
 
     def distance_mm(self):
@@ -93,4 +92,3 @@ class ultrassonicSensor:
             except OSError as ex:
                 print("Error:", ex)
         print("Sensor test completed")
-

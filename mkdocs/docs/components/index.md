@@ -41,7 +41,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### Protoboard 400 Pontos
 
-![Protoboard 400 Pontos](/images/components/protoboard-400.png){ align=right width="200" }
+![Protoboard 400 Pontos](../images/components/protoboard-400.png){ align=right width="200" }
 
 - Quantidade de pontos: 400;
 - Barramento de alimentação: 2 pares (+ e -);
@@ -55,7 +55,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### Resistor 1K - 1/4W - 5%
 
-![Resistor 1K - 1/4W - 5%](/images/components/resistor-1k-14w-5.png){ align=right width="200" }
+![Resistor 1K - 1/4W - 5%](../images/components/resistor-1k-14w-5.png){ align=right width="200" }
 
 - Resistência: 1K;
 - Potência: 1/4W;
@@ -66,7 +66,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### Kit Jumper Macho Fêmea - 40 pçs - 20cm
 
-![Kit Jumper Macho Fêmea - 40 pçs - 20cm](/images/components/kit-jumper-macho-feme.png){ align=right width="200" }
+![Kit Jumper Macho Fêmea - 40 pçs - 20cm](../images/components/kit-jumper-macho-feme.png){ align=right width="200" }
 
 - Quantidade de pontos: 40;
 - Material: Plástico;
@@ -75,7 +75,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### Kit Jumper Macho/Macho - 40 pçs - 20cm
 
-![Kit Jumper Macho Macho - 40 pçs - 20cm](/images/components/kit-jumper-macho-macho.png){ align=right width="200" }
+![Kit Jumper Macho Macho - 40 pçs - 20cm](../images/components/kit-jumper-macho-macho.png){ align=right width="200" }
 
 - Quantidade de pontos: 40;
 - Material: Plástico;
@@ -85,7 +85,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### Buzer 5v 12mm
 
-![Buzer 5v 12mm](/images/components/buzzer_ativo_5v.webp){ align=right width="200" }
+![Buzer 5v 12mm](../images/components/buzzer_ativo_5v.webp){ align=right width="200" }
 
 - Tensão de alimentação recomendada: 5 V;
 - Tensão de operação: 4 V a 8 V;
@@ -96,7 +96,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### Módulo Driver Ponte H - L298N
 
-![Módulo Driver Ponte H - L298N](/images/components/modulo-driver-ponte-h-l298n.png){ align=right width="200" }
+![Módulo Driver Ponte H - L298N](../images/components/modulo-driver-ponte-h-l298n.png){ align=right width="200" }
 
 - Driver de Motores: L298N
 - Tensão da Lógica: 5 V
@@ -108,7 +108,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### Display IPS 1.47 SPI - ST7789
 
-![Display IPS 1.47 SPI - ST7789](/images/components/display_ips_1.47_2.jpg){ align=right width="200" }
+![Display IPS 1.47 SPI - ST7789](../images/components/display_ips_1.47_2.jpg){ align=right width="200" }
 
 - Modelo: Display IPS 1.47 SPI - ST7789
 - Resolução: 172 x 320 píxeis
@@ -124,7 +124,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### Diodo de Uso Geral - 1N4148 - 100V / 0,2A
 
-![Diodo de Uso Geral - 1N4148 - 100V / 0,2A](/images/components/diodo_1n4148.jpg){ align=right width="100" }
+![Diodo de Uso Geral - 1N4148 - 100V / 0,2A](../images/components/diodo_1n4148.jpg){ align=right width="100" }
 
 - Tensão de Pico Reversa: 100V
 - Corrente de Pico: 0,2A
@@ -133,7 +133,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### LED 5mm - Vermelho, Verde, Azul, Amarelo
 
-![LED 5mm - Vermelho, Verde, Azul, Amarelo](/images/components/led_difuso.jpg){ align=right width="200" }
+![LED 5mm - Vermelho, Verde, Azul, Amarelo](../images/components/led_difuso.jpg){ align=right width="200" }
 
 - Tamanho: 5 mm
 - Tensão: 2.0 ~ 2.21V
@@ -145,7 +145,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### Kit Resistores
 
-![Kit Resistores](/images/components/kit_resistors.webp){ align=right width="200" }
+![Kit Resistores](../images/components/kit_resistors.webp){ align=right width="200" }
 
 - 20 pçs 10 Ohms,
 - 20 pçs 47 Ohms,
@@ -175,7 +175,7 @@ All components list and prices can be found in the [Buying list](buying.md) page
 #### DevkitC-1 ESP32-S3 N16R8
 
 
-![ESP32-S3](/images/components/esp32-s3-n16r8.jpg){ align=right width="200" }
+![ESP32-S3](../images/components/esp32-s3-n16r8.jpg){ align=right width="200" }
 
 ESP32-S3 is a system on a chip that integrates the following features:
 
@@ -190,8 +190,8 @@ ESP32-S3 is a system on a chip that integrates the following features:
 
 ###### Pin layout
 
-![ESP32-S3 Pin Layout](/images/components/ESP32-S3_DevKitC-1_pinlayout_v1.1.jpg)
-[Abrir em nova janela](/images/components/ESP32-S3_DevKitC-1_pinlayout_v1.1.jpg){ target="_blank" }
+![ESP32-S3 Pin Layout](../images/components/ESP32-S3_DevKitC-1_pinlayout_v1.1.jpg)
+[Abrir em nova janela](../images/components/ESP32-S3_DevKitC-1_pinlayout_v1.1.jpg){ target="_blank" }
 
 
 -----
@@ -199,7 +199,7 @@ ESP32-S3 is a system on a chip that integrates the following features:
 
 #### Fonte Ajustável Para Protoboard
 
-![Fonte Ajustável Para Protoboard](/images/components/3PS02-4.jpg){ align=right width="200" }
+![Fonte Ajustável Para Protoboard](../images/components/3PS02-4.jpg){ align=right width="200" }
 
 - Modelo: KA-972
 - Tensão de entrada: 5v 2A
@@ -211,7 +211,7 @@ ESP32-S3 is a system on a chip that integrates the following features:
 
 #### Power Bank 5V 2.1A 10000mAh
 
-![Power Bank 5V 2.1A 10000mAh MAH KA-972](/images/components/power_bank_carregador_portatil_10_000mah_ka_972.webp){ align=right width="200" }
+![Power Bank 5V 2.1A 10000mAh MAH KA-972](../images/components/power_bank_carregador_portatil_10_000mah_ka_972.webp){ align=right width="200" }
 
 - Modelo: KA-972
 - Capacidade: 10000mAh
@@ -225,7 +225,7 @@ ESP32-S3 is a system on a chip that integrates the following features:
 
 #### Ultrassonic HC-SR04
 
-![Ultrassonic HC-SR04](/images/components/HC-SR04.png){ align=right width="200" }
+![Ultrassonic HC-SR04](../images/components/HC-SR04.png){ align=right width="200" }
 
 
 - Alimentação: 5V DC
@@ -236,7 +236,7 @@ ESP32-S3 is a system on a chip that integrates the following features:
 
 #### Camera VGA 640x480 OV7670
 
-![Camera VGA 640x480 OV7670](/images/components/OV7670.webp){ align=right width="200" }
+![Camera VGA 640x480 OV7670](../images/components/OV7670.webp){ align=right width="200" }
 
 - Modelo: OV7670;
 - Resolução: 640 x 480;
@@ -261,7 +261,7 @@ ESP32-S3 is a system on a chip that integrates the following features:
 #### Sensor Temperatura e Umidade DHT11
 
 
-![Sensor Temperatura e Umidade DHT11](/images/components/dht11.png){ align=right width="200" }
+![Sensor Temperatura e Umidade DHT11](../images/components/dht11.png){ align=right width="200" }
 
 - Modelo: DHT11 (Datasheet)
 - Tensão de operação: 3 – 5 V (5,5 V máximo)
@@ -278,7 +278,7 @@ ESP32-S3 is a system on a chip that integrates the following features:
 
 #### Kit Chassi 4WD
 
-![Kit Chassi 4WD](/images/components/kit_chassi_4wd.jpg){ align=right width="300" }
+![Kit Chassi 4WD](../images/components/kit_chassi_4wd.jpg){ align=right width="300" }
 
 - Chassi em acrílico;
 - Tração nas 4 rodas (4WD);
@@ -293,7 +293,7 @@ ESP32-S3 is a system on a chip that integrates the following features:
 
 #### Multímetro Digital DT830 MXT
 
-![Multímetro Digital DT830 MXT](/images/components/D_NQ_NP_2X_682728-MLB74821404574_032024-F.webp){ align=right width="300" }
+![Multímetro Digital DT830 MXT](../images/components/D_NQ_NP_2X_682728-MLB74821404574_032024-F.webp){ align=right width="300" }
 
 - Display: 3 ½ Dígitos (2000 Contagens).
 - Indicação de Sobre-faixa: Mostra apenas o dígito mais significativo (1).

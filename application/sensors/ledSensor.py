@@ -1,36 +1,44 @@
-from common.synapses import Synapses
-from common.singleton import SingletonMeta
 from machine import Pin
+from common.synapses import Synapses
 
 
 class LedSensor:
+    """Initialize the LED sensor
+    """
 
-    # Initialize the LED
-    #   - led: the LED
     def __init__(self):
         self.synapses = Synapses()
-        self.pin = self.synapses.LED_PIN
+        self.pin = self.synapses.led_pin
         self.led = Pin(self.pin, Pin.OUT)
 
-    # Read the LED value
     def read(self):
+        """Read the LED value"""
         return self.led.value()
 
-    # Turn the LED on
     def on(self):
+        """Turn the LED on"""
         self.led.on()
 
-    # Turn the LED off
     def off(self):
+        """Check if the LED is on"""
         self.led.off()
 
-    # Check if the LED is on
     def is_on(self):
+        """Check if the LED is on
+
+        Returns:
+            integer: 1 if the LED is on, 0 otherwise
+        """
         return self.read() == 1
 
     # Check if the LED is on and off
     #  - times: the number of times to check
     def test(self, times: int = 3):
+        """# Check if the LED is on and off
+
+        Args:
+            times (int, optional): repeated time. Defaults to 3.
+        """
         print("LED Test started")
         for i in range(times):
             print(f"LED Test {i+1}")

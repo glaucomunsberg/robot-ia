@@ -1,26 +1,20 @@
-from machine import Pin, PWM
-from common.singleton import SingletonMeta
-from common.synapses import Synapses
 import time
 
-# Buzzer class
-#   This class is used to control the buzzer of the device
-#   The buzzer can play a melody and the melody can be customized
+from common.synapses import Synapses
+from machine import PWM, Pin
 
 
 class BuzzerSensor:
+    """This class is used to control the buzzer of the device.
+    The buzzer can play a melody and the melody can be customized
+    """
 
-    # Initialize the buzzer
-    #   - BUZZER_PIN: the pin number of the buzzer
-    #   - BUZZER_FREQUENCY: the frequency of the buzzer
-    #   - BUZZER_DUTY: the duty cycle of the buzzer
-    #   - tones: the tones of the buzzer
     def __init__(self):
         self.synapses = Synapses()
-        self.pin = self.synapses.BUZZER_PIN
+        self.pin = self.synapses.buzzer_pin
         self.buzzer = PWM(Pin(self.pin, Pin.OUT),
-                          freq=self.synapses.BUZZER_FREQUENCY,
-                          duty=self.synapses.BUZZER_DUTY
+                          freq=self.synapses.buzzer_frenquency,
+                          duty=self.synapses.buzzer_duty
                           )
         self.tones = {
             'c': 262,
@@ -34,18 +28,22 @@ class BuzzerSensor:
             ' ': 0,
         }
 
-    # Play the melody
-    #   - melody: the melody to play
-    #   - rhythm: the rhythm of the melody
-    #   - interval_time: the interval time
     def play(self, melody: str, rhythm: list, interval_time: int):
+        """_summary_Play the melody
+
+        Args:
+            melody (str): notes of the melody
+            rhythm (list): rhythm of the melody
+            interval_time (int): interval time
+        """
         for tone, length in zip(melody, rhythm):
             self.buzzer.freq(self.tones[tone])
             time.sleep(interval_time/length)
         self.buzzer.deinit()
 
-    # Play the melody of the buzzer test
     def test(self):
+        """Test the buzzer"""
+        print("Buzzer Test started")
         melody = 'cdefgabC'
         rhythm = [8, 8, 8, 8, 8, 8, 8, 8]
         interval_time = 5

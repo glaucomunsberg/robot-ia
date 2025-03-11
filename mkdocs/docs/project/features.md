@@ -1,6 +1,6 @@
 ## Features
 
-
+- [x] Prepare the environment to build the robot with components and tools <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
 - [ ] Build a Robot with car chassis able to move and navigate through the environment
 - [ ] Create a interface to control the robot with actions interface
 - [ ] Create a dashboard to show the current status of the robot, show the sensors data and the actions taken by the robot

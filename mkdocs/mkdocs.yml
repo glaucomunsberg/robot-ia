@@ -119,4 +119,5 @@ nav:
   - Programming:
     - Resume: programming/index.md
     - Setup ESP32-S3: programming/setup.md
+    - Protocols: programming/protocol.md
   - Blog: blog/index.md
