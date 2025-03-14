@@ -105,6 +105,7 @@ nav:
       - Features: project/features.md
       - Roadmap: project/roadmap.md
       - Versions: project/version.md
+      - Design: project/design.md
   - Components:
     - List: components/index.md
     - Buying: components/buying.md

@@ -17,6 +17,14 @@ Below is the list and quantity used in the projects.
 
 All models are available at [Thingiverse](https://www.thingiverse.com/){ target="_blank" } and [Printable](https://www.printables.com){ target="_blank" } . Thank you for the community that shares the models.
 
+###  4wd Robot Chassis
+
+[![3D models](../images/3dmodels/4wd_chasisis.webp){ align=right width="200" }](../images/3dmodels/4wd_chasisis.webp){ target="_blank" }
+
+This is a 4wd robot chassis. You can download the 3D model at:
+
+[https://www.thingiverse.com/thing:1903009](https://www.thingiverse.com/thing:1903009){ target="_blank" }
+
 ### ESP32-S3 case
 
 [![3D models](../images/3dmodels/esp32_s3_case.jpg){ align=right width="200" }](https://www.printables.com/model/565403-teyleten-robot-esp32-s3-wroom-1-case/files){ target="_blank" }

@@ -3,26 +3,24 @@ title: Robot IA
 ---
 
 
-[![Chassis](images/project/current_status_represenation.jpg){ align=right width=50% }](images/project/current_status_represenation.jpg){target="_bank"}
+[![Chassis](images/project/current_status_represenation.jpg){ align=right width=60% }](images/project/current_status_represenation.jpg){target="_bank"}
 
 
 The project is a DIY project that uses a AI as the main controller. I create this project to test some ideas about how to create a robot that can be used to help in some tasks using AI. 
 
 Current we use a [ESP32-S3](https://www.espressif.com/en/products/socs/esp32s3) microcontroller to run the project with peripherals like camera, ultrasonic sensor, temperature and humidity sensor, etc.
 
-**Current Version**: 0.0.1
-
-[![Release date](https://img.shields.io/github/release-date/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/releases)
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/glaucomunsberg/robot-ia/pages%2Fpages-build-deployment)](https://github.com/glaucomunsberg/robot-ia/actions/workflows/pages/pages-build-deployment)
-[![GitHub License](https://img.shields.io/github/license/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/blob/main/LICENSE)
 [![GitHub Release](https://img.shields.io/github/v/release/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/releases)
+[![Release date](https://img.shields.io/github/release-date/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/releases)
+[![GitHub License](https://img.shields.io/github/license/glaucomunsberg/robot-ia)](https://github.com/glaucomunsberg/robot-ia/blob/main/LICENSE)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/glaucomunsberg/robot-ia/pages%2Fpages-build-deployment)](https://github.com/glaucomunsberg/robot-ia/actions/workflows/pages/pages-build-deployment)
 
 <small>:information_source: It's a <b>early stage of development</b> and the robot is not able to move or take actions at this moment.</small>
 
 <div class="grid-center" markdown>
 [![Features](images/project/0.0.2/general/IMG_5008.jpg){ width="200" }](images/project/0.0.2/general/IMG_5008.jpg){ target="_blank" }
 [![Features](images/project/0.0.2/general/IMG_5005.jpg){ width="200" }](images/project/0.0.2/general/IMG_5005.jpg){ target="_blank" }
-[![Features](images/project/0.0.2/breadboard/breadboard.png){ width="200" }](images/project/breadboard/breadboard.png){ target="_blank" }
+[![Features](images/project/current_status_breadboard.png){ width="200" }](wiring/index.md)
 [![Features](images/project/current_status_represenation.jpg){ width="200" }](images/project/current_status_represenation.jpg){ target="_blank" }
 </div>
 

@@ -39,10 +39,21 @@
     }
 }
 
+.md-typeset .md-button {
+    padding: .425em 1em;
+    font-size: 0.6rem;
+}
+
 img {
     border-radius: 6px;
 }
 
 .md-grid {
     max-width: 66rem;
+}
+
+.bg-black {
+    img {
+        background-color: #000;
+    }
 }
