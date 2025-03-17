@@ -95,7 +95,7 @@ markdown_extensions:
   - toc:
 copyright: © 2024 Robot IA
 extra_css:
-  - stylesheets/extra.css
+  - extra/stylesheets/extra.css
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@11.5.0/dist/mermaid.min.js
   - path: extra/javascript/register-mermaid-icons.js

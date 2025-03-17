@@ -20,14 +20,14 @@ Current we use a [ESP32-S3](https://www.espressif.com/en/products/socs/esp32s3) 
 <div class="grid-center" markdown>
 [![Features](images/project/0.0.2/general/IMG_5008.jpg){ width="200" }](images/project/0.0.2/general/IMG_5008.jpg){ target="_blank" }
 [![Features](images/project/0.0.2/general/IMG_5005.jpg){ width="200" }](images/project/0.0.2/general/IMG_5005.jpg){ target="_blank" }
-[![Features](images/project/current_status_architecture.png){ width="200" }](project/architecture.md){ target="_blank" }
+[![Features](images/project/current_status_architecture.png){ width="200" }](project/architecture.md)
 [![Features](images/project/current_status_breadboard.png){ width="200" }](wiring/index.md)
 </div>
 
 ### Progress
 
 <div class="progress-bar-container">
-    <div class="progress-bar" style="width: 14%;">14%</div>
+    <div class="progress-bar" style="width: 18%;">18%</div>
 </div>
 
 Bellow you can see the current status of the project, if you want see the full list please go to the [features page](project/features.md).
@@ -37,7 +37,7 @@ Bellow you can see the current status of the project, if you want see the full l
 - [ ] Creating the project components <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
 - [ ] Creating the project documentation  <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
 - [ ] Creating the project assembly <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
-- [ ] Create the project programming
+- [ ] Create the project programming <small style='color:green'><b>:material-progress-clock: In Progress</b></small>
 - [ ] Create the project 3D models
 - [ ] Create the IA model
 - [ ] Create the robot controller
