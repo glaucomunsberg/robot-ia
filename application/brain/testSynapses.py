@@ -1,4 +1,3 @@
-from common.singleton import SingletonMeta
 from sensors.buzzerSensor import BuzzerSensor
 from sensors.ledSensor import LedSensor
 from sensors.ultrassonicSensor import UltrassonicSensor

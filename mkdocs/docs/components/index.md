@@ -1,9 +1,51 @@
 ![Components](../images/components/components.jpg){ align=center }
 
-Below is the list of components used in the robot. 
+
+
+
+## Diagram of components
+
+List of components used in the robot and the description of each one and the diagram of the components is applied in the robot.
+
+```mermaid
+architecture-beta
+    group esp32s3(cloud)[Body]
+    group sensors(cloud)[Sensors] in esp32s3
+    group chassis(cloud)[ Chassi 4WD] in esp32s3
+
+
+    %% ESP32-S3 SERVICES
+    service breadboard(codicon:circuit-board)[Protoboard] in esp32s3
+    service microprocessor(heroicons:cpu-chip-16-solid)[microprocessor ESP32_S3] in esp32s3
+    service dh11(carbon:temperature)[DHT11] in sensors
+    service hcsr04(material-symbols:nest-remote-comfort-sensor-outline)[HCSR04] in sensors
+    service buzzer(material-symbols:sound-detection-loud-sound)[Buzer 5v] in sensors
+    service led(heroicons:light-bulb)[LED 5mm] in sensors
+    service wheelDriver(carbon:asset)[Driver H L298N] in sensors
+    service motor1(solar:suspension-bold)[Motor 1] in chassis
+    service motor2(solar:suspension-bold)[Motor 2] in chassis
+    service motor3(solar:suspension-bold)[Motor 3] in chassis
+    service motor4(solar:suspension-bold)[Motor 4] in chassis
+
+    %% connections IN ESP32-S3
+    breadboard:R -- L:microprocessor
+    dh11:R -- L:breadboard
+    hcsr04:R -- L:breadboard
+    buzzer:R -- L:breadboard
+    led:R -- L:breadboard
+    wheelDriver:R -- L:breadboard
+    motor1:R -- L:wheelDriver
+    motor2:R -- L:wheelDriver
+    motor3:R -- L:wheelDriver
+    motor4:R -- L:wheelDriver
+```
+
+!!! note "Note"
+    If you want to see the **wiring** of the components, go to [Wiring](../wiring/chassis.md) section or all components of **architecture** like hardware and software elements, go to [Components Architecture](../project/architecture.md) in project section.
 
 ## List of components
 
+If you want to know more about the components, click on the component name below.
 
 - Eletronics
     - [X] [Protoboard 400 Pontos](#protoboard-400-pontos)
@@ -304,12 +346,4 @@ ESP32-S3 is a system on a chip that integrates the following features:
 - Dimensões: 126(A) x 70(L) x 24(P)mm.
 - Peso: Aproximadamente 150g.
 
-
-
-
-
-
-
-
-
-
+ 
