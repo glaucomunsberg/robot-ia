@@ -28,10 +28,10 @@ architecture-beta
     service buzzer(material-symbols:sound-detection-loud-sound)[Buzzer 5V] in sensors
     service led(heroicons:light-bulb)[LED] in sensors
     service wheelDriver(carbon:asset)[Wheel Driver] in sensors
-    service motor1(solar:suspension-bold)[Motor 1] in chassis
-    service motor2(solar:suspension-bold)[Motor 2] in chassis
-    service motor3(solar:suspension-bold)[Motor 3] in chassis
-    service motor4(solar:suspension-bold)[Motor 4] in chassis
+    service motor1(solar:wheel-angle-bold-duotone)[Motor 1] in chassis
+    service motor2(solar:wheel-angle-bold-duotone)[Motor 2] in chassis
+    service motor3(solar:wheel-angle-bold-duotone)[Motor 3] in chassis
+    service motor4(solar:wheel-angle-bold-duotone)[Motor 4] in chassis
 
     %% connections IN ESP32-S3
     breadboard:R -- L:microprocessor
@@ -51,5 +51,6 @@ architecture-beta
     microprocessor:R -- L:serverAPI
 
     serverAPI:B -- R:gateway
+
 
 ```

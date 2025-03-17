@@ -13,31 +13,43 @@ architecture-beta
     group sensors(cloud)[Sensors] in esp32s3
     group chassis(cloud)[ Chassi 4WD] in esp32s3
 
+    %% POWER SERVICES
+    service powerSource(material-symbols:power-plug-outline)[Power Source] in esp32s3
 
     %% ESP32-S3 SERVICES
-    service breadboard(codicon:circuit-board)[Protoboard] in esp32s3
     service microprocessor(heroicons:cpu-chip-16-solid)[microprocessor ESP32_S3] in esp32s3
+    service breadboard(codicon:circuit-board)[Protoboard] in esp32s3
+
+    %% SENSORS SERVICES
     service dh11(carbon:temperature)[DHT11] in sensors
     service hcsr04(material-symbols:nest-remote-comfort-sensor-outline)[HCSR04] in sensors
     service buzzer(material-symbols:sound-detection-loud-sound)[Buzer 5v] in sensors
     service led(heroicons:light-bulb)[LED 5mm] in sensors
     service wheelDriver(carbon:asset)[Driver H L298N] in sensors
-    service motor1(solar:suspension-bold)[Motor 1] in chassis
-    service motor2(solar:suspension-bold)[Motor 2] in chassis
-    service motor3(solar:suspension-bold)[Motor 3] in chassis
-    service motor4(solar:suspension-bold)[Motor 4] in chassis
+
+    %% CHASSIS SERVICES
+    service motor1(solar:wheel-angle-bold)[Motor 1] in chassis
+    service motor2(solar:wheel-angle-bold)[Motor 2] in chassis
+    service motor3(solar:wheel-angle-bold)[Motor 3] in chassis
+    service motor4(solar:wheel-angle-bold)[Motor 4] in chassis
+
+    %% connections IN POWER SERVICES
+    powerSource:T -- R:microprocessor
+    powerSource:T -- R:breadboard
 
     %% connections IN ESP32-S3
-    breadboard:R -- L:microprocessor
+    breadboard:B -- T:microprocessor
     dh11:R -- L:breadboard
     hcsr04:R -- L:breadboard
     buzzer:R -- L:breadboard
     led:R -- L:breadboard
     wheelDriver:R -- L:breadboard
-    motor1:R -- L:wheelDriver
-    motor2:R -- L:wheelDriver
-    motor3:R -- L:wheelDriver
-    motor4:R -- L:wheelDriver
+
+    %% connections IN CHASSIS
+    motor1:T -- B:wheelDriver
+    motor2:T -- B:wheelDriver
+    motor3:T -- B:wheelDriver
+    motor4:T -- B:wheelDriver
 ```
 
 !!! note "Note"
