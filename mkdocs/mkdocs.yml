@@ -131,6 +131,7 @@ nav:
     - Resume: programming/index.md
     - Setup ESP32-S3: programming/setup.md
     - Brain:
+      - Introduction: programming/brain/index.md
       - Cortex: programming/brain/cortex.md
       - Behavior: programming/brain/behavior.md
     - Protocols: programming/protocol.md

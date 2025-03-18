@@ -171,3 +171,5 @@ cython_debug/
 .pypirc
 
 mkdocs/site/*
+
+.DS_Store

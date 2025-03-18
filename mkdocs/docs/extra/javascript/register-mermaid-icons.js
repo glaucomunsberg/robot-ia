@@ -50,7 +50,12 @@ document$.subscribe(function() {
       loader: () =>
         fetch('https://unpkg.com/@iconify-json/simple-icons@1/icons.json').then((res) => res.json()),
     },
-    
+    //hugeicons
+    {
+      name: 'hugeicons',
+      loader: () =>
+        fetch('https://unpkg.com/@iconify-json/hugeicons@1/icons.json').then((res) => res.json()),
+    },
   ])
   mermaid.run({querySelector: '.diagram'});
 });
