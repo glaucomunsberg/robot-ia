@@ -9,7 +9,7 @@ Below is the list and quantity used in the projects.
 
 | Model | Description | Quantity |
 |-------|-------------|----------|
-| [Power Adapter](#power-adapter) | Power up your Breadboard with 5V using Power Bank to make your projects portable. | 2 |
+| [Power Adapter](#power-adpater) | Power up your Breadboard with 5V using Power Bank to make your projects portable. | 2 |
 | [ESP32-S3 case](#esp32-s3-case) | Protect your ESP32-S3 with this case. | 1 |
 
 

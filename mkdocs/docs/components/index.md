@@ -53,7 +53,7 @@ architecture-beta
 ```
 
 !!! note "Note"
-    If you want to see the **wiring** of the components, go to [Wiring](../wiring/chassis.md) section or all components of **architecture** like hardware and software elements, go to [Components Architecture](../project/architecture.md) in project section.
+    If you want to see the **wiring** of the components, go to [Wiring](../wiring/index.md) section or all components of **architecture** like hardware and software elements, go to [Components Architecture](../project/architecture.md) in project section.
 
 ## List of components
 

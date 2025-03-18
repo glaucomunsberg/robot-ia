@@ -17,7 +17,7 @@ This circuit integrates an **ESP32-S3** microcontroller with multiple sensors an
 To see all components installed in the breadboard see the [roadmap](../project/roadmap.md) of the project.
 
 !!! note "Esp32-S3 Pins Layout" 
-    If you want to see **pins layout** from `esp32-s3` microcontroller go to [**Pin Layout**](/components/index.html#pin-layout) section in components page.
+    If you want to see **pins layout** from `esp32-s3` microcontroller go to [**Pin Layout**](../components/index.md#pin-layout) section in components page.
 
 
 

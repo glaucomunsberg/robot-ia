@@ -1,5 +1,5 @@
 
-![ESP32-S3](/images/components/esp32-s3-n16r8.jpg){ align=right width="300" }
+![ESP32-S3](../images/components/esp32-s3-n16r8.jpg){ align=right width="300" }
 
 
 All steps below are based on the [ESP-IDF Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/get-started/linux-macos-setup.html#get-started-prerequisites){ target="_blank" }.

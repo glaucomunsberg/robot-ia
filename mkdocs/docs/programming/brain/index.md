@@ -88,7 +88,7 @@ The robot is in the `Action` state and receives a command to take a picture, the
 
 ## Human System Design
 
-[![Brain](/images/programming/brain/brain_lobes.png){ align=right width=200 }](../../images/programming/brain/brain_lobes.png){target=_blank}
+[![Brain](../../images/programming/brain/brain_lobes.png){ align=right width=200 }](../../images/programming/brain/brain_lobes.png){target=_blank}
 
 The robot brain is inspired by the human brain, the robot brain is divided into three main parts: the reptilian brain, the limbic brain, and the neocortex. Each part has its own responsibilities and characteristics. Lobes of the brain are responsible for different functions and are connected to each other and the abstract lobes are used to organize this robot brain architecture.
 
