@@ -13,6 +13,9 @@ theme:
     primary: blue
   features:
     - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+    - content.tooltips
     - search.suggest
     - navigation.instant
     - navigation.tabs
@@ -21,8 +24,6 @@ theme:
     - navigation.expand
     - navigation.tabs.sticky
     - toc.follow
-    - content.action.edit
-    - content.tooltips
 plugins:
   - mermaid2:
       arguments:
@@ -127,12 +128,22 @@ nav:
     - Body: assembly/body.md
   - Wiring:
     - Resume: wiring/index.md
+  - Setup:
+    - Resume: setup/index.md
+    - Transfer Files: setup/sync.md
   - Programming:
     - Resume: programming/index.md
-    - Setup ESP32-S3: programming/setup.md
     - Brain:
       - Introduction: programming/brain/index.md
+      - Structure: programming/brain/structure.md
       - Cortex: programming/brain/cortex.md
       - Behavior: programming/brain/behavior.md
-    - Protocols: programming/protocol.md
+    - Protocols:
+      - Introduction: programming/protocols/index.md
+      - Ideas:
+        - Idea: programming/protocols/ideia.md
+        - Command: programming/protocols/command.md
+        - Rule: programming/protocols/rule.md
+      - Data:
+        - Sensors: programming/protocols/sensor.md
   - Blog: blog/index.md
