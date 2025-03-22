@@ -1,7 +1,7 @@
 import time
 
 from common.synapses import Synapses
-from machine import PWM, Pin
+from machine import PWM, Pin  # pylint: disable=import-error
 
 
 class BuzzerSensor:

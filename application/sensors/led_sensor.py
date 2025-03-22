@@ -1,5 +1,6 @@
-from machine import Pin
+from machine import Pin  # pylint: disable=import-error
 from common.synapses import Synapses
+import time
 
 
 class LedSensor:
@@ -42,14 +43,12 @@ class LedSensor:
         print("LED Test started")
         for i in range(times):
             print(f"LED Test {i+1}")
+            time.sleep(0.5)
             self.on()
-            if self.is_on() == 1:
-                print("LED Testing on...")
-            else:
+            if self.is_on() != 1:
                 print("LED Error: test LED on")
+            time.sleep(0.5)
             self.off()
-            if self.is_on() == 0:
-                print("LED Testing off...")
-            else:
+            if self.is_on() != 0:
                 print("LED Error: test LED off")
         print("LED Test completed")

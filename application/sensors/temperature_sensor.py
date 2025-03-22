@@ -1,8 +1,7 @@
 from time import sleep
-
-import dht
+import dht  # pylint: disable=import-error
+from machine import Pin  # pylint: disable=import-error
 from common.synapses import Synapses
-from machine import Pin
 
 
 class TemperatureSensor:

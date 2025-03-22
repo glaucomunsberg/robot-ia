@@ -1,6 +1,6 @@
+# pylint: disable=import-error
 import utime
-
-from machine import RTC   # or import from machine depending on your micropython version
+from machine import RTC  # or import from machine depending on your micropython version
 rtc = RTC()
 rtc.datetime((2019, 5, 1, 4, 13, 0, 0, 0))
 
@@ -9,15 +9,15 @@ class Cortex:
     """Classe que gerencia as tarefas do sistema."""
 
     _instance = None
+    tasks = []
+    counter = 0
 
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
+            cls.tasks = []
+            cls.counter = 0
         return cls._instance
-
-    def __init__(self):
-        self.tasks = []
-        self.counter = 0  # Contador para manter ordem FIFO dentro de prioridades
 
     def generate_hash(self) -> str:
         """Gera um hash único baseado na data e hora."""
@@ -43,42 +43,42 @@ class Cortex:
 
     def run(self) -> None:
         """Executa de forma síncrona, respeitando a prioridade e FIFO dentro da prioridade."""
-        while self.tasks:
+        if len(self.tasks) == 0:
+            print("Nenhuma tarefa para executar.")
+        else:
             _, _, task_hash, task_type, func, args, kwargs = self.tasks.pop(0)
             print(f"Executando tarefa {task_hash} do tipo {task_type}...")
             try:
-                func(*args, **kwargs)
+                print(f" result:{func(*args, **kwargs)}")
             except Exception as e:
                 print(f"Erro na tarefa {task_hash}: {e}")
 
 
 # Exemplo de uso
-task_processor = Cortex()
+# task_processor = Cortex()
 
 
-def task1():
-    for i in range(5):
-        print(f"Tarefa 1 - Iteração {i}")
-        utime.sleep(1)
+# def task1():
+#     for i in range(5):
+#         print(f"Tarefa 1 - Iteração {i}")
+#         utime.sleep(1)
 
 
-def task2():
-    for i in range(3):
-        print(f"Tarefa 2 - Iteração {i}")
-        utime.sleep(2)
+# def task2():
+#     for i in range(3):
+#         print(f"Tarefa 2 - Iteração {i}")
+#         utime.sleep(2)
 
 
-def task3():
-    print("Tarefa 3 - Alta prioridade executando!")
+# def task3():
+#     print("Tarefa 3 - Alta prioridade executando!")
 
 
-def task4():
-    print("Tarefa 4 - Alta prioridade executando!")
+# def task4():
+#     print("Tarefa 4 - Alta prioridade executando!")
 
 
-task_processor.add_task(func=task1, task_type="PROCESS", priority=4)
-task_processor.add_task(func=task2, task_type="SENSOR", priority=2)
-task_processor.add_task(func=task3, task_type="BRAIN", priority=0)
-task_processor.add_task(func=task4, task_type="ACTION", priority=0)
-
-task_processor.run()
+# task_processor.add_task(func=task1, task_type="PROCESS", priority=4)
+# task_processor.add_task(func=task2, task_type="SENSOR", priority=2)
+# task_processor.add_task(func=task3, task_type="BRAIN", priority=0)
+# task_processor.add_task(func=task4, task_type="ACTION", priority=0)

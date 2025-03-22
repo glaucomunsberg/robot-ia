@@ -1,5 +1,5 @@
 import time
-from machine import Pin
+from machine import Pin, time_pulse_us  # pylint: disable=import-error
 from common.synapses import Synapses
 
 
@@ -9,27 +9,30 @@ class UltrassonicSensor:
     The sensor range is between 2cm and 4m.
     The timeouts received listening to echo pin are converted to OSError('Out of range')
     """
+    _instance = None
 
     synapses = Synapses()
     # echo_timeout_us is based in chip range limit (400cm)
 
-    def __init__(self):
+    def __new__(cls, *args, **kwargs):
         """
         trigger_pin: Output pin to send pulses
         echo_pin: Readonly pin to measure the distance. The pin should be protected with 1k resistor
         echo_timeout_us: Timeout in microseconds to listen to echo pin. 
         By default is based in sensor limit range (4m)
         """
-
-        self.echo_timeout_us = self.synapses.ultrassonic_echo_timeout_us
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls.echo_timeout_us = cls.synapses.ultrassonic_echo_timeout_us
         # Init trigger pin (out)
-        self.trigger = Pin(
-            self.synapses.ultrassonic_trigger_pin, mode=Pin.OUT, pull=None)
-        self.trigger.value(0)
+            cls.trigger = Pin(
+                cls.synapses.ultrassonic_trigger_pin, mode=Pin.OUT, pull=None)
+            cls.trigger.value(0)
 
-        # Init echo pin (in)
-        self.echo = Pin(self.synapses.ultrassonic_echo_pin,
-                        mode=Pin.IN, pull=None)
+            # Init echo pin (in)
+            cls.echo = Pin(cls.synapses.ultrassonic_echo_pin,
+                           mode=Pin.IN, pull=None)
+        return cls._instance
 
     def _send_pulse_and_wait(self):
         """
@@ -43,7 +46,7 @@ class UltrassonicSensor:
         time.sleep_us(10)
         self.trigger.value(0)
         try:
-            pulse_time = machine.time_pulse_us(
+            pulse_time = time_pulse_us(
                 self.echo, 1, self.echo_timeout_us)
             return pulse_time
         except OSError as ex:
@@ -79,11 +82,18 @@ class UltrassonicSensor:
         cms = (pulse_time / 2) / 29.1
         return cms
 
-    def test(self, times: int = 3):
+    def read(self) -> int:
+        """
+        Read the sensor and send the distance to the server.
+        """
+        return self.test()
+
+    def test(self, times: int = 3) -> int:
         """
         Test the sensor. It sends 3 pulses and prints the distance.
         """
         print("Sensor test started")
+        distance = 0
         for i in range(times):
             print(f"Test {i+1}")
             try:
@@ -92,3 +102,4 @@ class UltrassonicSensor:
             except OSError as ex:
                 print("Error:", ex)
         print("Sensor test completed")
+        return distance

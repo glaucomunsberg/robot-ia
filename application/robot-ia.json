@@ -1,0 +1,22 @@
+{
+    "name": "robot-ia",
+    "description": "Robot IA",
+    "version": "1.0.0",
+    "configs": {
+        "communication": {
+            "wifi": {
+                "ssid": "OsirMax_Anascience_5G",
+                "password": "20102020",
+                "ip": "192.168.18.21",
+                "subnet": "255.255.255.0",
+                "gateway": "192.168.18.1",
+                "dns": "8.8.8.8"
+            }
+        },
+        "api": {
+            "server": {
+                "port": 80
+            }
+        }
+    }
+}

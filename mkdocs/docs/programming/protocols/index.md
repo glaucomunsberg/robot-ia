@@ -80,9 +80,9 @@ The commands are the actions that the robot must execute to reach the goal. The 
 {
   "commands": [
     {
-        "sensors" {
+        "sensors": {
             "ultrasonic": {
-                "action": "read",
+                "action": "read"
             }
         }
     },
@@ -196,9 +196,9 @@ Bellow you will find the complete json file with the idea, commands and rules to
   "description": "I want to start walking until I find a wall",
   "commands": [ //(2)
     {
-        "sensors" { //(3)
+        "sensors": { //(3)
             "ultrasonic": {
-                "action": "read",
+                "action": "read"
             }
         }
     },
