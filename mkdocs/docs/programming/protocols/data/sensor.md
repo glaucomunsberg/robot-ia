@@ -27,7 +27,8 @@ The robot sends the sensors data to the controller in a json format and this dat
     "sensors": {
         "ultrasonic": {
             "distance": 10,
-            "unit": "cm"
+            "unit": "cm",
+            "created_at": "2021-01-01T00:00:00"
         }
     }
 }
@@ -40,7 +41,8 @@ The robot sends the sensors data to the controller in a json format and this dat
         "temperature": {
             "temperature": 25,
             "temperature_unit": "celsius",
-            "humidity": 50
+            "humidity": 50,
+            "created_at": "2021-01-01T00:00:00"
         }
     }
 }
@@ -52,7 +54,8 @@ The robot sends the sensors data to the controller in a json format and this dat
     "sensors": {
         "led": {
             "color": "red",
-            "intensity": 100
+            "intensity": 100,
+            "created_at": "2021-01-01T00:00:00"
         }
     }
 }
@@ -64,7 +67,8 @@ The robot sends the sensors data to the controller in a json format and this dat
     "sensors": {
         "buzzer": {
             "frequency": 1000,
-            "duration": 1000
+            "duration": 1000,
+            "created_at": "2021-01-01T00:00:00"
         }
     }
 }

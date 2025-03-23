@@ -99,7 +99,7 @@ The LED 5mm is a light emitting diode that can be used to indicate the status of
 ![Wiring Diagram](../images/wiring/led_5mm.png){ width=75% }
 </div>
 
-Code exemple:
+Code example:
 
 [https://dev.to/shemanto_sharkar/micropython-esp32-blink-led-210d](https://dev.to/shemanto_sharkar/micropython-esp32-blink-led-210d){ target="_blank" }
 

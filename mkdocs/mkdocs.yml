@@ -134,16 +134,21 @@ nav:
   - Programming:
     - Resume: programming/index.md
     - Brain:
-      - Introduction: programming/brain/index.md
+      - Resume: programming/brain/index.md
       - Structure: programming/brain/structure.md
       - Cortex: programming/brain/cortex.md
       - Behavior: programming/brain/behavior.md
     - Protocols:
-      - Introduction: programming/protocols/index.md
-      - Ideas:
-        - Idea: programming/protocols/ideia.md
-        - Command: programming/protocols/command.md
-        - Rule: programming/protocols/rule.md
+      - Resume: programming/protocols/index.md
+      - Communication: 
+        - Resume: programming/protocols/communication/index.md
+      - Intentions:
+        - Resume: programming/protocols/intention/index.md
+        - Idea: programming/protocols/intention/idea.md
+        - Command: programming/protocols/intention/command.md
+        - Rule: programming/protocols/intention/rule.md
+        - Example: programming/protocols/intention/example.md
       - Data:
-        - Sensors: programming/protocols/sensor.md
+        - Resume: programming/protocols/data/index.md
+        - Sensors: programming/protocols/data/sensor.md
   - Blog: blog/index.md
