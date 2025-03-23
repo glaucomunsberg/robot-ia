@@ -128,7 +128,7 @@ nav:
     - Body: assembly/body.md
   - Wiring:
     - Resume: wiring/index.md
-  - Setup:
+  - Setup/Run:
     - Resume: setup/index.md
     - Transfer Files: setup/sync.md
   - Programming:
