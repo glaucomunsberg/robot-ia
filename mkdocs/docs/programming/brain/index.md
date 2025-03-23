@@ -1,16 +1,46 @@
-The brain is **[STRUCTURED](structure.md)** by **[CORTEX](cortex.md)** that run all **[INTENTIONS](../protocols/intention/index.md)** with your **[COMMANDS](../protocols/intention/command.md)**. All data to send/used in each idea use the **[PROTOCOL](../protocols/index.md)**. 
 
-The workflow of the idea running in the robot Cortex is represented in the flowchart below.
+The abstract processor worflow is the **brain** in the robot-ia.
+
+It's [structured](structure.md) by [cortex](cortex.md) and substructures like [reptilian](reptilian.md), [limbic](limbic.md) and [neocortex](neocortex.md) to execute actions, decisions and manage the robot's [behavior](behavior.md). Each executation in brain use the [protocols](../protocols/index.md) to communicate, translate commands and return responses.
+
+```mermaid
+flowchart
+
+    subgraph brain[Robot Brain]
+        cortex[Cortext]
+
+        subgraph modules[substructures]
+            neocortex[Neocortex]
+            limic[Limbic]
+            reptilian[Reptilian]
+        end
+    end
+
+    subgraph body[Robot Body]
+        sensors[Sensores]
+    end
+
+    neocortex --  commands  --> cortex
+    limic --  commands --> cortex
+    reptilian --  commands --> cortex
+
+    cortex -- command --> sensors
+    sensors -- response --> cortex
+```
+
+## Brain Workflow Runner
+
+The brain execute the intentions in cortex translating the commands to the sensors and actuators. Bellow an exemple to read ultrassonic sensor and move the robot forward.
 
 ```mermaid
 flowchart TB
-    CORTEX[Cortext] --> IDEAS[["`Ideias`"]]
-    IDEAS -- run idea **go to forward** --> IDEA[walk forward]
-    IDEA --> CMD1[read ultrassonic]
-    IDEA --> CMD2[forward the weels]
-    IDEA --> CMD3[fa:fa-car stop weels]
-    CMD2 --> C_RULES2{rules}
-    C_RULES2 --> CR1_2[ultrassonic > 5 cm]
-    CMD3 --> C_RULES3{rules}
-    C_RULES3 --> CR1_3[ultrassonic < 5 cm]
+    CORTEX([Cortext]) --> INTENTIONS[["`Intentions List`"]]
+    INTENTIONS -- run idea **go to forward** --> IDEA[idea]
+    IDEA --> CMD1{{command 1}}
+    IDEA --> CMD2{{command 2}}
+    IDEA --> CMD3{{command 3}}
+    IDEA --> CMD4{{command 4}}
+    CMD2 --> C_RULES1[/rule 1\]
+    CMD2 --> C_RULES2[/rule 2\]
+    CMD3 --> C_RULES3[/rule 1\]
 ```

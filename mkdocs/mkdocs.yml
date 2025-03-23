@@ -135,8 +135,8 @@ nav:
     - Resume: programming/index.md
     - Brain:
       - Resume: programming/brain/index.md
-      - Structure: programming/brain/structure.md
       - Cortex: programming/brain/cortex.md
+      - Structure: programming/brain/structure.md
       - Behavior: programming/brain/behavior.md
     - Protocols:
       - Resume: programming/protocols/index.md

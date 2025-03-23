@@ -8,7 +8,6 @@ The architecture of the robot brain is divided into three main parts: the [repti
 Below is the architecture of the robot brain:
 
 ```mermaid
-
 architecture-beta
     group brain(hugeicons:ai-brain-01)[Brain]
 
@@ -36,9 +35,6 @@ architecture-beta
 
     cortex:L -- R:temporalLobe
     cortex:L -- R:occipitalLobe
-
-
-
 ```
 
 ### Reptilian

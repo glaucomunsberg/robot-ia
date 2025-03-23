@@ -16,16 +16,16 @@ stateDiagram
   [*] --> RestChoise:system start
   s2 --> s1
   s3 --> s1
-  RestChoise --> s5:Tasks list is not empty
+  RestChoise --> s5:tasks list is not empty
   s5 --> s6
-  s9 --> Alert:A <b>CRITICAL</b> task in list
+  s9 --> Alert:<b>CRITICAL</b> task in list
   s6 --> s9
   s11 --> [*]:is shutdown command
   s9 --> s11:no <b>CRITICAL</b> task in list
   s11 --> s15:os not shutdown command
   s15 --> s3:motor actions
   s16 --> s2:last tast is in x secounds
-  RestChoise --> s16:Task list is empty
+  RestChoise --> s16:task list is empty
   s16 --> s7:last task in x secounds and not moviment
   s7 --> s1
   s2:Rest

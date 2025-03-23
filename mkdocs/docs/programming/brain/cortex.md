@@ -1,16 +1,14 @@
 ## Cortex
 
-The `Cortex` is the brain of the system, responsible for managing all system activities, from reading sensors, controlling actuators, image processing, executing commands, to communicating with other systems.
+The `Cortex` is the brain of the system, responsible for managing all system activities, from reading sensors, controlling actuators, image processing, executing [commands](../protocols/intention/command.md), to communicating with other systems. Cortext use the [states](#states) to understand the system's current state and manage the [behavior](#behavior) of the system.
 
 
-## States
+## States and Transition
 
-The `Cortex` is responsible for managing the system's state, prioritizing tasks, and executing them according to the system's state. The system has four states:
+The `Cortex` is responsible for managing the system's state, prioritizing tasks, and executing them according to the system's state. Each state has a set of rules that define when the system `enters` and `exits` the state and rules executed `during` the state. 
 
-- **Alert**: The system is in alert mode, waiting for a critical activity to occur.
-- **Action**: The system is in action mode, executing tasks.
-- **Rest**: The system is in rest mode, waiting for activities to occur.
-- **Dormant**: The system is in dormant mode, waiting for the battery to be charged or the system to be restarted.
+The system has four states called `Alert`, `Action`, `Rest`, and `Dormant`. The system transitions between states according to the system's activities and the tasks in the task queue.
+
 
 ```mermaid
 stateDiagram
@@ -30,44 +28,39 @@ stateDiagram
 
 ```
 
-### Alert
+
+### **Alert**
+
+The robot prioritizing critical activities and suspending all non-critical activities.
 
 - **Enter** when any critical activity is inserted in cortex task queue
 - **During** suspend all sensor readings (TODO)
 - **Exit** when all critical activities are executed
 
-### Action
+### **Action**
+
+The robot executing all tasks in normal priority.
+
 - **Enter** when the system receives a command to execute an action and any critical activity is in the cortex task queue
 - **During** execute all tasks in the cortex task queue
 - **Exit** when all tasks in the cortex task queue are executed
 
-### Rest
+### **Rest**
+
+The robot waiting for activities to be added to the task queue and not reading certain sensors.
 
 - **Enter** without activities for x seconds
 - **During** does not read certain sensors
 - **Exit** with the addition of some activity
 
-### Dormant 
+### **Dormant**
+
+The robot waiting for the battery to be charged or the system to be restarted or ignore some set of sensors or commands.
 
 - **Enter** General Dane or battery at critical level
 - **During** does not read certain sensors (TODO)
 - **Exit** system restarted or battery not at critical level
 
-## Transition
-
-Each state has a set of rules that define when the system `enters`, `during`, and `exits` the state.
-
-### Enter
-
-The system enters the state when a specific activity occurs.
-
-### During
-
-The system remains in the state/rules while a specific activity occurs.
-
-### Exit
-
-The system exits the state when a specific activity occurs.
 
 
 ```mermaid
@@ -76,14 +69,17 @@ sequenceDiagram
     participant During
     participant Exit
 
-    Enter->>During: Any action like 'critical'
+    Enter->>During: Add action type 'critical'
     loop actions
-        During->>During: Suspende no critical tasks
-        During->>During: Remove moviment tasks form enqueu 
+        During->>During: Suspend no critical tasks
+        During->>During: Remove moviment tasks form queue 
         During->>During: Execute next critical task
     end
     During->>Exit: None 'critical' activity is enqueued
 ```
+
+
+---
     
 ## Task Enqueue
 
@@ -119,8 +115,12 @@ sequenceDiagram
   rect rgba(5,172,237,0.7)
     AddTask ->> RunTask: add 'EVENTUALY' level
   end
-  loop CortexRunner
-    RunTask ->> RunTask: Order by priority<br>Get the next task<br>Run the task command
-    RunTask --) AddTask: Eventualy enqueue a secundary event
+  loop Cortex
+    RunTask ->> RunTask: order by priority
+    RunTask ->> RunTask: get next task
+    RunTask ->> RunTask: run task 
+  end
+  rect rgba(5,172,237,0.7)
+    AddTask ->> RunTask: add another 'EVENTUALY' level
   end
 ```
