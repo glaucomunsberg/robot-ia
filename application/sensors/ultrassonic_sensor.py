@@ -14,7 +14,7 @@ class UltrassonicSensor:
     synapses = Synapses()
     # echo_timeout_us is based in chip range limit (400cm)
 
-    def __new__(cls, *args, **kwargs):
+    def __new__(cls, *args, **kwargs):  # pylint: disable=unused-argument
         """
         trigger_pin: Output pin to send pulses
         echo_pin: Readonly pin to measure the distance. The pin should be protected with 1k resistor
@@ -40,10 +40,10 @@ class UltrassonicSensor:
         We use the method `machine.time_pulse_us()` to get the microseconds until the echo is received.
         """
         self.trigger.value(0)  # Stabilize the sensor
-        time.sleep_us(5)
+        time.sleep_us(5)  # pylint: disable= no-member
         self.trigger.value(1)
         # Send a 10us pulse.
-        time.sleep_us(10)
+        time.sleep_us(10)   # pylint: disable= no-member
         self.trigger.value(0)
         try:
             pulse_time = time_pulse_us(

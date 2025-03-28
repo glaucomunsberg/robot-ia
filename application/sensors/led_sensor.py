@@ -7,6 +7,24 @@ class LedSensor:
     """Initialize the LED sensor
     """
 
+    _instance = None
+
+    def __new__(cls, *args, **kwargs):  # pylint: disable=unused-argument
+        """
+        trigger_pin: Output pin to send pulses
+        echo_pin: Readonly pin to measure the distance. The pin should be protected with 1k resistor
+        echo_timeout_us: Timeout in microseconds to listen to echo pin. 
+        By default is based in sensor limit range (4m)
+        """
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+
+            cls.synapses = Synapses()
+            cls.pin = cls.synapses.led_pin
+            cls.led = Pin(cls.pin, Pin.OUT)
+
+        return cls._instance
+
     def __init__(self):
         self.synapses = Synapses()
         self.pin = self.synapses.led_pin

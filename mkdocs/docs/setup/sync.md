@@ -9,17 +9,17 @@ Go to the root of the project
 cd robot-ai
 ```
 
+Transfer Files to ESP32-S3. We use the [mpremote](https://docs.micropython.org/en/latest/reference/mpremote.html){ target="_blank" } tool to transfer files to the ESP32-S3, feel free to use any other tool you prefer.
 
-Transfer Files to ESP32-S3
 ```bash
-ampy --port /dev/ttyUSB0 put application/
+mpremote fs cp -r application :/
 ```
 
 
 ## Run the application
 
 ```bash
-ampy --port /dev/ttyUSB0 run main.py
+mpremote run main.py
 ```
 
 

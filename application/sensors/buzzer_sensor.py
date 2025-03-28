@@ -8,25 +8,35 @@ class BuzzerSensor:
     """This class is used to control the buzzer of the device.
     The buzzer can play a melody and the melody can be customized
     """
+    _instance = None
 
-    def __init__(self):
-        self.synapses = Synapses()
-        self.pin = self.synapses.buzzer_pin
-        self.buzzer = PWM(Pin(self.pin, Pin.OUT),
-                          freq=self.synapses.buzzer_frenquency,
-                          duty=self.synapses.buzzer_duty
-                          )
-        self.tones = {
-            'c': 262,
-            'd': 294,
-            'e': 330,
-            'f': 349,
-            'g': 392,
-            'a': 440,
-            'b': 494,
-            'C': 523,
-            ' ': 0,
-        }
+    def __new__(cls, *args, **kwargs):  # pylint: disable=unused-argument
+        """
+        trigger_pin: Output pin to send pulses
+        echo_pin: Readonly pin to measure the distance. The pin should be protected with 1k resistor
+        echo_timeout_us: Timeout in microseconds to listen to echo pin. 
+        By default is based in sensor limit range (4m)
+        """
+        if cls._instance is None:
+            cls.synapses = Synapses()
+            cls.pin = cls.synapses.buzzer_pin
+            cls.buzzer = PWM(Pin(cls.pin, Pin.OUT),
+                             freq=cls.synapses.buzzer_frenquency,
+                             duty=cls.synapses.buzzer_duty
+                             )
+            cls.tones = {
+                'c': 262,
+                'd': 294,
+                'e': 330,
+                'f': 349,
+                'g': 392,
+                'a': 440,
+                'b': 494,
+                'C': 523,
+                ' ': 0,
+            }
+
+        return cls._instance
 
     def play(self, melody: str, rhythm: list, interval_time: int):
         """_summary_Play the melody
