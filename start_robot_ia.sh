@@ -62,19 +62,22 @@ then
     if [ $SYNC_FILES = "Y" ] || [ $SYNC_FILES = "YES" ]
     then
         time_start=$(date +"%Y%m%d%H%M%S")
-        echo "1/6 - Actuators"
+        echo "1/7 - Actuators"
         mpremote fs cp -r application/actuators :/actuators
-        echo "2/6 - Sensors"
+        echo "2/7 - Sensors"
         mpremote fs cp -r application/sensors :/sensors
-        echo "3/6 - Brain"
+        echo "3/7 - Brain"
         mpremote fs cp -r application/brain :/brain
-        echo "4/6 - Common"
+        echo "4/7 - Common"
         mpremote fs cp -r application/common :/common
-        echo "5/6 - Communication"
+        echo "5/7 - Communication"
         mpremote fs cp -r application/communication :/communication
-        echo "6/6 - Main and Config"
-        mpremote fs cp -r application/robot-ia.json :/robot-ia.json
-        mpremote fs cp -r application/main.py :/main.py
+        echo "6/7 - Tests"
+        mpremote fs mkdir :/tests
+        mpremote fs cp -r application/tests :/tests
+        echo "6/7 - Main and Config"
+        mpremote fs cp application/robot-ia.json :/robot-ia.json
+        mpremote fs cp application/main.py :/main.py
         time_finish=$(date +"%Y%m%d%H%M%S")
         echo "Time elapsed: $(($time_finish-$time_start))"
     else
