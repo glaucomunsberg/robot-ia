@@ -66,8 +66,8 @@ class Cortex:
                 else:
                     result = func()
                 if self.variables.debug:
-                    print(f" args:{args} and kwargs:{kwargs}")
-                    print(f"Task {task_hash} result: {result}")
+                    print(
+                        f"Task {task_hash}\n args:{args} and kwargs:{kwargs}\n result: {result}")
 
             except MemoryError:
                 print(f"Cortex Memory Error: {task_hash}")

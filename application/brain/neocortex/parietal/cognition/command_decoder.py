@@ -3,6 +3,7 @@ import time
 from brain.reptilian.cerebellum.actions import read_ultrassonic_sensor
 from brain.cortex import Cortex
 from sensors.ultrassonic_sensor import UltrassonicSensor
+from sensors.temperature_sensor import TemperatureSensor
 from common.variables import Variables
 
 
@@ -20,6 +21,7 @@ class CommandDecoder:
             cls._instance = super().__new__(cls)
             cls.cortex = Cortex()
             cls.sensor_ultrassonic = UltrassonicSensor()
+            cls.temperature_sensor = TemperatureSensor()
             cls.variables = Variables()
         return cls._instance
 
@@ -61,8 +63,14 @@ class CommandDecoder:
                                 print(
                                     f"      action: {command['sensors'][sensor]['action']}")
                                 print(f"---> READ THE SENSOR 1 {sensor} <---")
-                            self.cortex.add_task(func=self.sensor_ultrassonic.read,
-                                                 task_type="SENSOR")
+                            if sensor == "ultrassonic":
+                                self.cortex.add_task(func=self.sensor_ultrassonic.measure,
+                                                     task_type="SENSOR")
+                            if sensor == "temperature":
+                                self.cortex.add_task(func=self.temperature_sensor.measure,
+                                                     task_type="SENSOR")
+
+                            # TODO: add action to sensor as shortcuts like that
                             if self.variables.debug:
                                 print(f"---> READ THE SENSOR 2  {sensor} <---")
                             self.cortex.add_task(func=read_ultrassonic_sensor,
@@ -96,68 +104,6 @@ class CommandDecoder:
         print("")
 
     def test(self) -> None:
-        """Test method."""
-        print("Test empty list...")
-        test_list = []
-        self.decode(test_list)
-        print("Test go to forward...")
-        test_list = [{
-            "name": "go to forward",
-            "description": "I want to start walking until I find a wall",
-            "commands": [
-                {
-                    "sensors": {
-                        "ultrasonic": {
-                            "action": "read"
-                        }
-                    }
-                },
-                {
-                    "actuators": [
-                        {
-                            "weel": {
-                                "action": "forward",
-                                "speed": 100,
-                                "weels": {
-                                    "left": 100,
-                                    "right": 100
-                                },
-                                "rules": [
-                                    {
-                                        "sensors": {
-                                            "ultrasonic": {
-                                                "distance": 5,
-                                                "unit": "cm",
-                                                "condition": "less_than"
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "weel": {
-                                "action": "stop",
-                                "speed": 0,
-                                "weels": {
-                                    "left": 0,
-                                    "right": 0
-                                },
-                                "rules": [
-                                    {
-                                        "sensors": {
-                                            "ultrasonic": {
-                                                "distance": 5,
-                                                "unit": "cm",
-                                                "condition": "greater_than"
-                                            }
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            ]
-        }]
-        self.decode(test_list)
+        """Test the decoder
+        """
+        print("Test decoder...")
