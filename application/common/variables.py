@@ -1,5 +1,5 @@
-from common.machine_time import MachineTime
 import json
+from common.machine_time import MachineTime
 
 
 class Variables:

@@ -130,7 +130,12 @@ nav:
     - Resume: wiring/index.md
   - Setup/Run:
     - Resume: setup/index.md
-    - Transfer Files: setup/sync.md
+    - Setup Environment: setup/environment.md
+    - Configs: setup/config.md
+    - Run/Start: setup/run_robot_ai.md
+    - Advanced:
+      - Develop Mode: setup/advanced/dev.md
+      - Sync Files: setup/advanced/sync.md
   - Programming:
     - Resume: programming/index.md
     - Brain:
