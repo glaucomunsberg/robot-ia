@@ -1,6 +1,7 @@
 import time
 import network  # pylint: disable=import-error
 import ntptime  # pylint: disable=import-error
+import webrepl  # pylint: disable=import-error
 from machine import RTC  # pylint: disable=import-error
 from common.variables import Variables
 
@@ -66,6 +67,14 @@ class Wifi:
                         (year, month, day, 0, hours, minutes, seconds, 0))
                 except OSError as error:
                     print(f"Wifi Error: {error}")
+
+                try:
+                    can_enable = self.variables.get_value(
+                        ['communication', 'web_repl', 'enabled'])
+                    if can_enable is not None and can_enable:
+                        webrepl.start()
+                except Exception as error:  # pylint: disable=broad-except
+                    print(f"WebREPL Error: {error}")
 
     def is_connected(self) -> bool:
         """Check if the Wi-Fi is connected

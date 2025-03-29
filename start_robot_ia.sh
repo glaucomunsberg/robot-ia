@@ -2,9 +2,9 @@
 
 # GET THE FIRST PARAMETER PASSED TO THE SCRIPT
 # IF THE PARAMETER IS NOT EMPTY, SET TO SYNC THE FILES
-SYNC_FILES="${1:-skipped}"
+SYNC_FILES="${1:-SKIP}"
 RUN_APP="${2:-Y}"
-COMMAND_TO_RUN="${3:-skipped}"
+COMMAND_TO_RUN="${3:-SKIP}"
 
 # UPPER CASE THE PARAMETERS
 SYNC_FILES=$(echo $SYNC_FILES | tr '[:lower:]' '[:upper:]')
@@ -56,7 +56,7 @@ echo -e "---------------------------$BLUE_LIGHT"
 
 # Sync files to the ESP32-S3
 echo -e "SYNCING FILES $NORMAL"
-if [ $SYNC_FILES = "SKIPPED" ]
+if [ $SYNC_FILES = "SKIP" ]
 then
     echo "  Skipped by parameter"
 else
@@ -88,6 +88,7 @@ else
         echo "6/7 - Main and Config"
         mpremote fs cp application/robot-ia.json :/robot-ia.json
         mpremote fs cp application/main.py :/main.py
+        mpremote fs cp application/webrepl_cfg.py :/webrepl_cfg.py
         time_finish=$(date +"%Y%m%d%H%M%S")
         echo "Time elapsed: $(($time_finish-$time_start))"
     else
@@ -98,7 +99,7 @@ echo -e "---------------------------$BLUE_LIGHT"
 
 # Run the main script
 echo -e "RUN ROBOT IA $NORMAL"
-if [ $RUN_APP = "SKIPPED" ]
+if [ $RUN_APP = "SKIP" ]
 then
     echo "  Skipped by parameter"
 else
@@ -122,7 +123,7 @@ else
     fi
 fi
 
-if [ $COMMAND_TO_RUN != "SKIPPED" ]
+if [ $COMMAND_TO_RUN != "SKIP" ]
 then
     time_start=$(date +"%Y%m%d%H%M%S")
     echo -e "---------------------------$BLUE_LIGHT"
