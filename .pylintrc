@@ -1,5 +1,6 @@
 [MASTER]
 init-hook='import sys; sys.path.append("./application")'
-disable=
-    C0114, # missing-module-docstring
-ignore=messy_code
+disable=C0114, # missing-module-docstring
+ignore=messy_code # ignore the messy_code directory
+[REPORTS]
+output-format=json:pylint_report.json

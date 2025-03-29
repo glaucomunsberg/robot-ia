@@ -170,7 +170,11 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-mkdocs/site/*
-
+# MacOS
 .DS_Store
+
+# Robot IA files
+mkdocs/site/*
 messy_code
+pylint_report.json
+application/playground*.py
