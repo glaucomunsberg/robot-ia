@@ -2,38 +2,41 @@
 
 # GET THE FIRST PARAMETER PASSED TO THE SCRIPT
 # IF THE PARAMETER IS NOT EMPTY, SET TO SYNC THE FILES
-if [ -z "$1" ]
-then
-    SYNC_FILES="false"
-else
-    SYNC_FILES="true"
-fi
+SYNC_FILES="${1:-skipped}"
+RUN_APP="${2:-Y}"
+COMMAND_TO_RUN="${3:-skipped}"
 
-if [ -z "$2" ]
-then
-    RUN_APP="false"
-else
-    RUN_APP="true"
-fi
+# UPPER CASE THE PARAMETERS
+SYNC_FILES=$(echo $SYNC_FILES | tr '[:lower:]' '[:upper:]')
+RUN_APP=$(echo $RUN_APP | tr '[:lower:]' '[:upper:]')
+COMMAND_TO_RUN=$(echo $COMMAND_TO_RUN | tr '[:lower:]' '[:upper:]')
+
 BLACK="\033[1m"
 RED="\033[31m"
 GREEN="\033[32m"
 YELLOW="\033[33m"
 BLUE="\033[1;94m"
+BLUE_LIGHT="\033[1;96m"
 NORMAL="\033[0;39m"
 
 echo -e "$BLUE"
 echo -e "ROBOT IA $NORMAL"
-echo -e "===========================$BLACK"
-echo -e "CONNECTING TO DEVICE $NORMAL"
+echo -e "===========================$BLUE_LIGHT"
+echo -e "DEVICES $NORMAL"
 DEVICES=$(mpremote connect list | grep -v "None")
-echo "Devices found:"
-echo "  $DEVICES"
-echo -e "---------------------------$BLACK" 
+echo "  Port: $DEVICES"
+if [ -z "$DEVICES" ]
+then
+    echo -e "  No devices found $NORMAL"
+else
+    echo -e "  Device Info: $(mpremote exec 'import uos; print(uos.uname())')"
+fi
+echo -e "---------------------------$BLUE_LIGHT" 
 
 echo -e "SET UP CLOCK $NORMAL"
 mpremote rtc --set
-echo -e "---------------------------$BLACK"
+echo "  Clock set to $(mpremote rtc)"
+echo -e "---------------------------$BLUE_LIGHT"
 
 # Delete all folders called __pycache__ and all files with extension .pyc
 
@@ -47,18 +50,26 @@ then
     find application -name "__pycache__" -type d -exec rm -r "{}" \;
     find application -name "*.pyc" -type f -exec rm "{}" \;
 else
-    echo "No cache files found"
+    echo "  No cache files found"
 fi
-echo -e "---------------------------$BLACK"
+echo -e "---------------------------$BLUE_LIGHT"
 
 # Sync files to the ESP32-S3
 echo -e "SYNCING FILES $NORMAL"
-if [ $SYNC_FILES = "false" ]
-    echo "Sync skipped by parameter"
+if [ $SYNC_FILES = "SKIPPED" ]
 then
-    echo "Do you want to sync the files to the ESP32-S3? (y/n)"
-    read SYNC_FILES
-    SYNC_FILES=$(echo $SYNC_FILES | tr '[:lower:]' '[:upper:]')
+    echo "  Skipped by parameter"
+else
+    
+    if [ $SYNC_FILES = "ASK" ]
+    then
+       echo "Do you want to sync the files to the ESP32-S3? (y/n)"
+       read SYNC_FILES
+       SYNC_FILES=$(echo $SYNC_FILES | tr '[:lower:]' '[:upper:]')
+    else
+       SYNC_FILES="Y"
+    fi
+    
     if [ $SYNC_FILES = "Y" ] || [ $SYNC_FILES = "YES" ]
     then
         time_start=$(date +"%Y%m%d%H%M%S")
@@ -83,23 +94,42 @@ then
         echo "Sync skipped by '$SYNC_FILES'"
     fi
 fi
-echo -e "---------------------------$BLACK"
+echo -e "---------------------------$BLUE_LIGHT"
 
 # Run the main script
 echo -e "RUN ROBOT IA $NORMAL"
-if [ $RUN_APP = "false" ]
-    echo "Run skipped by parameter"
+if [ $RUN_APP = "SKIPPED" ]
 then
+    echo "  Skipped by parameter"
+else
     echo "Do you want to run the main script? (y/n)"
-    read RUN_APP
-    RUN_APP=$(echo $RUN_APP | tr '[:lower:]' '[:upper:]')
+    if [ $RUN_APP = "ASK" ]
+    then
+       echo "Do you want to run the main script? (y/n)"
+       read RUN_APP
+       RUN_APP=$(echo $RUN_APP | tr '[:lower:]' '[:upper:]')
+    else
+       RUN_APP="Y"
+    fi
     if [ $RUN_APP = "Y" ] || [ $RUN_APP = "YES" ]
     then
+        time_start=$(date +"%Y%m%d%H%M%S")
         mpremote run application/main.py
+        time_finish=$(date +"%Y%m%d%H%M%S")
+        echo "Time elapsed: $(($time_finish-$time_start))"
     else
-        echo "Run skipped by '$RUN_APP'"
+        echo "  Run skipped by '$RUN_APP'"
     fi
-else
-    mpremote run run application/main.py
+fi
+
+if [ $COMMAND_TO_RUN != "SKIPPED" ]
+then
+    time_start=$(date +"%Y%m%d%H%M%S")
+    echo -e "---------------------------$BLUE_LIGHT"
+    echo -e "RUN COMMAND $NORMAL"
+    echo "Running: mpremote run $COMMAND_TO_RUN"
+    mpremote run $COMMAND_TO_RUN
+    time_finish=$(date +"%Y%m%d%H%M%S")
+    echo "Time elapsed: $(($time_finish-$time_start))"
 fi
 echo -e "---------------------------$NORMAL"

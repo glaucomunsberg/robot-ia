@@ -13,10 +13,10 @@ class Steam:
     task = None
     loop = None
 
-    def __new__(cls, *args, **kwargs):
+    def __new__(cls, *args, **kwargs):  # pylint: disable=unused-argument
         if cls._instance is None:
             cls._instance = super().__new__(cls)
-            cls.code = MachineTime().current_code()
+            cls.code = MachineTime().generate_code()
 
         return cls._instance
 

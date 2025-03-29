@@ -1,4 +1,5 @@
 from common.synapses import Synapses
+from common.variables import Variables
 from machine import Pin  # pylint: disable=import-error
 
 # Created by https://RandomNerdTutorials.com/micropython-esp32-esp8266-dc-motor-l298n/
@@ -12,9 +13,11 @@ class DCMotor:
     synapses = Synapses()
     frequency = 15000
     motor_name = ""
+    variables = None
 
     def __init__(self, motor_number: int = 0):
         self.motor_name = "Motor {motor_number}"
+        self.variables = Variables()
         if motor_number == 1:
             self.pin1 = Pin(self.synapses.motor_1_pin_1, Pin.OUT)
             self.pin2 = Pin(self.synapses.motor_1_pin_2, Pin.OUT)
@@ -56,7 +59,8 @@ class DCMotor:
             #                 self.min_duty)*((speed - 1)/(100-1)))
             duty_cycle = int(self.min_duty + (self.max_duty -
                              self.min_duty) * ((speed - 1) / 99))
-        print(f"duty cile: {duty_cycle}")
+        if self.variables.debug:
+            print(f"duty cile: {duty_cycle}")
         return duty_cycle
 
     def set_max_duty(self, max_duty):

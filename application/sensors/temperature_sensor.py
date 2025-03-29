@@ -52,8 +52,7 @@ class TemperatureSensor:
                 self.set_last_measure(temp, temp_f, hum)
                 return temp, temp_f, hum
             except OSError as e:
-                print('Failed to read sensor.')
-                print(f"{e}")
+                print(f"Temperature Error: {e}")
         return temp, temp_f, hum
 
     def set_last_measure(self, temp, temp_f, hum):
@@ -64,7 +63,9 @@ class TemperatureSensor:
         self.cortex.add_task(func=self.hippocampus.store_memory,
                              task_type="SENSOR",
                              priority=3,
-                             args=self.last_measure)
+                             kwargs={
+                                 "memory": self.last_measure
+                             })
 
     def test(self):
         """Test the temperature sensor"""
@@ -75,5 +76,12 @@ class TemperatureSensor:
         print(f"Temperature: {temp_f} F")
         print(f"Humidity: {hum} %")
         print("Temperature Sensor Test completed")
+
+    def __del__(self):
+        """Destructor"""
+        self.sensor.deinit()
+        self.sensor = None
+        self._instance = None
+        print("Temperature Sensor destroyed")
 
 # Compare this snippet from application/main.py:

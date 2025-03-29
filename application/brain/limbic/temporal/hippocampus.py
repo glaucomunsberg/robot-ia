@@ -21,12 +21,14 @@ class Hippocampus:
     def store_memory(self, memory: dict):
         """Add a memory in the hippocampus."""
         if not isinstance(memory, dict):
-            raise ValueError("Memory must be a dictionary.")
+            raise ValueError(
+                f"Memory must be a dictionary. Not {type(memory)} with value {memory}")
         if "type" not in memory:
             raise ValueError("Memory must have a type.")
         if "timestamp" not in memory:
             memory["timestamp"] = self.time_machine.timestamp()
         self.memory.append(memory)
+        return memory
 
     def recall_memory(self):
         """Recall all the memories stored in the hippocampus."""

@@ -37,7 +37,8 @@ class UltrassonicSensor:
     def _send_pulse_and_wait(self):
         """
         Send the pulse to trigger and listen on echo pin.
-        We use the method `machine.time_pulse_us()` to get the microseconds until the echo is received.
+        We use the method `machine.time_pulse_us()` to get the microseconds
+        until the echo is received.
         """
         self.trigger.value(0)  # Stabilize the sensor
         time.sleep_us(5)  # pylint: disable= no-member
@@ -82,11 +83,26 @@ class UltrassonicSensor:
         cms = (pulse_time / 2) / 29.1
         return cms
 
-    def read(self) -> int:
+    def measure(self, measure_type: str = "cm", tries: int = 2) -> int:
         """
         Read the sensor and send the distance to the server.
         """
-        return self.test()
+        distance = -1
+        distance = -1
+        while tries > 1 and distance < 0:
+            try:
+                if measure_type == "cm":
+                    distance = self.distance_cm()
+                elif measure_type == "mm":
+                    distance = self.distance_mm()
+                else:
+                    raise ValueError("Invalid measure type")
+                if distance > 0:
+                    tries = 0
+            except OSError as ex:
+                print("Ultrassonic Error:", ex)
+                tries -= 1
+        return distance
 
     def test(self, times: int = 3) -> int:
         """
@@ -100,6 +116,6 @@ class UltrassonicSensor:
                 distance = self.distance_cm()
                 print(f"Distance: {distance} cm")
             except OSError as ex:
-                print("Error:", ex)
+                print("Ultrassonic Error:", ex)
         print("Sensor test completed")
         return distance

@@ -1,17 +1,19 @@
-
 import socket
 
-from communication.network import Wifi
+from communication.wi_fi import Wifi
 from brain.neocortex.parietal.cognition.command_decoder import CommandDecoder
+from common.variables import Variables
 
 
 class Reader:
+    """ Reader is the server that receives the commands from the client"""
 
     _instance = None
     wifi = None
     server = None
     conn = None
     command_decoder = CommandDecoder()
+    variables = None
 
     is_running = False
 
@@ -19,6 +21,7 @@ class Reader:
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls.wifi = Wifi()
+            cls.variables = Variables()
 
         return cls._instance
 
@@ -30,7 +33,8 @@ class Reader:
                 self.server.bind(('', 80))  # Porta 80 para HTTP
                 self.server.settimeout(5)
                 self.server.listen(5)
-                print("Servidor inicializado")
+                if self.variables.debug:
+                    print("Servidor inicializado")
             except OSError as e:
                 print(f' >> INIT ERROR: {e}')
                 self.close_socket()
@@ -47,14 +51,15 @@ class Reader:
 
         # create a while loop to keep the server running with 1 second of sleep
         if self.server is None:
-            print("Servidor não inicializado!")
+            if self.variables.debug:
+                print("Servidor não inicializado!")
             return
 
         time = 0
         self.conn = None
         while self.is_running:
             time += 1
-            print(f"Listening... ")
+            print("Listening... ")
 
             try:
                 self.conn, addr = self.server.accept()
@@ -73,17 +78,20 @@ class Reader:
                 print(f' >> ERROR: {e}')
                 self.is_running = False
             finally:
-                # appearantly, context managers are currently not supported in MicroPython, therefore the connection is closed manually
+                # appearantly, context managers are currently not
+                # supported in MicroPython, therefore the connection is closed manually
                 if self.conn is not None:
                     self.conn.close()
                 print('Listening closed.')
 
     def close_socket(self):
+        """Close the socket"""
         self.is_running = False
         self.server.close()
         print(' >> Socket closed.')
 
     def reset_socket(self):
+        """Reset the socket and reinitialize the server"""
         self.close_socket()
         self.server = None
         self.conn = None
@@ -93,4 +101,5 @@ class Reader:
         self.server.bind(('', 80))  # Porta 80 para HTTP
         self.server.settimeout(5)
         self.server.listen(5)
-        print("Servidor reset_socket")
+        if self.variables.debug:
+            print("Servidor reset_socket")

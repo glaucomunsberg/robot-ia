@@ -24,4 +24,4 @@ mpremote run application/main.py
 
 
 !!! tip "Tip"
-    If you are using a different port, replace `/dev/ttyUSB0` with the correct port, e.g. `/dev/ttyACM0`.
+    If you are using a different port, replace `/dev/ttyUSB0` with the correct port, e.g. `/dev/ttyACM0`. Check the port with the command `mpremote connect list`.

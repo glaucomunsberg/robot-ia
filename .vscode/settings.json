@@ -8,5 +8,8 @@
   ],
   "python.testing.pytestEnabled": false,
   "python.testing.unittestEnabled": true,
-  "todo-tree.general.rootFolder": "${workspaceFolder}/application"
+  "todo-tree.general.rootFolder": "${workspaceFolder}/application",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none"
+  }
 }

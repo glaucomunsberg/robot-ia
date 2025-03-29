@@ -1,8 +1,9 @@
 import json
+import time
+from brain.reptilian.cerebellum.actions import read_ultrassonic_sensor
 from brain.cortex import Cortex
 from sensors.ultrassonic_sensor import UltrassonicSensor
-from brain.reptilian.cerebellum.actions import read_ultrassonic_sensor
-import time
+from common.variables import Variables
 
 
 class CommandDecoder:
@@ -12,54 +13,61 @@ class CommandDecoder:
     _instance = None
     cortex = None
     sensor_ultrassonic = None
+    variables = None
 
-    def __new__(cls, *args, **kwargs):
+    def __new__(cls, *args, **kwargs):  # pylint: disable=unused-argument
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls.cortex = Cortex()
             cls.sensor_ultrassonic = UltrassonicSensor()
+            cls.variables = Variables()
         return cls._instance
 
     def decode_from_text(self, text) -> None:
         """Set commands to decode."""
-        print(f"Type: {type(text)}")
+        if self.variables.debug:
+            print(f"Type: {type(text)}")
         commands = {}
         try:
             json_string = json.dumps(text)
             commands = json.loads(json_string)
-            # transfrom json in dict
-        except Exception as e:
-            print(f"Error decoding JSON: {e}")
-
+        except Exception as e:  # pylint: disable=broad-except
+            print(f"Decoder Error: {e}")
+         # transfrom json in dict
         self.decode([commands])
 
     def decode(self, commands: list) -> None:
         """Set commands to decode."""
         ideia_count = 0
         for idea in commands:
-            if type(idea) is not dict:
+            if not isinstance(idea, dict):
                 print(f"ideia {ideia_count} type {type(idea)} converting...")
-                print(f"ideia: {idea}")
+                if self.variables.debug:
+                    print(f"ideia: {idea}")
                 idea = json.loads("{"+idea)
-            print(f"ideia: {idea}")
+            if self.variables.debug:
+                print(f"ideia: {idea}")
             time.sleep(1)
             # print(f"  name: {idea['name']}")
             ideia_count += 1
             if "commands" in idea:
                 for command in idea["commands"]:
-                    print(f"  command...")
+                    if self.variables.debug:
+                        print("  command...")
                     if "sensors" in command:
                         for sensor in command["sensors"]:
-                            print(f"    sensor: {sensor}")
-                            print(
-                                f"      action: {command['sensors'][sensor]['action']}")
-                            print(f"---> READ THE SENSOR 1 {sensor} <---")
+                            if self.variables.debug:
+                                print(f"    sensor: {sensor}")
+                                print(
+                                    f"      action: {command['sensors'][sensor]['action']}")
+                                print(f"---> READ THE SENSOR 1 {sensor} <---")
                             self.cortex.add_task(func=self.sensor_ultrassonic.read,
                                                  task_type="SENSOR")
-                            print(f"---> READ THE SENSOR 2  {sensor} <---")
+                            if self.variables.debug:
+                                print(f"---> READ THE SENSOR 2  {sensor} <---")
                             self.cortex.add_task(func=read_ultrassonic_sensor,
                                                  task_type="SENSOR")
-
+            # pylint: disable=line-too-long
             # if "actuators" in command:
             #     for actuator in command["actuators"]:
             #         print(f"    actuator...")
