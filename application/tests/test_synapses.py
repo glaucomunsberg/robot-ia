@@ -1,10 +1,10 @@
 from time import sleep
 
-from application.actuators.dc_motor import DCMotor
-from application.sensors.buzzer_sensor import BuzzerSensor
-from application.sensors.led_sensor import LedSensor
-from application.sensors.ultrassonic_sensor import UltrassonicSensor
-from application.sensors.temperature_sensor import TemperatureSensor
+from actuators.dc_motor import DCMotor
+from sensors.buzzer_sensor import BuzzerSensor
+from sensors.led_sensor import LedSensor
+from sensors.ultrassonic_sensor import UltrassonicSensor
+from sensors.temperature_sensor import TemperatureSensor
 
 
 class TestSynapses:
@@ -44,4 +44,4 @@ class TestSynapses:
         print("end test motor...")
 
     def __str__(self):
-        pass
+        "pass"

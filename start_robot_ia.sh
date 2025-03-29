@@ -63,18 +63,17 @@ then
     then
         time_start=$(date +"%Y%m%d%H%M%S")
         echo "1/7 - Actuators"
-        mpremote fs cp -r application/actuators :/actuators
+        mpremote fs cp -r application/actuators :
         echo "2/7 - Sensors"
-        mpremote fs cp -r application/sensors :/sensors
+        mpremote fs cp -r application/sensors :
         echo "3/7 - Brain"
-        mpremote fs cp -r application/brain :/brain
+        mpremote fs cp -r application/brain :
         echo "4/7 - Common"
-        mpremote fs cp -r application/common :/common
+        mpremote fs cp -rf application/common :
         echo "5/7 - Communication"
-        mpremote fs cp -r application/communication :/communication
+        mpremote fs cp -r application/communication :
         echo "6/7 - Tests"
-        mpremote fs mkdir :/tests
-        mpremote fs cp -r application/tests :/tests
+        mpremote fs cp -r application/tests :
         echo "6/7 - Main and Config"
         mpremote fs cp application/robot-ia.json :/robot-ia.json
         mpremote fs cp application/main.py :/main.py

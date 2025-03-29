@@ -1,6 +1,6 @@
+import time
 from machine import Pin  # pylint: disable=import-error
 from common.synapses import Synapses
-import time
 
 
 class LedSensor:

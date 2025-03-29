@@ -18,6 +18,7 @@ class BuzzerSensor:
         By default is based in sensor limit range (4m)
         """
         if cls._instance is None:
+            cls._instance = super().__new__(cls)
             cls.synapses = Synapses()
             cls.pin = cls.synapses.buzzer_pin
             cls.buzzer = PWM(Pin(cls.pin, Pin.OUT),
