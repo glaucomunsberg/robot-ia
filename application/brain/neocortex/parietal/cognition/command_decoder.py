@@ -36,10 +36,10 @@ class CommandDecoder:
          # transfrom json in dict
         self.decode([commands])
 
-    def decode(self, commands: list) -> None:
+    def decode(self, commands: list) -> None:  # pylint: disable=too-many-branches too-many-statements
         """Set commands to decode."""
         ideia_count = 0
-        for idea in commands:
+        for idea in commands:  # pylint: disable=too-many-nested-blocks
             if not isinstance(idea, dict):
                 print(f"ideia {ideia_count} type {type(idea)} converting...")
                 if self.variables.debug:

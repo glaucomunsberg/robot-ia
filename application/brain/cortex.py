@@ -28,7 +28,7 @@ class Cortex:
         """Generate a hash based on the current timestamp."""
         return f"{self.machine_time.generate_code()}-{(self.counter+1):04d}"  # pylint: disable=line-too-long
 
-    def add_task(self, func, task_type, priority=3, args=None, kwargs=None) -> None:
+    def add_task(self, func, task_type, priority=3, args=None, kwargs=None) -> None:  # pylint: disable=too-many-arguments too-many-positional-arguments
         """Add a task to the task list. With priority, type and function to execute
         Args:
             func (function): The function to execute
@@ -55,51 +55,27 @@ class Cortex:
             # Order by priority and counter
             self.tasks.sort(key=lambda x: (x[0], x[1]))
             _, _, task_hash, task_type, func, args, kwargs = self.tasks.pop(0)
-            print(
-                f"Executando tarefa {task_hash} do tipo {task_type}...")
+            print(f"Execução {task_hash} do tipo {task_type}...")
             try:
                 if kwargs and args:
-                    if self.variables.debug:
-                        print(f" args:{args}")
-                        print(f" kwargs:{kwargs}")
-
-                        print(f" result:{func(*args, **kwargs)}")
-                    else:
-                        func(*args, **kwargs)
+                    result = func(*args, **kwargs)
                 elif kwargs:
-                    if self.variables.debug:
-                        print(f" kwargs:{kwargs}")
-                        print(f" result:{func(**kwargs)}")
-                    else:
-                        func(**kwargs)
+                    result = func(**kwargs)
                 elif args:
-                    if self.variables.debug:
-                        print(f" args:{args}")
-                        print(f" result:{func(*args)}")
-                    else:
-                        func(*args)
+                    result = func(*args)
                 else:
-                    if self.variables.debug:
-                        print(f" result:{func()}")
-                    else:
-                        func()
-            except KeyboardInterrupt:
-                print(f"Cortex Task {task_hash} interrupted.")
+                    result = func()
+                if self.variables.debug:
+                    print(f" args:{args} and kwargs:{kwargs}")
+                    print(f"Task {task_hash} result: {result}")
+
             except MemoryError:
                 print(f"Cortex Memory Error: {task_hash}")
             except OSError as e:
                 print(f"Cortex OS Error: {task_hash} -> {e}")
-            except ValueError as e:
-                print(f"Cortex Value Error: {task_hash} -> {e}")
             except TypeError as e:
                 print(f"Cortex Type Error: {task_hash} -> {e}")
             except RuntimeError as e:
                 print(f"Cortex Runtime Error: {task_hash} -> {e}")
-            except NameError as e:
-                print(f"Cortex Name Error: {task_hash} -> {e}")
-            except AttributeError as e:
-                print(f"Cortex Attribute Error: {task_hash} -> {e}")
-            except ImportError as e:
-                print(f"Cortex Import Error: {task_hash} -> {e}")
             except Exception as e:  # pylint: disable=broad-except
                 print(f"Cortex Error: {task_hash} -> {e}")

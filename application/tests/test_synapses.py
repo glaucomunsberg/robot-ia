@@ -16,7 +16,7 @@ class TestSynapses:
         self.buzzer_sensor = BuzzerSensor()
         self.ultrassonic_sensor = UltrassonicSensor()
         self.temperature_sensor = TemperatureSensor()
-        self.motors = list()
+        self.motors = []
         self.motors.append(DCMotor(1))
         self.motors.append(DCMotor(2))
 

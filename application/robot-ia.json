@@ -2,7 +2,12 @@
     "name": "robot-ia",
     "description": "Robot IA",
     "version": "1.0.0",
+    "debug": true,
     "configs": {
+        "time": {
+            "timezone": "America/Sao_Paulo",
+            "timezone_offset": -3
+        },
         "communication": {
             "wifi": {
                 "ssid": "OsirMax_Anascience_5G",

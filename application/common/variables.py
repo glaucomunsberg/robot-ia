@@ -7,8 +7,8 @@ class Variables:
     The pins are used to control the devices
     """
     _instance = None
-    file: dict = dict()
-    configs: dict = dict()
+    file: dict = {}
+    configs: dict = {}
     version: str = "0.0.0"
     debug: bool = False
 
