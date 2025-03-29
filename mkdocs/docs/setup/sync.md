@@ -19,7 +19,7 @@ mpremote fs cp -r application :/
 ## Run the application
 
 ```bash
-mpremote run main.py
+mpremote run application/main.py
 ```
 
 

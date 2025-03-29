@@ -31,6 +31,10 @@ echo "Devices found:"
 echo "  $DEVICES"
 echo -e "---------------------------$BLACK" 
 
+echo -e "SET UP CLOCK $NORMAL"
+mpremote rtc --set
+echo -e "---------------------------$BLACK"
+
 # Delete all folders called __pycache__ and all files with extension .pyc
 
 echo -e "REMOVING CACHE FILES $NORMAL"
