@@ -1,5 +1,5 @@
 [MASTER]
-init-hook='import sys; sys.path.append("./application")'
+init-hook='import sys; sys.path.append("./application"); sys.path.append("./venv/lib/python3.13/site-packages/")'
 disable=C0114, # missing-module-docstring
 ignore=messy_code # ignore the messy_code directory
 [REPORTS]

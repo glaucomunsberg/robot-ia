@@ -12,6 +12,7 @@ class CommandDecoderTest:
         print("Test empty list...")
         test_list = []
         self.decoder.decode(test_list)
+
         print("Test go to forward...")
         test_list = [{
             "name": "go to forward",
@@ -20,7 +21,73 @@ class CommandDecoderTest:
                 {
                     "sensors": {
                         "ultrasonic": {
-                            "action": "read"
+                            "action": "mensure",
+                        },
+                        "temperature": {
+                            "action": "mensure",
+                        }
+                    }
+                },
+                {
+                    "actuators": [
+                        {
+                            "weel": {
+                                "action": "backward",
+                                "weels": {
+                                    "right": 100,
+                                    "left": 100
+                                },
+                                "rules": [
+                                    {
+                                        "times": {
+                                            "elapsed": {
+                                                "time": 10,
+                                                "unit": "second",
+                                                "condition": "less_than"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "weel": {
+                                "action": "stop",
+                                "weels": {
+                                    "right": 0,
+                                    "left": 0
+                                },
+                                "rules": [
+                                    {
+                                        "times": {
+                                            "elapsed": {
+                                                "time": 10,
+                                                "unit": "second",
+                                                "condition": "greater_than"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }]
+        self.decoder.decode(test_list)
+
+        print("Test go to forward stop if at 5cm...")
+        test_list = [{
+            "name": "go to forward",
+            "description": "I want to start walking until I find a wall",
+            "commands": [
+                {
+                    "sensors": {
+                        "ultrasonic": {
+                            "action": "mensure",
+                        },
+                        "temperature": {
+                            "action": "mensure",
                         }
                     }
                 },
@@ -31,8 +98,7 @@ class CommandDecoderTest:
                                 "action": "forward",
                                 "speed": 100,
                                 "weels": {
-                                    "left": 100,
-                                    "right": 100
+                                    "all": 100
                                 },
                                 "rules": [
                                     {
@@ -52,8 +118,7 @@ class CommandDecoderTest:
                                 "action": "stop",
                                 "speed": 0,
                                 "weels": {
-                                    "left": 0,
-                                    "right": 0
+                                    "all": 0
                                 },
                                 "rules": [
                                     {
@@ -72,4 +137,4 @@ class CommandDecoderTest:
                 }
             ]
         }]
-        self.decoder.decode(test_list)
+        # self.decoder.decode(test_list)

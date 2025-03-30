@@ -3,7 +3,7 @@ from machine import Pin  # pylint: disable=import-error
 from common.synapses import Synapses
 
 
-class LedSensor:
+class Led:
     """Initialize the LED sensor
     """
 

@@ -28,10 +28,10 @@ class Synapses:
         # led_pin
         self.led_pin = 15
 
-        # ultrassonic_trigger_pin
-        self.ultrassonic_trigger_pin = 16
-        self.ultrassonic_echo_pin = 17
-        self.ultrassonic_echo_timeout_us = 500*2*30
+        # ultrasonic_trigger_pin
+        self.ultrasonic_trigger_pin = 16
+        self.ultrasonic_echo_pin = 17
+        self.ultrasonic_echo_timeout_us = 500*2*30
 
         # temperature_pin
         self.temperature_pin = 13
@@ -51,9 +51,9 @@ class Synapses:
         return {
             "buzzer_pin": self.buzzer_pin,
             "led_pin": self.led_pin,
-            "ultrassonic_trigger_pin": self.ultrassonic_trigger_pin,
-            "ultrassonic_echo_pin": self.ultrassonic_echo_pin,
-            "ultrassonic_echo_timeout_us": self.ultrassonic_echo_timeout_us,
+            "ultrasonic_trigger_pin": self.ultrasonic_trigger_pin,
+            "ultrasonic_echo_pin": self.ultrasonic_echo_pin,
+            "ultrasonic_echo_timeout_us": self.ultrasonic_echo_timeout_us,
             "temperature_pin": self.temperature_pin
         }
 

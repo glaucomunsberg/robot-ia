@@ -1,27 +1,33 @@
 import json
 import time
-from brain.reptilian.cerebellum.actions import read_ultrassonic_sensor
+from brain.reptilian.cerebellum.actions import actuators_with_rules
 from brain.cortex import Cortex
-from sensors.ultrassonic_sensor import UltrassonicSensor
-from sensors.temperature_sensor import TemperatureSensor
+from common.machine_time import MachineTime
 from common.variables import Variables
+from sensors.ultrasonic import Ultrasonic
+from sensors.temperature import Temperature
 
 
 class CommandDecoder:
-
     """Commands decodes in commands"""
 
     _instance = None
     cortex = None
-    sensor_ultrassonic = None
+    sensor_list = ['ultrasonic', 'temperature']
+    sensor_ultrasonic = None
+    sensor_temperature = None
+    ideas = []
+    ideas_count = 0
+
     variables = None
 
     def __new__(cls, *args, **kwargs):  # pylint: disable=unused-argument
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls.cortex = Cortex()
-            cls.sensor_ultrassonic = UltrassonicSensor()
-            cls.temperature_sensor = TemperatureSensor()
+            cls.time_machine = MachineTime()
+            cls.sensor_ultrasonic = Ultrasonic()
+            cls.sensor_temperature = Temperature()
             cls.variables = Variables()
         return cls._instance
 
@@ -42,6 +48,7 @@ class CommandDecoder:
         """Set commands to decode."""
         ideia_count = 0
         for idea in commands:  # pylint: disable=too-many-nested-blocks
+            self.ideas_count += 1
             if not isinstance(idea, dict):
                 print(f"ideia {ideia_count} type {type(idea)} converting...")
                 if self.variables.debug:
@@ -50,6 +57,8 @@ class CommandDecoder:
             if self.variables.debug:
                 print(f"ideia: {idea}")
             time.sleep(1)
+            if not 'code' in idea:
+                idea['code'] = f'{self.time_machine.generate_code()}-{self.ideas_count}'
             # print(f"  name: {idea['name']}")
             ideia_count += 1
             if "commands" in idea:
@@ -63,18 +72,23 @@ class CommandDecoder:
                                 print(
                                     f"      action: {command['sensors'][sensor]['action']}")
                                 print(f"---> READ THE SENSOR 1 {sensor} <---")
-                            if sensor == "ultrassonic":
-                                self.cortex.add_task(func=self.sensor_ultrassonic.measure,
+                            if sensor == "ultrasonic":
+                                self.cortex.add_task(func=self.sensor_ultrasonic.measure,
                                                      task_type="SENSOR")
                             if sensor == "temperature":
-                                self.cortex.add_task(func=self.temperature_sensor.measure,
+                                self.cortex.add_task(func=self.sensor_temperature.measure,
                                                      task_type="SENSOR")
 
-                            # TODO: add action to sensor as shortcuts like that
-                            if self.variables.debug:
-                                print(f"---> READ THE SENSOR 2  {sensor} <---")
-                            self.cortex.add_task(func=read_ultrassonic_sensor,
-                                                 task_type="SENSOR")
+                            # if self.variables.debug:
+                            #     print(f"---> READ THE SENSOR 2  {sensor} <---")
+                            # self.cortex.add_task(func=read_ultrasonic_sensor,
+                            #                      task_type="SENSOR")
+                    if "actuators" in command:
+                        self.cortex.add_task(func=actuators_with_rules,
+                                             task_type="ACTUATOR",
+                                             kwargs={
+                                                 "actuators": command["actuators"]
+                                             })
             # pylint: disable=line-too-long
             # if "actuators" in command:
             #     for actuator in command["actuators"]:

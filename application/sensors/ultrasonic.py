@@ -3,7 +3,7 @@ from machine import Pin, time_pulse_us  # pylint: disable=import-error
 from common.synapses import Synapses
 
 
-class UltrassonicSensor:
+class Ultrasonic:
     """
     Driver to use the untrasonic sensor HC-SR04.
     The sensor range is between 2cm and 4m.
@@ -13,6 +13,11 @@ class UltrassonicSensor:
 
     synapses = Synapses()
     # echo_timeout_us is based in chip range limit (400cm)
+    last_measure = {
+        "type": "ultrasonic",
+        "distance": -1,
+        "unit": "cm",
+    }
 
     def __new__(cls, *args, **kwargs):  # pylint: disable=unused-argument
         """
@@ -23,15 +28,19 @@ class UltrassonicSensor:
         """
         if cls._instance is None:
             cls._instance = super().__new__(cls)
-            cls.echo_timeout_us = cls.synapses.ultrassonic_echo_timeout_us
-        # Init trigger pin (out)
+            cls.echo_timeout_us = cls.synapses.ultrasonic_echo_timeout_us
+            # Init trigger pin (out)
             cls.trigger = Pin(
-                cls.synapses.ultrassonic_trigger_pin, mode=Pin.OUT, pull=None)
+                cls.synapses.ultrasonic_trigger_pin, mode=Pin.OUT, pull=None)
             cls.trigger.value(0)
 
             # Init echo pin (in)
-            cls.echo = Pin(cls.synapses.ultrassonic_echo_pin,
+            cls.echo = Pin(cls.synapses.ultrasonic_echo_pin,
                            mode=Pin.IN, pull=None)
+            cls._history = []
+            cls._history_size = 5  # Número de medições para calcular a média
+            # cls.hippocampus = Hippocampus()
+            # cls.cortex = Cortex()
         return cls._instance
 
     def _send_pulse_and_wait(self):
@@ -86,21 +95,42 @@ class UltrassonicSensor:
     def measure(self, measure_type: str = "cm", tries: int = 2) -> int:
         """
         Read the sensor and send the distance to the server.
+        Filters out values that deviate significantly from the recent history.
         """
         distance = -1
-        distance = -1
-        while tries > 1 and distance < 0:
+        while tries > 0 and distance < 0:
             try:
                 if measure_type == "cm":
-                    distance = self.distance_cm()
+                    new_distance = self.distance_cm()
                 elif measure_type == "mm":
-                    distance = self.distance_mm()
+                    new_distance = self.distance_mm()
                 else:
                     raise ValueError("Invalid measure type")
-                if distance > 0:
-                    tries = 0
+
+                if len(self._history) >= self._history_size:
+                    avg_distance = sum(self._history) / len(self._history)
+                    to_compare = (
+                        abs(new_distance - avg_distance) / avg_distance)
+                    if to_compare > 0.2:  # 30% threshold
+                        print(
+                            f"Discarded: {new_distance} (avg: {avg_distance}) value {to_compare}")
+                        tries -= 1
+                        continue
+                self.last_measure["distance"] = new_distance
+                self.last_measure["unit"] = measure_type
+                self._history.append(new_distance)
+                if len(self._history) > self._history_size:
+                    self._history = self._history[-self._history_size:]
+                tries -= 1
+                distance = new_distance
+                # self.cortex.add_task(func=self.hippocampus.store_memory,
+                #                      task_type="SENSOR",
+                #                      priority=3,
+                #                      kwargs={
+                #                          "memory": self.last_measure
+                #                      })
             except OSError as ex:
-                print("Ultrassonic Error:", ex)
+                print("Ultrasonic Error:", ex)
                 tries -= 1
         return distance
 
@@ -116,6 +146,6 @@ class UltrassonicSensor:
                 distance = self.distance_cm()
                 print(f"Distance: {distance} cm")
             except OSError as ex:
-                print("Ultrassonic Error:", ex)
+                print("Ultrasonic Error:", ex)
         print("Sensor test completed")
         return distance

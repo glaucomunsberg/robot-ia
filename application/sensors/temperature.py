@@ -6,7 +6,7 @@ from brain.cortex import Cortex
 from brain.limbic.temporal.hippocampus import Hippocampus
 
 
-class TemperatureSensor:
+class Temperature:
     """ Class TemperatureSensor
         - measure: measure the temperature
         - test: test the temperature sensor
@@ -37,7 +37,7 @@ class TemperatureSensor:
             cls.sensor = dht.DHT11(Pin(cls.pin))
         return cls._instance
 
-    def measure(self, tries=3):
+    def measure(self, tries: int = 3) -> dict:
         """Measure the temperature"""
         temp = 0
         temp_f = 0
@@ -50,10 +50,10 @@ class TemperatureSensor:
                 hum = self.sensor.humidity()
                 temp_f = temp * (9/5) + 32.0
                 self.set_last_measure(temp, temp_f, hum)
-                return temp, temp_f, hum
+                return self.last_measure
             except OSError as e:
                 print(f"Temperature Error: {e}")
-        return temp, temp_f, hum
+        return self.last_measure
 
     def set_last_measure(self, temp, temp_f, hum):
         """Set the last measure"""
@@ -71,7 +71,10 @@ class TemperatureSensor:
         """Test the temperature sensor"""
 
         print("Temperature Sensor Test started")
-        temp, temp_f, hum = self.measure()
+        mensure = self.measure()
+        temp = mensure["temperature"]
+        temp_f = mensure["temperature_f"]
+        hum = mensure["humidity"]
         print(f"Temperature: {temp} C")
         print(f"Temperature: {temp_f} F")
         print(f"Humidity: {hum} %")

@@ -4,7 +4,7 @@ from common.synapses import Synapses
 from machine import PWM, Pin  # pylint: disable=import-error
 
 
-class BuzzerSensor:
+class Buzzer:
     """This class is used to control the buzzer of the device.
     The buzzer can play a melody and the melody can be customized
     """

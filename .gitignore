@@ -178,3 +178,5 @@ mkdocs/site/*
 messy_code
 pylint_report.json
 application/playground*.py
+playground
+playground/*.py

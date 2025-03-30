@@ -1,10 +1,10 @@
 from time import sleep
 
 from actuators.dc_motor import DCMotor
-from sensors.buzzer_sensor import BuzzerSensor
-from sensors.led_sensor import LedSensor
-from sensors.ultrassonic_sensor import UltrassonicSensor
-from sensors.temperature_sensor import TemperatureSensor
+from actuators.buzzer import Buzzer
+from actuators.led import Led
+from sensors.ultrasonic import Ultrasonic
+from sensors.temperature import Temperature
 
 
 class TestSynapses:
@@ -12,35 +12,34 @@ class TestSynapses:
     """
 
     def __init__(self):
-        self.led_sensor = LedSensor()
-        self.buzzer_sensor = BuzzerSensor()
-        self.ultrassonic_sensor = UltrassonicSensor()
-        self.temperature_sensor = TemperatureSensor()
-        self.motors = []
-        self.motors.append(DCMotor(1))
-        self.motors.append(DCMotor(2))
+        self.led_sensor = Led()
+        self.buzzer_sensor = Buzzer()
+        self.ultrasonic_sensor = Ultrasonic()
+        self.temperature_sensor = Temperature()
+        self.motors = DCMotor()
 
     def test(self):
         """Test the synapses of sensors"""
         self.led_sensor.test()
         self.buzzer_sensor.test()
-        self.ultrassonic_sensor.test()
+        self.ultrasonic_sensor.test()
         self.temperature_sensor.test()
 
     def test_motor(self):
         """Test the synapses of motors"""
-        for motor in self.motors:
-            print(f"start test motor {motor.motor_name}...")
-            motor.stop()
-            motor.forward(100)
+        for set_weels in ['left', 'right']:
+            self.motors.set_weels(set_weels)
+            print(f"start test motor {self.motors.current_weels}...")
+            self.motors.stop()
+            self.motors.forward(100)
             sleep(3)
-            motor.stop()
-            motor.backwards(100)
+            self.motors.stop()
+            self.motors.backwards(100)
             sleep(3)
-            motor.stop()
-            motor.backwards(100)
+            self.motors.stop()
+            self.motors.backwards(100)
             sleep(3)
-            motor.stop()
+            self.motors.stop()
         print("end test motor...")
 
     def __str__(self):
