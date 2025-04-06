@@ -1,3 +1,7 @@
 {
-  "recommendations": ["gruntfuggly.todo-tree", "ms-python.pylint"]
+  "recommendations": [
+    "gruntfuggly.todo-tree",
+    "ms-python.pylint",
+    "gluestack.gluestack-vscode"
+  ]
 }
