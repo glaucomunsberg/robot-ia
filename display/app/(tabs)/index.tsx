@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, useWindowDimensions } from "react-native";
+import { StyleSheet, View, Text, Button } from "react-native";
 import React, { useState } from "react";
 import { AppContainer } from "@/components/AppContainer";
 import { RobotStatusBar } from "@/components/ui/RobotStatusBar";
@@ -15,101 +15,150 @@ import {
 } from "@/helpers/responsive";
 import { Colors } from "@/constants/Colors";
 import { PixelRatio } from "react-native";
-import { TabView, SceneMap, Icon } from "react-native-tab-view";
+import { TabView, SceneMap } from "react-native-tab-view";
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment } from "@/reducers/counterReducer";
+import { usePathname } from "expo-router";
+import { ScrollView } from "react-native-gesture-handler";
 interface FirstPageProps {
   logData: string[];
 }
 
+const mapStateToProps = (state) => {
+  return {
+    count: state.count,
+  };
+};
+
 function FirstRoute(props: FirstPageProps) {
   const [index, setIndex] = useState(0);
+  const pathname = usePathname();
+  const count = useSelector((state) => state.counter.value);
   return (
-    <View
-      style={{
-        justifyContent: "center",
-        alignItems: "left",
-        gap: 6,
-      }}
-    >
-      <View>
-        <Text
-          style={{
-            fontSize: 20,
-            color: Colors.light.text,
-            fontFamily: "SFCompactRounded",
-          }}
-        >
-          Device type: {getDeviceType()}
-        </Text>
+    <ScrollView>
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "left",
+          gap: 6,
+        }}
+      >
+        <View>
+          <Text
+            style={{
+              fontSize: 20,
+              color: Colors.light.text,
+              fontFamily: "SFCompactRounded",
+            }}
+          >
+            Device type: {getDeviceType()}
+          </Text>
+        </View>
+        <View>
+          <Text
+            style={{
+              fontSize: 20,
+              color: Colors.light.text,
+              fontFamily: "SFCompactRounded",
+            }}
+          >
+            With/Height (Radio): {getScreenWidth()}px / {getScreenHeight()}px (
+            {PixelRatio.get()})
+          </Text>
+        </View>
+        <View>
+          <Text
+            style={{
+              fontSize: getFontSize(14),
+              color: Colors.light.text,
+              fontFamily: "SFCompactRounded",
+            }}
+          >
+            FontSize 14: {getFontSize(14)} (scale {PixelRatio.getFontScale()})
+          </Text>
+        </View>
+        <View>
+          <Text
+            style={{
+              fontSize: getFontSize(14),
+              color: Colors.light.text,
+              fontFamily: "SFCompactRounded",
+            }}
+          >
+            FontInfo: {getFontInfoFromSize(14)}
+          </Text>
+        </View>
+        <View>
+          <Text
+            style={{
+              fontSize: getFontSize(14),
+              color: Colors.light.text,
+              fontFamily: "SFCompactRounded",
+            }}
+          >
+            IconSize 12: {getIconSize(12)}
+          </Text>
+        </View>
+        <View>
+          <Text
+            style={{
+              fontSize: getFontSize(14),
+              color: Colors.light.text,
+              fontFamily: "SFCompactRounded",
+            }}
+          >
+            Info: {getIconInfoFromSize(14)}
+          </Text>
+        </View>
+        <View style={{}}>
+          <Text
+            style={{
+              fontSize: 20,
+              color: Colors.light.text,
+              fontFamily: "SFCompactRounded",
+            }}
+          >
+            Current route: {pathname}
+          </Text>
+        </View>
+        <View style={{}}>
+          <Text
+            style={{
+              fontSize: 20,
+              color: Colors.light.text,
+              fontFamily: "SFCompactRounded",
+            }}
+          >
+            {props.logData.map((element, index) => {
+              return <Text key={index}>{element}</Text>;
+            })}
+          </Text>
+        </View>
+
+        <View style={{}}>
+          <Text
+            style={{
+              fontSize: 20,
+              color: Colors.light.text,
+              fontFamily: "SFCompactRounded",
+            }}
+          >
+            Current count {count}
+          </Text>
+        </View>
       </View>
-      <View>
-        <Text
-          style={{
-            fontSize: 20,
-            color: Colors.light.text,
-            fontFamily: "SFCompactRounded",
-          }}
-        >
-          With/Height (Radio): {getScreenWidth()}px / {getScreenHeight()}px (
-          {PixelRatio.get()})
-        </Text>
-      </View>
-      <View>
-        <Text
-          style={{
-            fontSize: getFontSize(14),
-            color: Colors.light.text,
-            fontFamily: "SFCompactRounded",
-          }}
-        >
-          FontSize 14: {getFontSize(14)} (scale {PixelRatio.getFontScale()})
-        </Text>
-      </View>
-      <View>
-        <Text
-          style={{
-            fontSize: getFontSize(14),
-            color: Colors.light.text,
-            fontFamily: "SFCompactRounded",
-          }}
-        >
-          FontInfo: {getFontInfoFromSize(14)}
-        </Text>
-      </View>
-      <View>
-        <Text
-          style={{
-            fontSize: getFontSize(14),
-            color: Colors.light.text,
-            fontFamily: "SFCompactRounded",
-          }}
-        >
-          IconSize 12: {getIconSize(12)}
-        </Text>
-      </View>
-      <View>
-        <Text
-          style={{
-            fontSize: getFontSize(14),
-            color: Colors.light.text,
-            fontFamily: "SFCompactRounded",
-          }}
-        >
-          Info: {getIconInfoFromSize(14)}
-        </Text>
-      </View>
-      <View style={{ flex: 1 }}>
-        <Text
-          style={{
-            fontSize: 20,
-            color: Colors.light.text,
-            fontFamily: "SFCompactRounded",
-          }}
-        >
-          {props.logData.map((element, index) => {
-            return <Text key={index}>{element}</Text>;
-          })}
-        </Text>
-      </View>
+    </ScrollView>
+  );
+}
+
+function SecondRoute() {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+  return (
+    <View>
+      <Text>Count: {count}</Text>
+      <Button title="Increment" onPress={() => dispatch(decrement())} />
+      <Button title="Decrement" onPress={() => dispatch(increment())} />
     </View>
   );
 }
@@ -126,7 +175,7 @@ export default function RobotAI() {
   const [logData, setLogData] = useState([""]);
   const renderScene = SceneMap({
     first: () => <View></View>,
-    second: () => <View></View>,
+    second: () => <SecondRoute />,
     third: () => <View></View>,
     fourth: () => <FirstRoute logData={logData} />,
   });
@@ -170,7 +219,12 @@ export default function RobotAI() {
               }}
             />
           </View>
-          <View style={{ flex: 1, backgroundColor: "blue" }}>
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "blue",
+            }}
+          >
             <TabView
               lazy
               navigationState={{ index, routes }}
@@ -179,6 +233,7 @@ export default function RobotAI() {
               initialLayout={{}}
               style={{
                 backgroundColor: Colors.light.background,
+                flex: 1,
               }}
               renderLabel={({ route, color }) => (
                 <Text style={[styles.tabLabel, { color }]}>
@@ -190,7 +245,7 @@ export default function RobotAI() {
         </View>
       </View>
 
-      <View style={{}}>
+      <View style={styles.alertBar}>
         <RobotAlert />
       </View>
     </AppContainer>
@@ -206,6 +261,9 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   statusBar: {
-    minHeight: getIconSize(20),
+    height: getIconSize(20),
+  },
+  alertBar: {
+    height: getIconSize(20),
   },
 });

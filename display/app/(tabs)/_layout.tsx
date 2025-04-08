@@ -15,6 +15,15 @@ export default function TabLayout() {
   const pathname = usePathname();
 
   console.log("Current Path", pathname);
+  const [showTabBar, setShowTabBar] = React.useState(true);
+  React.useEffect(() => {
+    console.log("Current Path changed", pathname);
+    if (pathname === "/" || pathname === "/index") {
+      setShowTabBar(false);
+    } else {
+      setShowTabBar(true);
+    }
+  }, [pathname]);
 
   return (
     <Tabs
@@ -27,9 +36,10 @@ export default function TabLayout() {
           ios: {
             // Use a transparent background on iOS to show the blur effect
             position: "absolute",
+            display: showTabBar ? "flex" : "none",
           },
           default: {
-            display: pathname === "/" ? "none" : "flex",
+            display: showTabBar ? "flex" : "none",
           },
         }),
       }}

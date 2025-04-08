@@ -1,24 +1,10 @@
-import {
-  Image,
-  StyleSheet,
-  Platform,
-  View,
-  Text,
-  Pressable,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
 
-import { useRouter, Link } from "expo-router";
+import { useRouter } from "expo-router";
 
-import { HelloWave } from "@/components/HelloWave";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
-import Logo from "@/assets/images/robot-ia.svg";
 import { AppContainer } from "@/components/AppContainer";
 import { Colors } from "@/constants/Colors";
 import RobotEyeRest from "@/assets/icons/robot/eyes_resting.svg";
-import RobotEyeBored from "@/assets/icons/robot/eyes_bored.svg";
 import RobotZzz from "@/assets/icons/robot/zzz.svg";
 import Animated, {
   useSharedValue,
@@ -27,11 +13,8 @@ import Animated, {
   withRepeat,
   Easing,
   withSequence,
-  useAnimatedProps,
 } from "react-native-reanimated";
-import { useEffect, useState } from "react";
-import { Svg, Path } from "react-native-svg";
-import { interpolatePath, parse } from "react-native-redash";
+import { useEffect } from "react";
 export default function HomeScreen() {
   const rotationAnimation = useSharedValue(0);
   const router = useRouter();
