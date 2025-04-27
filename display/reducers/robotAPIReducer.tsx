@@ -2,11 +2,34 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { createSlice } from "@reduxjs/toolkit";
 
+export interface RobotAPIStateType {
+  status: string | null;
+  sensors: {
+    [key: string]: any;
+  };
+  actuators: {
+    [key: string]: any;
+  };
+  energy: {
+    battery: {
+      status: string;
+      level: number;
+    };
+  };
+}
 export const robotAPISlice = createSlice({
   name: "robotAPI",
   initialState: {
     value: {
       status: null,
+      sensors: {},
+      actuators: {},
+      energy: {
+        battery: {
+          status: "",
+          level: 0,
+        },
+      },
     },
   },
   reducers: {
@@ -22,6 +45,14 @@ export const robotAPISlice = createSlice({
     reset: (state) => {
       state.value = {
         status: null,
+        sensors: {},
+        actuators: {},
+        energy: {
+          battery: {
+            status: "",
+            level: 0,
+          },
+        },
       };
     },
   },

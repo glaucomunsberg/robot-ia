@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
 
 export function RobotAlert() {
   const theme = useColorScheme() ?? "light";
-  const textColor = theme === "light" ? Colors.light.text : Colors.dark.text;
 
   return (
     <Link href="/welcome">

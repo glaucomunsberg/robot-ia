@@ -28,24 +28,20 @@ import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 import { useSelector, useDispatch } from "react-redux";
 import { usePathname } from "expo-router";
 import { ScrollView } from "react-native-gesture-handler";
-import { useGetStateByNameQuery } from "@/reducers/robotAPI";
-import { updateRobotAPIData } from "@/reducers/robotAPI";
 import { UseAccessAPI } from "@/helpers/accessApi";
 import { updateJoystickData } from "@/reducers/JoystickReducer";
 import { decrement, increment } from "@/reducers/counterReducer";
 import { JsonEditor, monoLightTheme } from "json-edit-react";
-
+import { IRootState } from "@/reduxStore";
 function SettingsTabRoute() {
   // const { data, error, isLoading } = useGetStateByNameQuery("sensors", {
   //   pollingInterval: 10000,
   // });
 
-  const apiResult = useSelector((state) => state.robotAPI.value);
+  const apiResult = useSelector((state: IRootState) => state.robotAPI.value);
 
   return (
     <View>
-      {apiResult?.isLoading && <Text>Loading...</Text>}
-      {apiResult?.error && <Text>Error: {String(apiResult.error)}</Text>}
       {apiResult &&
         (Platform.OS == "web" ? (
           <>
@@ -72,14 +68,14 @@ function SettingsTabRoute() {
 function StatusTabRoute() {
   const [index, setIndex] = useState(0);
   const pathname = usePathname();
-  const joystickData = useSelector((state) => state.joystick.value);
-  const count = useSelector((state) => state.counter.value);
+  const joystickData = useSelector((state: IRootState) => state.joystick.value);
+  const count = useSelector((state: IRootState) => state.counter.value);
   return (
     <ScrollView>
       <View
         style={{
           justifyContent: "center",
-          alignItems: "left",
+          alignItems: "stretch",
           gap: 6,
         }}
       >
@@ -246,9 +242,8 @@ function CameraRoute() {
 }
 
 function LoggerTabRoute() {
-  const count = useSelector((state) => state.counter.value);
+  const count = useSelector((state: IRootState) => state.counter.value);
 
-  const apiResult = useSelector((state) => state.robotAPI.value);
   const dispatch = useDispatch();
 
   return (
@@ -276,22 +271,22 @@ export default function RobotAI() {
     fourth: () => <StatusTabRoute />,
   });
 
-  const renderTabBar = (props) => (
+  const renderTabBar = (props: any) => (
     <TabBar
       {...props}
       indicatorStyle={{ backgroundColor: "white" }}
       style={{ backgroundColor: Colors.light.blueDark }}
-      renderLabel={({ route, color }) => (
-        <Text
-          style={{
-            color: color,
-            fontSize: getFontSize(14),
-            fontFamily: "SFCompactRounded",
-          }}
-        >
-          {route.title}
-        </Text>
-      )}
+      // renderLabel={({ route, color }) => (
+      //   <Text
+      //     style={{
+      //       color: color,
+      //       fontSize: getFontSize(14),
+      //       fontFamily: "SFCompactRounded",
+      //     }}
+      //   >
+      //     {route.title}
+      //   </Text>
+      // )}
     />
   );
   const [isLandscape, setIsLandscape] = useState(false);
@@ -318,7 +313,7 @@ export default function RobotAI() {
               ? "row"
               : "column-reverse",
             justifyContent: "center",
-            alignItems: "left",
+            alignItems: "stretch",
             gap: 6,
           }}
         >

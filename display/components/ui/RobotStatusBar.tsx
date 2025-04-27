@@ -39,24 +39,33 @@ import IconServerLink16Regular from "@/assets/icons/fluent_server-link-16-regula
 
 import IconVolumeUp from "@/assets/icons/material-symbols_volume-up-off-rounded.svg";
 import IconVolumeUpOff from "@/assets/icons/material-symbols_volume-up-rounded.svg";
+import { IRootState } from "@/reduxStore";
+import { RobotAPIStateType } from "@/reducers/robotAPIReducer";
 
+export interface iconNameTypes {
+  wheel: string;
+  mic: string;
+  detector: string;
+  temperature: string;
+  camera: string;
+  battery: string;
+  server: string;
+  led: string;
+  ultrasonic: string;
+  buzzer: string;
+}
+export interface iconStatusTypes {
+  online: string;
+  offline: string;
+}
 export interface listIconsTypes {
-  status: "online" | "offline";
-  iconName:
-    | "wheel"
-    | "mic"
-    | "detector"
-    | "temperature"
-    | "camera"
-    | "battery"
-    | "server"
-    | "led"
-    | "ultrasonic";
+  status: keyof iconStatusTypes;
+  iconName: keyof iconNameTypes;
 }
 
 export function RobotStatusBar() {
   const theme = useColorScheme() ?? "light";
-  const apiResult = useSelector((state) => state.robotAPI.value);
+  const apiResult = useSelector((state: IRootState) => state.robotAPI.value);
   //padding lef 0 when landscape and 20 when portrait
   const [paddingLeft, setPaddingLeft] = useState(0);
   const setCurrentPadding = (width: number, height: number) => {
@@ -138,7 +147,7 @@ export function RobotStatusBar() {
   });
 
   const returnIconFromList = ({ status, iconName }: listIconsTypes) => {
-    const icon = listIcons[iconName];
+    const icon = listIcons[iconName as keyof typeof listIcons];
     if (icon) {
       if (status === "online") {
         return icon.online;
@@ -156,7 +165,8 @@ export function RobotStatusBar() {
     if (apiResult?.sensors) {
       for (const [key, value] of Object.entries(apiResult.sensors)) {
         const iconName = key as keyof typeof listIcons;
-        const status = value.status as "online" | "offline";
+        const sensorsValues = value as RobotAPIStateType["sensors"];
+        const status = sensorsValues.status;
         const icon = returnIconFromList({ status, iconName });
         if (icon) {
           listIconsToDisplay.push(icon);
@@ -165,7 +175,8 @@ export function RobotStatusBar() {
       }
       for (const [key, value] of Object.entries(apiResult.actuators)) {
         const iconName = key as keyof typeof listIcons;
-        const status = value.status as "online" | "offline";
+        const actuatorsValues = value as RobotAPIStateType["actuators"];
+        const status = actuatorsValues.status;
         const icon = returnIconFromList({ status, iconName });
         if (icon) {
           listIconsToDisplay.push(icon);
@@ -213,7 +224,7 @@ export function RobotStatusBar() {
       flexDirection="row"
       customStyle={{ paddingLeft, ...styles.container }}
     >
-      {currentIconsToDisplay().map((Icon, index) => (
+      {currentIconsToDisplay().map((Icon: any, index: number) => (
         <View key={index} style={styles.item}>
           <TouchableHighlight onPress={onPressButton} underlayColor="none">
             <Icon

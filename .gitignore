@@ -180,3 +180,17 @@ pylint_report.json
 application/playground*.py
 playground
 playground/*.py
+
+
+
+# Android/IntelliJ
+#
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+.cxx/
+
+# Bundle artifacts
+*.jsbundle

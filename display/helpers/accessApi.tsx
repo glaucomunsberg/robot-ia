@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useGetStateByNameQuery } from "@/reducers/robotAPI";
-import { updateRobotAPIData } from "@/reducers/robotAPI";
+import { useGetStateByNameQuery } from "@/reducers/robotAPIReducer";
+import { updateRobotAPIData } from "@/reducers/robotAPIReducer";
 export function UseAccessAPI() {
   const dispatch = useDispatch();
 

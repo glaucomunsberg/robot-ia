@@ -15,7 +15,6 @@ import Animated, {
   withSequence,
 } from "react-native-reanimated";
 
-import Svg, { Path } from "react-native-svg";
 import { useEffect } from "react";
 export default function HomeScreen() {
   const rotationAnimation = useSharedValue(0);
