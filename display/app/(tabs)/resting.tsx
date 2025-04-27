@@ -14,6 +14,8 @@ import Animated, {
   Easing,
   withSequence,
 } from "react-native-reanimated";
+
+import Svg, { Path } from "react-native-svg";
 import { useEffect } from "react";
 export default function HomeScreen() {
   const rotationAnimation = useSharedValue(0);
@@ -96,10 +98,22 @@ export default function HomeScreen() {
   //   return { d };
   // });
 
-  // const AnimatedPath = Animated.createAnimatedComponent(Path);
+  //const AnimatedPath = Animated.createAnimatedComponent(Path);
 
+  const { navigate } = useRouter();
+
+  const onTochOrPointerEnter = () => {
+    setTimeout(() => {
+      navigate("/");
+    }, 1000);
+    console.log("point enter");
+  };
   return (
-    <AppContainer flexDirection="column" customStyle={styles.container}>
+    <AppContainer
+      pointerOrTouchedEnter={onTochOrPointerEnter}
+      flexDirection="column"
+      customStyle={styles.container}
+    >
       <View style={styles.containerLeft}></View>
       <View>
         <AppContainer flexDirection="row" customStyle={styles.container}>

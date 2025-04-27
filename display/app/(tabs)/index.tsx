@@ -1,9 +1,18 @@
-import { StyleSheet, View, Text, Button } from "react-native";
-import React, { useState } from "react";
+import {
+  Platform,
+  StyleSheet,
+  View,
+  Text,
+  Button,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
+import React, { useEffect, useState } from "react";
 import { AppContainer } from "@/components/AppContainer";
 import { RobotStatusBar } from "@/components/ui/RobotStatusBar";
 import { RobotAlert } from "@/components/ui/RobotAlert";
 import { ReactNativeJoystick } from "@korsolutions/react-native-joystick";
+import { CameraView, CameraType, useCameraPermissions } from "expo-camera";
 import {
   getDeviceType,
   getFontSize,
@@ -15,24 +24,55 @@ import {
 } from "@/helpers/responsive";
 import { Colors } from "@/constants/Colors";
 import { PixelRatio } from "react-native";
-import { TabView, SceneMap } from "react-native-tab-view";
+import { TabView, SceneMap, TabBar } from "react-native-tab-view";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "@/reducers/counterReducer";
 import { usePathname } from "expo-router";
 import { ScrollView } from "react-native-gesture-handler";
-interface FirstPageProps {
-  logData: string[];
+import { useGetStateByNameQuery } from "@/reducers/robotAPI";
+import { updateRobotAPIData } from "@/reducers/robotAPI";
+import { UseAccessAPI } from "@/helpers/accessApi";
+import { updateJoystickData } from "@/reducers/JoystickReducer";
+import { decrement, increment } from "@/reducers/counterReducer";
+import { JsonEditor, monoLightTheme } from "json-edit-react";
+
+function SettingsTabRoute() {
+  // const { data, error, isLoading } = useGetStateByNameQuery("sensors", {
+  //   pollingInterval: 10000,
+  // });
+
+  const apiResult = useSelector((state) => state.robotAPI.value);
+
+  return (
+    <View>
+      {apiResult?.isLoading && <Text>Loading...</Text>}
+      {apiResult?.error && <Text>Error: {String(apiResult.error)}</Text>}
+      {apiResult &&
+        (Platform.OS == "web" ? (
+          <>
+            <Text>API Response</Text>
+            <JsonEditor
+              theme={monoLightTheme}
+              restrictEdit={true}
+              restrictDelete={true}
+              restrictAdd={true}
+              enableClipboard={false}
+              data={apiResult}
+            />
+          </>
+        ) : (
+          <>
+            <Text>API Response</Text>
+            <Text>{JSON.stringify(apiResult)}</Text>
+          </>
+        ))}
+    </View>
+  );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    count: state.count,
-  };
-};
-
-function FirstRoute(props: FirstPageProps) {
+function StatusTabRoute() {
   const [index, setIndex] = useState(0);
   const pathname = usePathname();
+  const joystickData = useSelector((state) => state.joystick.value);
   const count = useSelector((state) => state.counter.value);
   return (
     <ScrollView>
@@ -129,9 +169,7 @@ function FirstRoute(props: FirstPageProps) {
               fontFamily: "SFCompactRounded",
             }}
           >
-            {props.logData.map((element, index) => {
-              return <Text key={index}>{element}</Text>;
-            })}
+            Joystick data: <Text>{JSON.stringify(joystickData)}</Text>
           </Text>
         </View>
 
@@ -146,23 +184,83 @@ function FirstRoute(props: FirstPageProps) {
             Current count {count}
           </Text>
         </View>
+        <View style={{}}>
+          <Text
+            style={{
+              fontSize: 20,
+              color: Colors.light.text,
+              fontFamily: "SFCompactRounded",
+            }}
+          >
+            Platform {Platform.OS}
+          </Text>
+        </View>
       </View>
     </ScrollView>
   );
 }
 
-function SecondRoute() {
+function CameraRoute() {
+  const [facing, setFacing] = useState<CameraType>("back");
+  const [permission, requestPermission] = useCameraPermissions();
+  useEffect(() => {
+    console.log("permission", permission);
+  }, [permission]);
+
+  if (!permission) {
+    // Camera permissions are still loading.
+    return (
+      <View>
+        <Text style={styles.message}>Loading camera...</Text>
+      </View>
+    );
+  }
+
+  if (!permission.granted) {
+    // Camera permissions are not granted yet.
+    return (
+      <View style={styles.container}>
+        <Text style={styles.message}>
+          We need your permission to show the camera
+        </Text>
+        <Button onPress={requestPermission} title="grant permission" />
+      </View>
+    );
+  }
+
+  function toggleCameraFacing() {
+    setFacing((current) => (current === "back" ? "front" : "back"));
+  }
+
+  return (
+    <View style={styles.container}>
+      <CameraView style={styles.camera} facing={facing}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
+            <Text style={styles.text}>Flip Camera</Text>
+          </TouchableOpacity>
+        </View>
+      </CameraView>
+    </View>
+  );
+}
+
+function LoggerTabRoute() {
   const count = useSelector((state) => state.counter.value);
+
+  const apiResult = useSelector((state) => state.robotAPI.value);
   const dispatch = useDispatch();
+
   return (
     <View>
       <Text>Count: {count}</Text>
-      <Button title="Increment" onPress={() => dispatch(decrement())} />
-      <Button title="Decrement" onPress={() => dispatch(increment())} />
+      <Button title="Increment" onPress={() => dispatch(increment())} />
+      <Button title="Decrement" onPress={() => dispatch(decrement())} />
     </View>
   );
 }
 export default function RobotAI() {
+  const dispatch = useDispatch();
   // store the last logged data
   const routes = [
     { key: "first", title: "Camera", icon: "map" },
@@ -171,13 +269,38 @@ export default function RobotAI() {
     { key: "fourth", title: "Status", icon: "map" },
   ];
   const [index, setIndex] = useState(3);
-
-  const [logData, setLogData] = useState([""]);
   const renderScene = SceneMap({
-    first: () => <View></View>,
-    second: () => <SecondRoute />,
-    third: () => <View></View>,
-    fourth: () => <FirstRoute logData={logData} />,
+    first: () => <CameraRoute />,
+    second: () => <LoggerTabRoute />,
+    third: () => <SettingsTabRoute />,
+    fourth: () => <StatusTabRoute />,
+  });
+
+  const renderTabBar = (props) => (
+    <TabBar
+      {...props}
+      indicatorStyle={{ backgroundColor: "white" }}
+      style={{ backgroundColor: Colors.light.blueDark }}
+      renderLabel={({ route, color }) => (
+        <Text
+          style={{
+            color: color,
+            fontSize: getFontSize(14),
+            fontFamily: "SFCompactRounded",
+          }}
+        >
+          {route.title}
+        </Text>
+      )}
+    />
+  );
+  const [isLandscape, setIsLandscape] = useState(false);
+
+  const [isWeb] = useState(Platform.OS === "web");
+
+  Dimensions.addEventListener("change", () => {
+    const { width, height } = Dimensions.get("window");
+    setIsLandscape(width > height);
   });
 
   return (
@@ -189,7 +312,11 @@ export default function RobotAI() {
         <View
           style={{
             flex: 1,
-            flexDirection: "row",
+            flexDirection: isWeb
+              ? "row"
+              : isLandscape
+              ? "row"
+              : "column-reverse",
             justifyContent: "center",
             alignItems: "left",
             gap: 6,
@@ -207,15 +334,15 @@ export default function RobotAI() {
               radius={75}
               onStart={(data) => {
                 //console.log("onStart", data);
-                setLogData([JSON.stringify(data)]);
+                dispatch(updateJoystickData(data));
               }}
               onStop={(data) => {
                 //console.log("onStop", data);
-                setLogData([JSON.stringify(data)]);
+                dispatch(updateJoystickData(data));
               }}
               onMove={(data) => {
                 //console.log("onMove", data);
-                setLogData([JSON.stringify(data)]);
+                //dispatch(updateJoystickData(data));
               }}
             />
           </View>
@@ -231,15 +358,11 @@ export default function RobotAI() {
               renderScene={renderScene}
               onIndexChange={setIndex}
               initialLayout={{}}
+              renderTabBar={renderTabBar}
               style={{
                 backgroundColor: Colors.light.background,
                 flex: 1,
               }}
-              renderLabel={({ route, color }) => (
-                <Text style={[styles.tabLabel, { color }]}>
-                  {route.title} 1
-                </Text>
-              )}
             />
           </View>
         </View>
@@ -247,6 +370,7 @@ export default function RobotAI() {
 
       <View style={styles.alertBar}>
         <RobotAlert />
+        <UseAccessAPI />
       </View>
     </AppContainer>
   );
@@ -265,5 +389,31 @@ const styles = StyleSheet.create({
   },
   alertBar: {
     height: getIconSize(20),
+  },
+  message: {
+    textAlign: "center",
+    paddingBottom: 10,
+  },
+  camera: {
+    flex: 1,
+    minHeight: 200,
+    minWidth: 200,
+    backgroundColor: Colors.light.background,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: "row",
+    backgroundColor: "transparent",
+    margin: 64,
+  },
+  button: {
+    flex: 1,
+    alignSelf: "flex-end",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "white",
   },
 });
