@@ -33,6 +33,7 @@ The robot sends the sensors data to the controller in a json format and this dat
         "ultrasonic": {
             "distance": 10,
             "unit": "cm",
+            "status": "online",
             "created_at": "2021-01-01T00:00:00"
         }
     }
