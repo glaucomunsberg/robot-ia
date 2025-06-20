@@ -1,4 +1,14 @@
-## Command
+---
+title: Intention Command
+description: The command is the action that the robot must execute to reach the goal.
+tags:
+    - protocol
+    - intention
+    - command protocol
+hide:
+  - tags
+---
+
 The commands are the actions that the robot must execute to reach the goal. The protocol is composed by a list of command.
 
 ## Command Types
@@ -11,13 +21,11 @@ The sensors are the commands that the robot must execute a `action` like `read`.
 
 ### Actuators
 
-The actuators are the commands that the robot must execute a `action` like `forward` or `stop`. 
-
+The actuators are the commands that the robot must execute a `action` like `forward` or `stop`.
 
 ## Example
 
 Below we have an example of a command that the robot read the sensor and move the weel to the forward direction.
-
 
 ```json
 {

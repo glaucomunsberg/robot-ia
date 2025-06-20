@@ -1,7 +1,30 @@
-# High Level Components Architecture
-
-
-The architecture of the project is divided into three main components, the **API**, the **Ollama Server**, and the **ESP32-S3**. 
+---
+title: High Level Components Architecture
+description: The architecture of the project is divided into three main components, the API, the Ollama Server, and the ESP32-S3.
+tags:
+    - architecture
+    - components
+    - ollama
+    - ESP32-S3
+    - Chassi 4WDs
+    - sensors
+    - DH11
+    - HCSR04
+    - BUZZER
+    - Ultrasonic Sensor
+    - Temperature Sensor
+    - Humidity Sensor
+    - LED
+    - MongoDB
+    - Server
+    - Microprocessor
+    - Llama32
+    - Brain Cortex
+    - API
+hide:
+  - tags
+---
+The architecture of the project is divided into three main components, the **API**, the **Ollama Server**, and the **ESP32-S3**.
 
 ```mermaid
 architecture-beta
@@ -54,8 +77,8 @@ architecture-beta
 
     serverAPI:B -- R:gateway
 ```
-## Responsibilities
 
+## Responsibilities
 
 #### Server
 
@@ -69,11 +92,9 @@ The API is responsible for managing the data and sending the data taskes to ESP3
 
 The MongoDB is responsible for storing the datalake data used by the API and the Ollama Server.
 
-
 ### Olhama Server
 
-The Ollama Server is responsible for managing the data and the communication between the API and the ESP32-S3. 
-
+The Ollama Server is responsible for managing the data and the communication between the API and the ESP32-S3.
 
 #### Llama32 model
 

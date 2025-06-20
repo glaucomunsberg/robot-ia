@@ -1,7 +1,24 @@
+---
+title: Components
+description: The list of components to buy to build the robot-ia.
+tags:
+  - components
+  - ESP32-S3
+  - DHT22
+  - HC-SR04
+  - L298N
+  - chassi 4wd
+  - LED
+  - OV7670
+  - BUZZER
+  - protoboard
+  - devkitc-1
+  - ST7789
+  - DT830
+hide:
+  - tags
+---
 ![Components](../images/components/components.jpg){ align=center }
-
-
-
 
 ## Diagram of components
 
@@ -60,36 +77,34 @@ architecture-beta
 If you want to know more about the components, click on the component name below.
 
 - Eletronics
-    - [X] [Protoboard 400 Pontos](#protoboard-400-pontos)
-    - [x] [Resistor 1K - 1/4W - 5%](#resistor-1k-14w-5)
-    - [x] Resistor 1K - 1/4W
-    - [x] [Display IPS 1.47 SPI - ST7789](#display-ips-147-spi-st7789) 
-    - [x] [Diodo de Uso Geral - 1N4148 - 100V / 0,2A](#diodo-de-uso-geral-1n4148-100v-02a)
-    - [x] [Kit Jumper Macho/Macho - 40 pçs - 20cm](#kit-jumper-machomacho-40-pcs-20cm)
-    - [x] [Kit Jumper Macho/Fêmea - 40 pçs - 20cm](#kit-jumper-macho-femea-40-pcs-20cm)
-    - [x] [Módulo Driver Ponte H - L298N](#modulo-driver-ponte-h-l298n)
-    - [x] [Buzzer 5v 12mm](#buzer-5v-12mm)
-    - [x] [LED 5mm - Vermelho, Verde, Azul, Amarelo](#led-5mm-vermelho-verde-azul-amarelo)
-    - [x] [Kit Resistores](#kit-resistores)
+  - [X] [Protoboard 400 Pontos](#protoboard-400-pontos)
+  - [x] [Resistor 1K - 1/4W - 5%](#resistor-1k-14w-5)
+  - [x] Resistor 1K - 1/4W
+  - [x] [Display IPS 1.47 SPI - ST7789](#display-ips-147-spi-st7789)
+  - [x] [Diodo de Uso Geral - 1N4148 - 100V / 0,2A](#diodo-de-uso-geral-1n4148-100v-02a)
+  - [x] [Kit Jumper Macho/Macho - 40 pçs - 20cm](#kit-jumper-machomacho-40-pcs-20cm)
+  - [x] [Kit Jumper Macho/Fêmea - 40 pçs - 20cm](#kit-jumper-macho-femea-40-pcs-20cm)
+  - [x] [Módulo Driver Ponte H - L298N](#modulo-driver-ponte-h-l298n)
+  - [x] [Buzzer 5v 12mm](#buzer-5v-12mm)
+  - [x] [LED 5mm - Vermelho, Verde, Azul, Amarelo](#led-5mm-vermelho-verde-azul-amarelo)
+  - [x] [Kit Resistores](#kit-resistores)
 - Hardware
-    - [x] [Placa DevkitC-1 ESP32-S3 N16R8](#devkitc-1-esp32-s3-n16r8)
+  - [x] [Placa DevkitC-1 ESP32-S3 N16R8](#devkitc-1-esp32-s3-n16r8)
 - Energy
-    - [x] [Power Bank 5V 2.1A 10000mAh](#power-bank-5v-21a-10000mah)
-    - [x] [Fonte Ajustável Para Protoboard](#fonte-ajustavel-para-protoboard)
+  - [x] [Power Bank 5V 2.1A 10000mAh](#power-bank-5v-21a-10000mah)
+  - [x] [Fonte Ajustável Para Protoboard](#fonte-ajustavel-para-protoboard)
 - Sensing
-    - [x] [Ultrassonic HC-SR04](#ultrassonic-hc-sr04)
-    - [x] [Camera VGA 640x480 OV7670](#camera-vga-640x480-ov7670)
-    - [x] [Sensor Temperatura e Umidade DHT11](#sensor-temperatura-e-umidade-dht11)
+  - [x] [Ultrassonic HC-SR04](#ultrassonic-hc-sr04)
+  - [x] [Camera VGA 640x480 OV7670](#camera-vga-640x480-ov7670)
+  - [x] [Sensor Temperatura e Umidade DHT11](#sensor-temperatura-e-umidade-dht11)
 - Infra
-    - [x] [Kit Chassi 4WD](#kit-chassi-4wd)
+  - [x] [Kit Chassi 4WD](#kit-chassi-4wd)
 - Tools
-    - [x] [Multímetro Digital DT830 MXT](#multimetro-digital-dt830-mxt)
+  - [x] [Multímetro Digital DT830 MXT](#multimetro-digital-dt830-mxt)
 
 All components list and prices can be found in the [Buying list](buying.md) page.
 
-
 ## Especifications
-
 
 ### Eletronics
 
@@ -136,7 +151,6 @@ All components list and prices can be found in the [Buying list](buying.md) page
 - Cor: Preto;
 - Tamanho: 20cm;
 
-
 #### Buzer 5v 12mm
 
 ![Buzer 5v 12mm](../images/components/buzzer_ativo_5v.webp){ align=right width="200" }
@@ -159,7 +173,6 @@ All components list and prices can be found in the [Buying list](buying.md) page
 - Dimensões: 43 x 43 x 27 mm
 - Peso: 30 g
 
-
 #### Display IPS 1.47 SPI - ST7789
 
 ![Display IPS 1.47 SPI - ST7789](../images/components/display_ips_1.47_2.jpg){ align=right width="200" }
@@ -169,12 +182,11 @@ All components list and prices can be found in the [Buying list](buying.md) page
 - Tensão Lógica: 3.3V
 - Chip Controlador: ST7789
 - Interface: SPI
-- Tela do LCD: IPS 
+- Tela do LCD: IPS
 - Área Ativa de Visualização: 17,38 x 32,35 mm
 - Dimensões Totais: 30,00 x 37,00  x 2,76 mm
 - Temperatura Operacional: -20 °C a 70 °C
 - Peso: 2.7g
-
 
 #### Diodo de Uso Geral - 1N4148 - 100V / 0,2A
 
@@ -183,7 +195,6 @@ All components list and prices can be found in the [Buying list](buying.md) page
 - Tensão de Pico Reversa: 100V
 - Corrente de Pico: 0,2A
 - Peso: 0,1g
-
 
 #### LED 5mm - Vermelho, Verde, Azul, Amarelo
 
@@ -195,7 +206,6 @@ All components list and prices can be found in the [Buying list](buying.md) page
 - Intensidade luminosa: 1000 MCD
 - Vida útil: 50,000 Horas
 - Ângulo de abertura: 120º graus
-
 
 #### Kit Resistores
 
@@ -228,7 +238,6 @@ All components list and prices can be found in the [Buying list](buying.md) page
 
 #### DevkitC-1 ESP32-S3 N16R8
 
-
 ![ESP32-S3](../images/components/esp32-s3-n16r8.jpg){ align=right width="200" }
 
 ESP32-S3 is a system on a chip that integrates the following features:
@@ -247,8 +256,8 @@ ESP32-S3 is a system on a chip that integrates the following features:
 ![ESP32-S3 Pin Layout](../images/components/ESP32-S3_DevKitC-1_pinlayout_v1.1.jpg)
 [Abrir em nova janela](../images/components/ESP32-S3_DevKitC-1_pinlayout_v1.1.jpg){ target="_blank" }
 
-
 -----
+
 ### Energy
 
 #### Fonte Ajustável Para Protoboard
@@ -262,7 +271,6 @@ ESP32-S3 is a system on a chip that integrates the following features:
 - Tensão de saída: 5v 2.1A
 - Capacidade: 6200mAh
 
-
 #### Power Bank 5V 2.1A 10000mAh
 
 ![Power Bank 5V 2.1A 10000mAh MAH KA-972](../images/components/power_bank_carregador_portatil_10_000mah_ka_972.webp){ align=right width="200" }
@@ -274,13 +282,12 @@ ESP32-S3 is a system on a chip that integrates the following features:
 - Dimensões: 14 x 6,5 x 1,5 cm
 
 -----
-### Sensing
 
+### Sensing
 
 #### Ultrassonic HC-SR04
 
 ![Ultrassonic HC-SR04](../images/components/HC-SR04.png){ align=right width="200" }
-
 
 - Alimentação: 5V DC
 - Corrente de Operação: 15 mA
@@ -311,9 +318,7 @@ ESP32-S3 is a system on a chip that integrates the following features:
 - Interface SCCB compatível com interface I2C;
 - Flicker: 50/60Hz (detecção automática);
 
-
 #### Sensor Temperatura e Umidade DHT11
-
 
 ![Sensor Temperatura e Umidade DHT11](../images/components/dht11.png){ align=right width="200" }
 
@@ -328,13 +333,14 @@ ESP32-S3 is a system on a chip that integrates the following features:
 - Dimensões: 23 mm x 12 mm x 5 mm (sem terminais)
 
 -----
+
 ### Infra
 
 #### Kit Chassi 4WD
 
 ![Kit Chassi 4WD](../images/components/kit_chassi_4wd.jpg){ align=right width="300" }
 
-- Chassi em acrílico;
+- Chassi 4WD em acrílico;
 - Tração nas 4 rodas (4WD);
 - Dimensões: 256 x 150 x 65mm;
 - Peso Chassi completo: 470g;
@@ -342,8 +348,8 @@ ESP32-S3 is a system on a chip that integrates the following features:
 - Velocidade motor sem carga: 200RPM (6V) e 90RPM (3V);
 
 -----
-### Tools
 
+### Tools
 
 #### Multímetro Digital DT830 MXT
 
@@ -357,5 +363,3 @@ ESP32-S3 is a system on a chip that integrates the following features:
 - Alimentação: 1 x 9V (Inclusa)
 - Dimensões: 126(A) x 70(L) x 24(P)mm.
 - Peso: Aproximadamente 150g.
-
- 

@@ -1,10 +1,17 @@
-
-# Communication
+---
+title: Communication Protocol
+description: The communication protocol used in the robot-ia project to exchange information between the server and the robot cortex.
+tags:
+  - programming
+  - protocols
+  - communication protocol
+hide:
+  - tags
+---
 
 ## Description
 
 Communication is the process of exchanging information between two or more entities. It is a fundamental concept in programming, as it is the basis for all interactions between Server through the [Intention](../intention/index.md) and a Robot Cortex through the [Brain](../../brain/index.md).
-
 
 ```mermaid
 flowchart LR

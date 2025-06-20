@@ -1,5 +1,13 @@
-
-# Intentions
+---
+title: Robot Communication Protocol
+description: The robot communication protocol used in the robot-ia project to define how the robot and the controller communicate through intentions, ideas, commands, and rules.
+tags:
+  - programming
+  - protocols
+  - robot communication protocol
+hide:
+  - tags
+---
 
 ## Introduction
 
@@ -48,10 +56,9 @@ classDiagram
 
 ```
 
-
 ### Workflow execution
 
-Each **idea** is running in the robot through the [`cortex`](../../brain/cortex.md) and the robot sends the data to the controller. The controller sends the commands to the robot to execute the idea. 
+Each **idea** is running in the robot through the [`cortex`](../../brain/cortex.md) and the robot sends the data to the controller. The controller sends the commands to the robot to execute the idea.
 
 ```mermaid
 ---
@@ -65,7 +72,6 @@ flowchart TB
     CMD2 --> C_RULES2{"rules"}
     C_RULES2 --> CR1_2["condiction 1"]
 ```
-
 
 ### Format
 
@@ -99,7 +105,7 @@ This section show abstract concepts about the communication protocol, the next s
 
 <div class="grid cards" markdown>
 
--  :material-code-block-tags:{ .lg .middle } __An Example__
+- :material-code-block-tags:{ .lg .middle } **An Example**
 
     ----
 
@@ -107,7 +113,7 @@ This section show abstract concepts about the communication protocol, the next s
 
     [:octicons-arrow-right-24: Example Section](example.md)
 
--   :octicons-light-bulb-16:{ .lg .middle } __Idea__
+- :octicons-light-bulb-16:{ .lg .middle } **Idea**
 
     ----
 
@@ -115,7 +121,7 @@ This section show abstract concepts about the communication protocol, the next s
 
     [:octicons-arrow-right-24: Idea Section](idea.md)
 
--   :octicons-command-palette-16:{ .lg .middle } __Command__
+- :octicons-command-palette-16:{ .lg .middle } **Command**
 
     ----
 
@@ -123,7 +129,7 @@ This section show abstract concepts about the communication protocol, the next s
 
     [:octicons-arrow-right-24: Command Section](command.md)
 
--   :material-directions-fork:{ .lg .middle } __Rules__
+- :material-directions-fork:{ .lg .middle } **Rules**
 
     ----
 

@@ -1,3 +1,13 @@
+---
+title: Behavior
+description: The behavior of the robot is defined by a state diagram that shows how the system behaves
+tags:
+  - programming
+  - brain
+  - behavior
+hide:
+  - tags
+---
 
 The system has a workflow that defines how the system behaves in each state. The workflow is defined by a state diagram that shows the system's behavior in each state.
 

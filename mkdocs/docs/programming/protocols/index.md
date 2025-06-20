@@ -1,9 +1,18 @@
-# Communication Protocol
+---
+title: Communication Protocol
+description: The communication protocol used in the robot-ia project to exchange information between the server and the robot cortex.
+tags:
+  - programming
+  - protocols
+  - communication
+  - Intention
+hide:
+  - tags
+---
 
 Communication is the process of exchanging information between two or more entities. It is a fundamental concept in programming, as it is the basis for all interactions between different parts of a system such as a Server Intention and a Robot Cortex.
 
-Current the project is composed by the communication between the [server and the robot](#server-communication), the [robot and the sensors and actuators](#robot-intention), and the [data syntax](#data-syntax) used or returned by the robot.
-
+Current the project is composed by the communication between the [server and the robot](#server-communication), the [robot and the sensors and actuators](#robot-intention), and the [data syntax](#data-protocol) used or returned by the robot.
 
 ```mermaid
 flowchart LR
@@ -35,7 +44,6 @@ Communication between the server and the robot is done through the HTTP protocol
 <div class="grid-center" markdown>
   [Read more about Communication Protocol](communication/index.md){ .md-button }
 </div>
-
 
 ## Intention Protocol
 

@@ -1,10 +1,20 @@
-
-# Setup your machine
-
-
+---
+title: Setup your machine
+description: A guide to set up the development environment for the ESP32-S3.
+tags:
+  - setup
+  - environment
+  - ESP32-S3
+  - micropython
+  - ESP-IDF
+  - esptool
+  - thonny
+  - esptool.py
+hide:
+  - tags
+---
 
 ![ESP32-S3](../images/components/esp32-s3-n16r8.jpg){ align=right width="300" }
-
 
 This section will guide you through the setup of the development environment for the ESP32-S3. All steps below are based on the [ESP-IDF Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/get-started/linux-macos-setup.html#get-started-prerequisites){ target="_blank" }.
 
@@ -19,6 +29,7 @@ cd ~/
 ```
 
 ### MacOS
+
 Install `cmake`, `ninja` and `dfu-util` to build the firmware.
 
 ```bash
@@ -64,6 +75,7 @@ echo 'alias get_idf=". $HOME/esp/esp-idf/export.sh"' >> ~/.zshrc
 ```
 
 ### Ubuntu
+
 ```bash
 echo 'alias get_idf=". $HOME/esp/esp-idf/export.sh"' >> ~/.bashrc
 ```
@@ -103,7 +115,6 @@ brew brew install python-tk@3.12
 sudo apt install python3-tk
 ```
 
-
 ```bash
 pip3 install thonny --break-system-packages
 ```
@@ -122,10 +133,3 @@ esptool.py --chip esp32s3 write_flash -z 0x1000 ESP32_GENERIC_S3-20241129-v1.24.
 
 !!! note "Firmware version"
     The firmware version used in the project is `ESP32_GENERIC_S3-20241129-v1.24.1.bin`
-
-
-
-
-
-
-

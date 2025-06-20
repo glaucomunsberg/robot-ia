@@ -1,23 +1,30 @@
-# 3D print models
+---
+title: 3D Models
+description: The 3D models used in the robot-ia project.
+tags:
+  - 3D Models
+  - ESP32-S3
+  - Chassi 4WD
+hide:
+  - tags
+---
 
-We use some 3D models in our projects. Feel free to use them in your projects, modify them or buy them in your favorite store. 
+We use some 3D models in our projects. Feel free to use them in your projects, modify them or buy them in your favorite store.
 
 ## Models and Quantity
 
 Below is the list and quantity used in the projects.
 
-
 | Model | Description | Quantity |
 |-------|-------------|----------|
-| [Power Adapter](#power-adpater) | Power up your Breadboard with 5V using Power Bank to make your projects portable. | 2 |
+| [Power Adapter](#power-adapter) | Power up your Breadboard with 5V using Power Bank to make your projects portable. | 2 |
 | [ESP32-S3 case](#esp32-s3-case) | Protect your ESP32-S3 with this case. | 1 |
-
 
 ## Download
 
 All models are available at [Thingiverse](https://www.thingiverse.com/){ target="_blank" } and [Printable](https://www.printables.com){ target="_blank" } . Thank you for the community that shares the models.
 
-###  4wd Robot Chassis
+### 4wd Robot Chassis
 
 [![3D models](../images/3dmodels/4wd_chasisis.webp){ align=right width="200" }](../images/3dmodels/4wd_chasisis.webp){ target="_blank" }
 
@@ -33,15 +40,13 @@ Protect your ESP32-S3 with this case. You can download the 3D model at:
 
 [https://www.printables.com/model/565403-teyleten-robot-esp32-s3-wroom-1-case/files](https://www.printables.com/model/565403-teyleten-robot-esp32-s3-wroom-1-case/files){ target="_blank" }
 
-### Power Adpater
+### Power Adapter
 
 [![3D models](../images/3dmodels/power_up_3d_print.jpg){ align=right width="200" }](https://www.thingiverse.com/thing:6640089){ target="_blank" }
 
-Power up your Breadboard with 5V using Power Bank to make your projects portable. You can download the 3D model at: 
+Power up your Breadboard with 5V using Power Bank to make your projects portable. You can download the 3D model at:
 
 [https://www.thingiverse.com/thing:6640089](https://www.thingiverse.com/thing:6640089).
-
-
 
 ## Print steps
 
@@ -53,4 +58,4 @@ Power up your Breadboard with 5V using Power Bank to make your projects portable
 6. Start the print.
 7. Print the model.
 
-The steps can follow in this [youtube video](https://www.youtube.com/watch?v=PzQe6xfWyzk){ target="_blank" }.   
+The steps can follow in this [youtube video](https://www.youtube.com/watch?v=PzQe6xfWyzk){ target="_blank" }.

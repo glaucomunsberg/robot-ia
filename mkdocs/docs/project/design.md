@@ -1,6 +1,13 @@
-# Logo Design
+---
+title: Logo Design
+description: Download the logo in different colors and formats PNG and SVG.
+tags:
+  - project
+  - design
+hide:
+  - tags
+---
 
 You can download the logo in different colors and formats PNG and SVG.
 
-[![Logo](../images/logos/robot-ia.png){ width="30%" }](../images/logos/robot-ia.svg){ target="_blank" } [![Logo](../images/logos/robot-ia-black.png){ width="30%" }](../images/logos/robot-ia-black.svg){ target="_blank" } [![Logo](../images/logos/robot-ia-white.png){ width="30%" }](../images/logos/robot-ia-white.svg){ target="_blank" .bg-black } 
-
+[![Logo](../images/logos/robot-ia.png){ width="30%" }](../images/logos/robot-ia.svg){ target="_blank" } [![Logo](../images/logos/robot-ia-black.png){ width="30%" }](../images/logos/robot-ia-black.svg){ target="_blank" } [![Logo](../images/logos/robot-ia-white.png){ width="30%" }](../images/logos/robot-ia-white.svg){ target="_blank" .bg-black }

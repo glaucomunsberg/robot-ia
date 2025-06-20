@@ -64,7 +64,7 @@ export const { updateRobotAPIData, reset } = robotAPISlice.actions;
 export const robotApi = createApi({
   // Set the baseUrl for every endpoint below
   reducerPath: "robotApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://192.168.18.39:8863/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://192.168.18.10:8863/" }),
   tagTypes: ["robotData"],
   endpoints: (build) => ({
     getStateByName: build.query({

@@ -1,14 +1,21 @@
-## Cortex
+---
+title: Cortex
+description: The Cortex is the brain of the system, responsible for managing all system activities, from reading sensors, controlling actuators, image processing, executing commands, to communicating with other systems.
+tags:
+  - programming
+  - brain
+  - cortex
+hide:
+  - tags
+---
 
-The `Cortex` is the brain of the system, responsible for managing all system activities, from reading sensors, controlling actuators, image processing, executing [commands](../protocols/intention/command.md), to communicating with other systems. Cortext use the [states](#states) to understand the system's current state and manage the [behavior](#behavior) of the system.
-
+The `Cortex` is the brain of the system, responsible for managing all system activities, from reading sensors, controlling actuators, image processing, executing [commands](../protocols/intention/command.md), to communicating with other systems. Cortext use the [states](#states-and-transition) to understand the system's current state and manage the behavior of the system.
 
 ## States and Transition
 
-The `Cortex` is responsible for managing the system's state, prioritizing tasks, and executing them according to the system's state. Each state has a set of rules that define when the system `enters` and `exits` the state and rules executed `during` the state. 
+The `Cortex` is responsible for managing the system's state, prioritizing tasks, and executing them according to the system's state. Each state has a set of rules that define when the system `enters` and `exits` the state and rules executed `during` the state.
 
 The system has four states called `Alert`, `Action`, `Rest`, and `Dormant`. The system transitions between states according to the system's activities and the tasks in the task queue.
-
 
 ```mermaid
 stateDiagram
@@ -27,7 +34,6 @@ stateDiagram
   Alert --> Action
 
 ```
-
 
 ### **Alert**
 
@@ -61,8 +67,6 @@ The robot waiting for the battery to be charged or the system to be restarted or
 - **During** does not read certain sensors (TODO)
 - **Exit** system restarted or battery not at critical level
 
-
-
 ```mermaid
 sequenceDiagram
     participant Enter
@@ -78,9 +82,8 @@ sequenceDiagram
     During->>Exit: None 'critical' activity is enqueued
 ```
 
-
 ---
-    
+
 ## Task Enqueue
 
 Todas as trefas são enviadas para serem processada com a classificação:
@@ -90,7 +93,6 @@ Todas as trefas são enviadas para serem processada com a classificação:
 - <small style='background-color: rgb(243,199,4);color: white; border-radius: 6px; padding: 1px 6px;'>NORMAL</small>: Execução em prioridade normal, caso não haja atividades de alta prioridade. Cenário: realizar o movimento do carro, leitura de outros sensores ou execução de demostrativo na tela.
 - <small style='background-color: rgb(0,126,64);color: white; border-radius: 6px; padding: 1px 6px;'>LOW</small>: atividades de baixa prioridade, caso não haja nenhuma atividade: Cenário: leitura de sensores secundários como de tempoeratura, sincronização de de dados e etc.
 - <small style='background-color: rgb(5,172,237);color: white; border-radius: 6px; padding: 1px 6px;'>EVENTUALY</small>: Atividades que não exigem priorização e poderão não ser executadas. Cenário: sincronização do relógio interno.
-
 
 Below is a sequence diagram that shows how the tasks are enqueued and processed by the `Cortex`.
 

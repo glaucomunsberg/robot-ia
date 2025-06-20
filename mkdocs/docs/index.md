@@ -1,10 +1,21 @@
+---
+title: Robot IA
+description: A DIY robot project that uses AI as the main controller.
+image: images/project/current_status_represenation.jpg
+tags:
+  - robot
+  - ESP32-S3
+  - IA
+  - DIY
+hide:
+  - tags
+---
 
 ## Introduction
 
 [![Chassis](images/project/current_status_represenation.jpg){ align=right width=60% }](images/project/current_status_represenation.jpg){target="_bank"}
 
-
-The project is a DIY project that uses a AI as the main controller. I create this project to test some ideas about how to create a robot that can be used to help in some tasks using AI. 
+The project is a DIY project that uses a AI as the main controller. I create this project to test some ideas about how to create a robot that can be used to help in some tasks using AI.
 
 Current we use [ESP32-S3](https://www.espressif.com/en/products/socs/esp32s3) microcontroller to run the project with peripherals like camera, ultrasonic sensor, temperature and humidity sensor, etc.
 
@@ -60,7 +71,7 @@ Bellow you can see the current status of the project, if you want see the full l
 
 ## Contribute
 
-Fill free to contribute with this project! 
+Fill free to contribute with this project!
 
 ```bash
 git clone https://github.com/glaucomunsberg/robot-ia.git
@@ -74,4 +85,3 @@ Keep in mind that you need follow the project [coding style](project/coding-styl
 ### License
 
 This project is under the [GNU General Public License v2.0](https://github.com/glaucomunsberg/robot-ia/blob/main/LICENSE){ target="_blank" } it's a open source project and you can use it to create your own robot.
-

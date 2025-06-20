@@ -1,8 +1,16 @@
-
-## Ideia
+---
+title: Idea Protocol
+description: The idea protocol used in the robot-ia project to define the intentions of the robot
+tags:
+  - programming
+  - protocols
+  - intention
+  - idea protocol
+hide:
+  - tags
+---
 
 The idea is composed by directives that the robot must follow to reach the goal. We create a `name` and a `description` to the idea is a text field that describes the idea.
-
 
 ## Exemplo
 

@@ -1,3 +1,15 @@
+---
+title: Advanced Setup for Developers
+description: A guide for developers to set up the robot-ia project for development.
+tags:
+   - setup
+   - advanced
+   - development
+   - mpremote
+hide:
+  - tags
+---
+
 ## Install VSCode
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/).
@@ -7,6 +19,7 @@
 3. Edit [`application/robot-ia.json`](../config.md) file with your preferred settings.
 
 4. Run the start_robot_ia.sh script to send all environment files and start the robot_ia environment.
+
    ```bash
    mpremote run application/main.py
    ```

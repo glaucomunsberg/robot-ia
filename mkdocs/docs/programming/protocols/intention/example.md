@@ -1,9 +1,17 @@
-
-## Example
+---
+title: Intention Protocol Example
+description: An example of how to create an intention protocol for a robot to execute a specific task
+tags:
+  - programming
+  - protocols
+  - intention protocol
+hide:
+  - tags
+---
 
 "I want move until find a wall" is an `idea` and that idea can be translated to a list with `command` and `rules` to the robot go to foward. Lets construct the idea, commands and rules to the robot go ahead.
 
-### Ideia
+## Ideia
 
 The wil be composed by a `name` and a `description` to the idea is a text field that describes the idea.
 
@@ -17,7 +25,7 @@ The wil be composed by a `name` and a `description` to the idea is a text field 
 }
 ```
 
-### Commands
+## Commands
 
 The commands are the actions that the robot must execute to reach the goal. At this moment, the commands are composed by: Read sensors, move the weel to the forward direction and stop the weel.
 
@@ -59,7 +67,7 @@ The commands are the actions that the robot must execute to reach the goal. At t
 }
 ```
 
-### Rules
+## Rules
 
 Well, we need to create a rules to when the robot must forward or stop. At this case we create a rule to stop the robot when the ultrasonic sensor detect a wall at 5 cm and keep the robot moving until the ultrasonic sensor detect a wall at 5 cm.
 
@@ -112,7 +120,6 @@ Well, we need to create a rules to when the robot must forward or stop. At this 
 }
 ```
 
-
 ### Data
 
 In some cases the robot can read the sensors and this data follow the [sensors syntax](../data/sensor.md). Bellow you will find the complete json  with the data from current read ultrasonic sensor.
@@ -131,7 +138,6 @@ In some cases the robot can read the sensors and this data follow the [sensors s
 ## Result
 
 The result of protocol is a json file that you will use to send in [API](../../API/index.md) and the API send this command to the [Cortex](../../brain/cortex.md) to be run.
-
 
 ### Format
 

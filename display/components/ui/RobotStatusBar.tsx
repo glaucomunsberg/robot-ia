@@ -225,7 +225,12 @@ export function RobotStatusBar() {
       customStyle={{ paddingLeft, ...styles.container }}
     >
       {currentIconsToDisplay().map((Icon: any, index: number) => (
-        <View key={index} style={styles.item}>
+        <View
+          key={index}
+          style={styles.item}
+          accessible={true}
+          accessibilityLabel="Pizza"
+        >
           <TouchableHighlight onPress={onPressButton} underlayColor="none">
             <Icon
               height={styles.itemIcon.height}

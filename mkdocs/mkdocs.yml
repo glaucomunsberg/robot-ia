@@ -5,7 +5,7 @@ site_dir: site
 theme:
   name: material
   logo: images/logos/robot-ia-white.png
-  language: pt-BR
+  #language: pt-BR
   icon:
     repo: fontawesome/brands/github
   favicon: images/logos/favicon.png
@@ -25,6 +25,7 @@ theme:
     - navigation.tabs.sticky
     - toc.follow
 plugins:
+  - tags
   - mermaid2:
       arguments:
         securityLevel: 'loose'
@@ -111,12 +112,15 @@ nav:
       - Assembly: assembly/index.md
       - Wiring: wiring/index.md
       - Programming: programming/index.md
+      - Setup/Run: setup/index.md
     - Project:
       - Features: project/features.md
       - Roadmap: project/roadmap.md
-      - Versions: project/version.md
       - Architecture: project/architecture.md
+      - Versions: project/version.md
+    - Others:
       - Design: project/design.md
+      - Tags: tags.md
   - Components:
     - List: components/index.md
     - Buying: components/buying.md
@@ -124,15 +128,16 @@ nav:
     - List: 3dmodels/index.md
   - Assembly:
     - Resume: assembly/index.md
-    - Chassis: assembly/chassis.md
+    - Chassi 4WDs: assembly/chassis.md
     - Body: assembly/body.md
   - Wiring:
     - Resume: wiring/index.md
   - Setup/Run:
     - Resume: setup/index.md
-    - Setup Environment: setup/environment.md
+    - Environment: setup/environment.md
     - Configs: setup/config.md
-    - Run/Start: setup/run_robot_ai.md
+    - Run:
+      - Start: setup/run_robot_ai.md
     - Advanced:
       - Develop Mode: setup/advanced/dev.md
       - Sync Files: setup/advanced/sync.md

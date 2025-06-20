@@ -1,0 +1,11 @@
+{
+  "MD013": {
+    // Number of characters
+    "line_length": 500
+  },
+  "MD033": {
+    // Allowed elements
+    "allowed_elements": ["figure", "figcaption", "div", "b", "small"]
+  },
+  "MD010": false
+}

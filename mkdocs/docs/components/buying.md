@@ -1,3 +1,24 @@
+---
+title: Buying list
+description: The buying list is the list of components used in the robot and the price of each
+tags:
+  - components
+  - buying
+  - ESP32-S3
+  - DHT22
+  - HC-SR04
+  - L298N
+  - chassi 4wd
+  - LED
+  - OV7670
+  - BUZZER
+  - protoboard
+  - devkitc-1
+  - ST7789
+  - DT830
+hide:
+  - tags
+---
 
 ## Buying list
 
@@ -22,5 +43,5 @@ Below is the list of components used in the robot and the price of each one. Fee
 | Kit Jumper Macho/Macho - 40 pçs - 20cm | 1 | R$ 17,50 | R$ 17,50 |  | 2025-03-03 | Body |
 | LED 5mm - Vermelho, Verde, Azul, Amarelo | 1 | R$ 0,50 | R$ 1,50 |  | 2025-03-08 | Body |
 | Power Bank 5V 2.1A 10000mAh MAH KA-97 | 1 | R$ 87,50 | R$ 87,50 |  | 2025-03-08 | Energy |
-| Kit Resistores 400 | 1 | R$ 34,45 | R$ 34,45 | [comprar](https://produto.mercadolivre.com.br/MLB-1085162167-400-resistores-valores-variados-_JM) | 2025-03-07 | Brain | 
+| Kit Resistores 400 | 1 | R$ 34,45 | R$ 34,45 | [comprar](https://produto.mercadolivre.com.br/MLB-1085162167-400-resistores-valores-variados-_JM) | 2025-03-07 | Brain |
 | Fonte Ajustável Para Protoboard | 1 | R$ 14,50 | R$ 14,50 |  | 2025-03-08 | Energy |

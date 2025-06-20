@@ -1,3 +1,17 @@
+---
+title: Robot Brain
+description: The brain of the robot-ia, responsible for executing actions, decisions and managing the robot's behavior.
+tags:
+  - programming
+  - brain
+  - cortex
+  - reptilian
+  - limbic
+  - neocortex
+  - behavior
+hide:
+  - tags
+---
 
 The abstract processor worflow is the **brain** in the robot-ia.
 

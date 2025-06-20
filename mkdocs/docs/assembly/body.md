@@ -1,8 +1,14 @@
-# Assembly Body
-
+---
+title: Assembly Body
+description: The body is the main structure of the robot. I use the kit body and you can buy the body in the Buying list page.
+tags:
+  - Assembly
+  - body
+hide:
+  - tags
+---
 
 ![Chassis](../images/assembly/body/IMG_5005.jpg){ align=right width=30% }
-
 
 ## Introduction
 

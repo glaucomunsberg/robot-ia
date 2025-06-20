@@ -1,19 +1,27 @@
-
-## Sensors Data
+---
+title: Sensors Data
+description: The sensors data is the information that the robot sends to the controller to monitor its environment and status.
+tags:
+  - programming
+  - protocols
+  - sensor protocol
+  - data protocol
+hide:
+  - tags
+---
 
 The robot sends the sensors data to the controller in a json format and this data can be used to monitor the robot's environment and status.
 The sensors data includes information about the ultrasonic sensor, temperature sensor, LED, and buzzer. Each sensor has its own set of attributes that provide detailed information about its readings and status.
 
+## Format
 
-### Format
-
-#### List of Sensors
+### List of Sensors
 
 - `sensors`: This is the main object that contains all the sensors data.
-    - `ultrasonic`: This object contains the data from the ultrasonic sensor.
-    - `temperature`: This object contains the data from the temperature sensor.
-    - `led`: This object contains the data from the LED.
-    - `buzzer`: This object contains the data from the buzzer.
+  - `ultrasonic`: This object contains the data from the ultrasonic sensor.
+  - `temperature`: This object contains the data from the temperature sensor.
+  - `led`: This object contains the data from the LED.
+  - `buzzer`: This object contains the data from the buzzer.
 
 ```json
 {
@@ -31,10 +39,12 @@ The sensors data includes information about the ultrasonic sensor, temperature s
 }
 ```
 
-### Example
+## Example
+
 The following is an example of the sensors data that the robot sends to the controller. The data includes information about the ultrasonic sensor, temperature sensor, LED, and buzzer.
 
-#### Ultrasonic
+### Ultrasonic
+
 ```json
 {
     "sensors": {
@@ -54,9 +64,7 @@ The following is an example of the sensors data that the robot sends to the cont
 - `created_at`: The timestamp when the data was created.
 - `status`: The status of the sensor (e.g., online, offline).
 
-
-
-#### Temperature
+### Temperature
 
 ```json
 {
@@ -79,7 +87,8 @@ The following is an example of the sensors data that the robot sends to the cont
 - `created_at`: The timestamp when the data was created.
 - `status`: The status of the sensor (e.g., online, offline).
 
-#### Led
+### Led
+
 ```json
 {
     "sensors": {
@@ -99,8 +108,8 @@ The following is an example of the sensors data that the robot sends to the cont
 - `created_at`: The timestamp when the data was created.
 - `status`: The status of the LED (e.g., online, offline).
 
+### Buzzer
 
-#### Buzzer
 ```json
 {
     "sensors": {
@@ -120,8 +129,7 @@ The following is an example of the sensors data that the robot sends to the cont
 - `created_at`: The timestamp when the data was created.
 - `status`: The status of the buzzer (e.g., online, offline).
 
-
-#### Offline and without data
+### Offline and without data
 
 ```json
 {
