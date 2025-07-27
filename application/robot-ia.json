@@ -1,7 +1,7 @@
 {
     "name": "robot-ia",
     "description": "Robot IA",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "debug": true,
     "configs": {
         "time": {
@@ -10,7 +10,7 @@
         },
         "communication": {
             "web_repl": {
-                "enabled": false
+                "enabled": true
             },
             "wifi": {
                 "ssid": "OsirMax_Anascience_5G",

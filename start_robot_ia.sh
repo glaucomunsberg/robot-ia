@@ -80,7 +80,7 @@ else
         echo "3/7 - Brain"
         mpremote fs cp -r application/brain :
         echo "4/7 - Common"
-        mpremote fs cp -rf application/common :
+        mpremote fs cp -r application/common :
         echo "5/7 - Communication"
         mpremote fs cp -r application/communication :
         echo "6/7 - Tests"
@@ -128,8 +128,10 @@ then
     time_start=$(date +"%Y%m%d%H%M%S")
     echo -e "---------------------------$BLUE_LIGHT"
     echo -e "RUN COMMAND $NORMAL"
-    echo "Running: mpremote run $COMMAND_TO_RUN"
-    mpremote run $COMMAND_TO_RUN
+    echo "Copying: application/${3}"
+    mpremote fs cp application/${3} :/${3}
+    echo "Running: mpremote run /application/${3}"
+    mpremote exec "import ${3}"
     time_finish=$(date +"%Y%m%d%H%M%S")
     echo "Time elapsed: $(($time_finish-$time_start))"
 fi

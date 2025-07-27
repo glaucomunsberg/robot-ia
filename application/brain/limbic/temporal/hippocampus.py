@@ -30,8 +30,8 @@ class Hippocampus:
         self.memory.append(memory)
         return memory
 
-    def recall_memory(self):
-        """Recall all the memories stored in the hippocampus."""
+    def call_memory(self):
+        """Call all the memories stored in the hippocampus."""
         return self.memory
 
     def recycle_memory(self, size: int = -1, kind: str = ""):

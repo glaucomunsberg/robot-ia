@@ -51,7 +51,8 @@ class Cortex:
     def run(self) -> None:
         """Execute the next task in the list"""
         if len(self.tasks) == 0:
-            print("Any task to execute.")
+            return
+            #print("Any task to execute.")
         else:
             # Order by priority and counter
             self.tasks.sort(key=lambda x: (x[0], x[1]))

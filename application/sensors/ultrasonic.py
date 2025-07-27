@@ -1,7 +1,8 @@
 import time
 from machine import Pin, time_pulse_us  # pylint: disable=import-error
 from common.synapses import Synapses
-
+from brain.cortex import Cortex
+from brain.limbic.temporal.hippocampus import Hippocampus
 
 class Ultrasonic:
     """
@@ -39,8 +40,8 @@ class Ultrasonic:
                            mode=Pin.IN, pull=None)
             cls._history = []
             cls._history_size = 5  # Número de medições para calcular a média
-            # cls.hippocampus = Hippocampus()
-            # cls.cortex = Cortex()
+            cls.hippocampus = Hippocampus()
+            cls.cortex = Cortex()
         return cls._instance
 
     def _send_pulse_and_wait(self):
@@ -123,12 +124,12 @@ class Ultrasonic:
                     self._history = self._history[-self._history_size:]
                 tries -= 1
                 distance = new_distance
-                # self.cortex.add_task(func=self.hippocampus.store_memory,
-                #                      task_type="SENSOR",
-                #                      priority=3,
-                #                      kwargs={
-                #                          "memory": self.last_measure
-                #                      })
+                self.cortex.add_task(func=self.hippocampus.store_memory,
+                                     task_type="BRAIN",
+                                     priority=3,
+                                     kwargs={
+                                         "memory": self.last_measure
+                                     })
             except OSError as ex:
                 print("Ultrasonic Error:", ex)
                 tries -= 1

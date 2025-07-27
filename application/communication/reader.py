@@ -3,7 +3,7 @@ import socket
 from communication.wi_fi import Wifi
 from brain.neocortex.parietal.cognition.command_decoder import CommandDecoder
 from common.variables import Variables
-
+from brain.limbic.temporal.hippocampus import Hippocampus
 
 class Reader:
     """ Reader is the server that receives the commands from the client"""
@@ -14,7 +14,7 @@ class Reader:
     conn = None
     command_decoder = CommandDecoder()
     variables = None
-
+    hippocampus = Hippocampus()
     is_running = False
 
     def __new__(cls, *args, **kwargs):
@@ -72,10 +72,15 @@ class Reader:
                 self.command_decoder.decode_from_text(
                     "{".join(request.decode('utf-8').split("{")[1:]))
                 # Envia resposta HTTP
+                memory = self.hippocampus.call_memory()
+                #memory = "{}"
                 self.conn.send(
-                    "HTTP/1.1 200 OK\nContent-Type: text/plain\n\nIt's work!")
+                    f"HTTP/1.1 200 OK\nContent-Type: application/json\n\n{memory}")
             except OSError as e:
-                print(f' >> ERROR: {e}')
+                print(f'Reader OSError: {e}')
+                self.is_running = False
+            except Exception as e:
+                print(f'Reader ERROR: {e}')
                 self.is_running = False
             finally:
                 # appearantly, context managers are currently not

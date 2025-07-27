@@ -31,37 +31,43 @@ class Temperature:
             cls._instance = super().__new__(cls)
 
             cls.synapses = Synapses()
-            cls.cortex = Cortex()
             cls.hippocampus = Hippocampus()
+            cls.cortex = Cortex()
             cls.pin = cls.synapses.temperature_pin
             cls.sensor = dht.DHT11(Pin(cls.pin))
         return cls._instance
 
     def measure(self, tries: int = 3) -> dict:
         """Measure the temperature"""
-        temp = 0
-        temp_f = 0
-        hum = 0
-        for _ in range(tries):
+        temp = None
+        temp_f = None
+        hum = None
+        while tries > 0 and temp is None:
+        #for _ in range(tries):
             try:
-                sleep(1)
+                sleep(0.5)
                 self.sensor.measure()
                 temp = self.sensor.temperature()
                 hum = self.sensor.humidity()
                 temp_f = temp * (9/5) + 32.0
-                self.set_last_measure(temp, temp_f, hum)
-                return self.last_measure
+                self.last_measure["temperature"] = temp
+                self.last_measure["temperature_f"] = temp_f
+                self.last_measure["humidity"] = hum
+                tries -= 1
             except OSError as e:
                 print(f"Temperature Error: {e}")
+                tries -= 1
+        self.set_last_measure(temp, temp_f, hum)
         return self.last_measure
 
     def set_last_measure(self, temp, temp_f, hum):
         """Set the last measure"""
+        print(f"Setting last measure: {temp}, {temp_f}, {hum}")
         self.last_measure["temperature"] = temp
         self.last_measure["temperature_f"] = temp_f
         self.last_measure["humidity"] = hum
         self.cortex.add_task(func=self.hippocampus.store_memory,
-                             task_type="SENSOR",
+                             task_type="BRAIN",
                              priority=3,
                              kwargs={
                                  "memory": self.last_measure
