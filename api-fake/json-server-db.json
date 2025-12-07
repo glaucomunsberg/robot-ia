@@ -1,0 +1,66 @@
+{
+    "sensors": {
+        "sensors": {
+            "ultrasonic": {
+                "distance": 10,
+                "unit": "cm",
+                "status": "online",
+                "created_at": "2021-01-01T00:00:00"
+            },
+            "temperature": {
+                "temperature": 25,
+                "temperature_unit": "celsius",
+                "humidity": 50,
+                "status": "online",
+                "created_at": "2021-01-01T00:00:00"
+            },
+            "led": {
+                "color": "red",
+                "intensity": 100,
+                "status": "online",
+                "created_at": "2021-01-01T00:00:00"
+            },
+            "buzzer": {
+                "frequency": null,
+                "duration": null,
+                "status": "offline",
+                "created_at": "2021-01-01T00:00:00"
+            }
+        },
+        "actuators": {
+            "wheel": {
+                "duration": null,
+                "status": "online",
+                "created_at": "2021-01-01T00:00:00"
+            }
+        },
+        "energy": {
+            "battery": {
+                "level": 40,
+                "status": "online",
+                "created_at": "2021-01-01T00:00:00"
+            }
+        },
+        "created_at": "2021-01-01T00:00:00"
+    },
+    "status": {
+        "name": "robot-ia",
+        "description": "Robot IA",
+        "version": "0.0.1",
+        "debug": true,
+        "configs": {
+            "time": {
+                "timezone": "America/Sao_Paulo",
+                "timezone_offset": -3
+            },
+            "communication": {
+                "web_repl": {
+                    "enabled": false
+                },
+                "wifi": {
+                    "ssid": "OsirMax_Anascience_5G"
+                }
+            }
+        }
+    }
+}
