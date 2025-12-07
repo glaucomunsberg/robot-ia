@@ -92,7 +92,7 @@ If you want to know more about the components, click on the component name below
   - [x] [Placa DevkitC-1 ESP32-S3 N16R8](#devkitc-1-esp32-s3-n16r8)
 - Energy
   - [x] [Power Bank 5V 2.1A 10000mAh](#power-bank-5v-21a-10000mah)
-  - [x] [Fonte Ajustável Para Protoboard](#fonte-ajustavel-para-protoboard)
+  - [x] [Fonte Ajustável Para Protoboard Mb102](#fonte-ajustavel-para-protoboard-mb102)
 - Sensing
   - [x] [Ultrassonic HC-SR04](#ultrassonic-hc-sr04)
   - [x] [Camera VGA 640x480 OV7670](#camera-vga-640x480-ov7670)
@@ -260,9 +260,9 @@ ESP32-S3 is a system on a chip that integrates the following features:
 
 ### Energy
 
-#### Fonte Ajustável Para Protoboard
+#### Fonte Ajustável Para Protoboard Mb102
 
-![Fonte Ajustável Para Protoboard](../images/components/3PS02-4.jpg){ align=right width="200" }
+![Fonte Ajustável Para Protoboard Mb102](../images/components/3PS02-4.jpg){ align=right width="200" }
 
 - Modelo: KA-972
 - Tensão de entrada: 5v 2A

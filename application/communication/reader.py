@@ -5,6 +5,7 @@ from brain.neocortex.parietal.cognition.command_decoder import CommandDecoder
 from common.variables import Variables
 from brain.limbic.temporal.hippocampus import Hippocampus
 
+
 class Reader:
     """ Reader is the server that receives the commands from the client"""
 
@@ -73,7 +74,7 @@ class Reader:
                     "{".join(request.decode('utf-8').split("{")[1:]))
                 # Envia resposta HTTP
                 memory = self.hippocampus.call_memory()
-                #memory = "{}"
+                # memory = "{}"
                 self.conn.send(
                     f"HTTP/1.1 200 OK\nContent-Type: application/json\n\n{memory}")
             except OSError as e:

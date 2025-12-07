@@ -6,6 +6,8 @@ from common.machine_time import MachineTime
 from common.variables import Variables
 from sensors.ultrasonic import Ultrasonic
 from sensors.temperature import Temperature
+from actuators.led import Led
+from actuators.buzzer import Buzzer
 
 
 class CommandDecoder:
@@ -28,6 +30,8 @@ class CommandDecoder:
             cls.time_machine = MachineTime()
             cls.sensor_ultrasonic = Ultrasonic()
             cls.sensor_temperature = Temperature()
+            cls.actuator_led = Led()
+            cls.actuator_buzzer = Buzzer()
             cls.variables = Variables()
         return cls._instance
 
@@ -84,36 +88,24 @@ class CommandDecoder:
                             # self.cortex.add_task(func=read_ultrasonic_sensor,
                             #                      task_type="SENSOR")
                     if "actuators" in command:
-                        self.cortex.add_task(func=actuators_with_rules,
-                                             task_type="ACTUATOR",
-                                             kwargs={
-                                                 "actuators": command["actuators"]
-                                             })
-            # pylint: disable=line-too-long
-            # if "actuators" in command:
-            #     for actuator in command["actuators"]:
-            #         print(f"    actuator...")
-            #         for actuator_type in actuator:
-            #             print(f"      type: {actuator_type}")
-            #             for action in actuator[actuator_type]:
-            #                 print(f"        action: {action}")
-            #                 print(
-            #                     f"        speed: {actuator[actuator_type][action]['speed']}")
-            #                 for weel in actuator[actuator_type][action]["weels"]:
-            #                     print(f"        weel: {weel}")
-            #                     print(
-            #                         f"          speed: {actuator[actuator_type][action]['weels'][weel]}")
-            #                     for rule in actuator[actuator_type][action]["rules"]:
-            #                         print(f"          rule...")
-            #                         for sensor in rule["sensors"]:
-            #                             print(
-            #                                 f"            sensor: {sensor}")
-            #                             print(
-            #                                 f"              distance: {rule['sensors'][sensor]['distance']}")
-            #                             print(
-            #                                 f"              unit: {rule['sensors'][sensor]['unit']}")
-            #                             print(
-            #                                 f"              condition: {rule['sensors'][sensor]['condition']}")
+                        for actuator in command["actuators"]:
+                            if self.variables.debug:
+                                print(f"    actuator: {actuator}")
+                                print(
+                                    f"      action: {command['actuators'][actuator]['action']}")
+                                print(
+                                    f"---> READ THE ACTUATOR 1 {actuator} <---")
+                            if actuator == "led":
+                                self.cortex.add_task(func=self.actuator_led.test,
+                                                     task_type="ACTUATOR")
+
+                            if actuator == "buzzer":
+                                if command['actuators'][actuator]['action'] == 'nokia-tone':
+                                    self.cortex.add_task(func=self.actuator_buzzer.test_nokia_tune_classic,
+                                                         task_type="ACTUATOR")
+                                else:
+                                    self.cortex.add_task(func=self.actuator_buzzer.test,
+                                                         task_type="ACTUATOR")
         print("End of commands...")
         print("")
 

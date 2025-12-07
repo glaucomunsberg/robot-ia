@@ -44,4 +44,4 @@ Below is the list of components used in the robot and the price of each one. Fee
 | LED 5mm - Vermelho, Verde, Azul, Amarelo | 1 | R$ 0,50 | R$ 1,50 |  | 2025-03-08 | Body |
 | Power Bank 5V 2.1A 10000mAh MAH KA-97 | 1 | R$ 87,50 | R$ 87,50 |  | 2025-03-08 | Energy |
 | Kit Resistores 400 | 1 | R$ 34,45 | R$ 34,45 | [comprar](https://produto.mercadolivre.com.br/MLB-1085162167-400-resistores-valores-variados-_JM) | 2025-03-07 | Brain |
-| Fonte Ajustável Para Protoboard | 1 | R$ 14,50 | R$ 14,50 |  | 2025-03-08 | Energy |
+| Fonte Ajustável Para Protoboard Mb102 | 1 | R$ 14,50 | R$ 14,50 |  | 2025-03-08 | Energy |

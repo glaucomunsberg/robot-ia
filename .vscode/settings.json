@@ -14,5 +14,12 @@
   },
   // python path
   "python.defaultInterpreterPath": "~/.virtualenvs/bin/python:lib",
-  "pylint.interpreter": ["./.venv/bin/python"]
+  "pylint.interpreter": ["./.venv/bin/python"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": "always"
+  },
+  "cursorpyright.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none"
+  },
+  "java.compile.nullAnalysis.mode": "disabled"
 }
